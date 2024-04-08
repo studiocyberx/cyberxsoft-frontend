@@ -9,6 +9,7 @@ export const fontSans = FontSans({
 export const bebas = Bebas_Neue({
   weight: "400",
   variable: "--font-bebas",
+  preload: false,
 });
 
 export const madeTommy = localFont({
@@ -17,4 +18,5 @@ export const madeTommy = localFont({
     { path: "../public/fonts/made-tommy-bold.otf", weight: "400" },
   ],
   variable: "--font-tommy",
+  preload: false,
 });
