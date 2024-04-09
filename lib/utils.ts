@@ -46,7 +46,10 @@ export function flattenAttributes(data: any): any {
 }
 
 export function getStrapiURL() {
-  return process.env.NEXT_PUBLIC_STRAPI_URL ?? "http://localhost:1337";
+  return (
+    process.env.NEXT_PUBLIC_STRAPI_URL ??
+    "https://light-blessing-0333ae3113.strapiapp.com/"
+  );
 }
 
 export function getStrapiMedia(url: string | null) {
