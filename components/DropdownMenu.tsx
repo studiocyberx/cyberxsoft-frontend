@@ -9,7 +9,16 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 
-const DropdownMenu = ({ subItems }) => {
+interface SubItemProps {
+  href: string;
+  title: string;
+}
+
+interface DropdownMenuProps {
+  subItems: SubItemProps[];
+}
+
+const DropdownMenu = ({ subItems }: DropdownMenuProps) => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
