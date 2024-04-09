@@ -3,6 +3,7 @@
 import { useActivePath } from "@/app/helper";
 import Link from "next/link";
 import DropdownMenu from "./DropdownMenu";
+import { ModeToggle } from "./ModeToggle";
 
 interface NavItemProps {
   href: string;
@@ -64,6 +65,8 @@ const Navbar = ({ fonts }: { fonts: FontProps }) => {
             )}
           </li>
         ))}
+
+        <ModeToggle />
       </ul>
     </nav>
   );
