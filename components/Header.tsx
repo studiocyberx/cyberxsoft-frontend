@@ -41,8 +41,6 @@ const socialIcons: SocialIconProps[] = [
 ];
 
 export function Header() {
-  console.log("header loaded");
-
   return (
     <>
       <div className="flex items-center flex-wrap justify-between gap-8 px-10 lg:px-20 py-1 bg-custom-purple-500">
