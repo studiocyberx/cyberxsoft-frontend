@@ -30,8 +30,8 @@ export default async function RootLayout({
           madeTommy.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system">
-          <Header data={globalData.header} />
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <Header />
           {children}
           <Footer data={globalData.footer} />
         </ThemeProvider>

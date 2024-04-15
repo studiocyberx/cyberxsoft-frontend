@@ -1,9 +1,7 @@
 "use client";
-
 import { useActivePath } from "@/app/helper";
 import Link from "next/link";
 import DropdownMenu from "./DropdownMenu";
-import { ModeToggle } from "./ModeToggle";
 
 interface NavItemProps {
   href: string;
@@ -26,7 +24,7 @@ interface FontProps {
 
 const navItems: NavItemProps[] = [
   { title: "Home", href: "/" },
-  { title: "About Us", href: "/about-us" },
+  { title: "About Us", href: "/about" },
   {
     title: "Services",
     href: "/services",
@@ -47,28 +45,28 @@ const Navbar = ({ fonts }: { fonts: FontProps }) => {
   const activepath = useActivePath();
 
   return (
-    <nav>
-      <ul className="flex items-center gap-4 ">
-        {navItems.map((navLink, index) => (
-          <li
-            key={index}
-            className={`${
-              activepath(navLink.href) ? "text-white" : "text-gray-400"
-            } hover:text-gray-200 transition-all duration-300 uppercase text-xl ${
-              fonts.className
-            }`}
-          >
-            {navLink.subItems ? (
-              <DropdownMenu subItems={navLink.subItems} />
-            ) : (
-              <Link href={navLink.href}>{navLink.title}</Link>
-            )}
-          </li>
-        ))}
-
-        <ModeToggle />
-      </ul>
-    </nav>
+    <>
+      <nav className="absolute hidden md:block md:static top-full right-0 bg-custom-purple-600/90 md:bg-none min-h-full z-20 px-20 md:p-0 py-8">
+        <ul className="flex items-center gap-4 flex-col md:flex-row">
+          {navItems.map((navLink, index) => (
+            <li
+              key={index}
+              className={`${
+                activepath(navLink.href) ? "text-white" : "text-gray-400"
+              } hover:text-gray-200 transition-all duration-300 uppercase text-xl ${
+                fonts.className
+              }`}
+            >
+              {navLink.subItems ? (
+                <DropdownMenu subItems={navLink.subItems} />
+              ) : (
+                <Link href={navLink.href}>{navLink.title}</Link>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </>
   );
 };
 

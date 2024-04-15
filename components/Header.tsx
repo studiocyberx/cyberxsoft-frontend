@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
-import { Button } from "@/components/ui/button";
 import { FaFacebook } from "react-icons/fa";
 import {
   FaXTwitter,
@@ -9,6 +8,7 @@ import {
   FaPhone,
   FaLocationDot,
 } from "react-icons/fa6";
+import Navigation from "./Navigation";
 import Navbar from "./Navbar";
 import { bebas } from "@/app/fonts";
 
@@ -40,10 +40,12 @@ const socialIcons: SocialIconProps[] = [
   { id: 4, icon: <FaLinkedin />, url: "/" },
 ];
 
-export async function Header({ data }: Readonly<HeaderProps>) {
+export function Header() {
+  console.log("header loaded");
+
   return (
     <>
-      <div className="flex items-center justify-between px-20 py-1 bg-custom-purple-500">
+      <div className="flex items-center flex-wrap justify-between gap-8 px-10 lg:px-20 py-1 bg-custom-purple-500">
         <div className="flex items-center gap-6 text-white">
           {socialIcons.map((icon) => (
             <Link
@@ -73,21 +75,12 @@ export async function Header({ data }: Readonly<HeaderProps>) {
           </Link>
         </div>
       </div>
-      <div className="flex items-center justify-between px-20 py-1 bg-custom-purple-600">
+
+      <div className="flex items-center gap-4 justify-between px-10 lg:px-20 py-1 bg-custom-purple-600 relative">
         <Logo />
 
-        <Navbar fonts={bebas} />
-
-        {/* <div className="flex items-center gap-4">
-          <Link href="/login">
-            <Button
-              variant="outline"
-              className="bg-transparent text-white px-8 rounded-sm uppercase text-lg"
-            >
-              Login
-            </Button>
-          </Link>
-        </div> */}
+        {/* <Navbar fonts={bebas} /> */}
+        <Navigation />
       </div>
     </>
   );

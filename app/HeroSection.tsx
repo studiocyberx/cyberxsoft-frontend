@@ -29,7 +29,7 @@ interface HeroSectionProps {
 
 export function HeroSection({ data }: Readonly<HeroSectionProps>) {
   return (
-    <header className="relative min-h-screen overflow-hidden z-0">
+    <header className="relative h-screen sm:h-auto overflow-hidden z-0">
       <BackgroundVideo src={introBackground}>
         <div className="absolute top-0 bottom-0 w-full flex items-start justify-center px-20 flex-col bg-custom-purple-700 bg-opacity-70 space-y-10">
           <h1 className="font-tommy text-4xl text-primary-foreground md:text-5xl lg:text-6xl max-w-5xl uppercase">
@@ -37,7 +37,7 @@ export function HeroSection({ data }: Readonly<HeroSectionProps>) {
             <span className="font-tommy font-bold">Innovation Grounded in</span>{" "}
             responsibility
           </h1>
-          <div className="flex items-center justify-between gap-8 w-full">
+          <div className="flex items-center justify-between gap-8 w-full flex-col-reverse md:flex-row">
             <Button
               asChild
               variant="outline"

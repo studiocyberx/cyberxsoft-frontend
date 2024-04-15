@@ -2,7 +2,7 @@ import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 
 const IntroSection = () => {
   return (
-    <Card className="bg-custom-purple-500 max-w-[70%] mx-auto px-4 py-8 lg:-mt-20 z-30 relative border-none">
+    <Card className="bg-custom-purple-500 max-w-[95%] md:max-w-[70%] mx-auto px-4 py-8 mt-4 sm:-mt-10 lg:-mt-20 z-30 relative border-none">
       <h6 className="text-custom-purple-50 font-bold text-lg uppercase">
         BigO Comprehensive Services:
       </h6>
