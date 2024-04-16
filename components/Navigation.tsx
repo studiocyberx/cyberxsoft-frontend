@@ -5,8 +5,8 @@ import { useState } from "react";
 import { MdOutlineMenu, MdClose } from "react-icons/md";
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleOpen = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const toggleOpen: () => void = () => {
     setIsOpen(!isOpen);
   };
   return (

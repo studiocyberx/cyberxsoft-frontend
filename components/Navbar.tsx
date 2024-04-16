@@ -41,7 +41,7 @@ const navItems: NavItemProps[] = [
   { title: "Careers", href: "/careers" },
 ];
 
-const Navbar = ({ fonts }: { fonts: FontProps }) => {
+const Navbar = ({ fonts, isOpen }: { fonts: FontProps; isOpen: boolean }) => {
   const activepath = useActivePath();
 
   return (

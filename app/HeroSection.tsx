@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import BackgroundVideo from "next-video/background-video";
+// import BackgroundVideo from "next-video/background-video";
 import introBackground from "@/videos/intro-background.mp4";
+import dynamic from "next/dynamic";
+const BackgroundVideo = dynamic(() => import("next-video/background-video"), {
+  ssr: false,
+});
 
 interface ImageProps {
   id: number;
