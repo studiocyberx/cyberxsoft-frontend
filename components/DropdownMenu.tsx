@@ -6,6 +6,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 
@@ -43,6 +44,7 @@ const DropdownMenu = ({ subItems }: DropdownMenuProps) => {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        <NavigationMenuIndicator />
       </NavigationMenuList>
     </NavigationMenu>
   );

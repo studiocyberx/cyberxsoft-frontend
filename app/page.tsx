@@ -20,7 +20,7 @@ const Home = async () => {
   if (!blocks) return <p>No sections found</p>;
 
   return (
-    <main className="bg-gray-200">
+    <main className="bg-gray-200 h-full">
       {/* {blocks.map((block: any) => blockRenderer(block))} */}
       {blockRenderer(blocks[0])}
       <IntroSection />

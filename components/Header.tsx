@@ -9,8 +9,6 @@ import {
   FaLocationDot,
 } from "react-icons/fa6";
 import Navigation from "./Navigation";
-import Navbar from "./Navbar";
-import { bebas } from "@/app/fonts";
 
 interface HeaderProps {
   data: {
@@ -42,7 +40,7 @@ const socialIcons: SocialIconProps[] = [
 
 export function Header() {
   return (
-    <>
+    <header>
       <div className="flex items-center flex-wrap justify-between gap-8 px-10 lg:px-20 py-1 bg-custom-purple-500">
         <div className="flex items-center gap-6 text-white">
           {socialIcons.map((icon) => (
@@ -74,12 +72,10 @@ export function Header() {
         </div>
       </div>
 
-      <div className="flex items-center gap-4 justify-between px-10 lg:px-20 py-1 bg-custom-purple-600 relative">
+      <div className="flex items-center gap-4 justify-between px-10 lg:px-20 py-1 bg-custom-purple-600">
         <Logo />
-
-        {/* <Navbar fonts={bebas} /> */}
         <Navigation />
       </div>
-    </>
+    </header>
   );
 }

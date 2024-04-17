@@ -24,7 +24,7 @@ const FeatureCard = ({ feature }: { feature: Feature }) => {
   return (
     <Card
       key={feature.id}
-      className="space-y-4 px-6 py-4 bg-custom-purple-500 border-none"
+      className="space-y-4 px-6 py-4 bg-custom-purple-500 border-none z-20"
     >
       <CardHeader className="items-center p-0 lg:-mt-14">
         <Image

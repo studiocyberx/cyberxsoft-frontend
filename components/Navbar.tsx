@@ -45,28 +45,36 @@ const Navbar = ({ fonts, isOpen }: { fonts: FontProps; isOpen: boolean }) => {
   const activepath = useActivePath();
 
   return (
-    <>
-      <nav className="absolute hidden md:block md:static top-full right-0 bg-custom-purple-600/90 md:bg-none min-h-full z-20 px-20 md:p-0 py-8">
-        <ul className="flex items-center gap-4 flex-col md:flex-row">
-          {navItems.map((navLink, index) => (
-            <li
-              key={index}
-              className={`${
-                activepath(navLink.href) ? "text-white" : "text-gray-400"
-              } hover:text-gray-200 transition-all duration-300 uppercase text-xl ${
-                fonts.className
-              }`}
-            >
-              {navLink.subItems ? (
-                <DropdownMenu subItems={navLink.subItems} />
-              ) : (
-                <Link href={navLink.href}>{navLink.title}</Link>
-              )}
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </>
+    <nav
+      className={`absolute md:block md:static top-0 left-0 bg-custom-purple-600/95 md:bg-none min-h-full z-40 px-10 md:p-0 py-8 ${
+        isOpen
+          ? "flex items-center justify-start text-left animate-nav-slide overflow-hidden w-full"
+          : "hidden"
+      }`}
+    >
+      <ul
+        className={`flex ${
+          isOpen ? "items-start" : "items-center"
+        } gap-4 flex-col md:flex-row`}
+      >
+        {navItems.map((navLink, index) => (
+          <li
+            key={index}
+            className={`${
+              activepath(navLink.href) ? "text-white" : "text-gray-400"
+            } hover:text-gray-200 transition-all duration-300 uppercase text-xl ${
+              fonts.className
+            }`}
+          >
+            {navLink.subItems ? (
+              <DropdownMenu subItems={navLink.subItems} />
+            ) : (
+              <Link href={navLink.href}>{navLink.title}</Link>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

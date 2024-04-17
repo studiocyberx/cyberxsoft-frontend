@@ -9,18 +9,19 @@ const Navigation = () => {
   const toggleOpen: () => void = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <>
       <Navbar fonts={bebas} isOpen={isOpen} />
       {isOpen ? (
         <MdClose
           onClick={toggleOpen}
-          className="text-2xl text-white block md:hidden"
+          className="text-2xl text-white block md:hidden z-50 cursor-pointer"
         />
       ) : (
         <MdOutlineMenu
           onClick={toggleOpen}
-          className="text-2xl text-white block md:hidden"
+          className="text-2xl text-white block md:hidden z-50 cursor-pointer"
         />
       )}
     </>

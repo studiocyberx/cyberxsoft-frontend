@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-// import BackgroundVideo from "next-video/background-video";
 import introBackground from "@/videos/intro-background.mp4";
+//Dynamic import to remove ESModule errors
 import dynamic from "next/dynamic";
 const BackgroundVideo = dynamic(() => import("next-video/background-video"), {
-  ssr: false,
+  ssr: true,
 });
 
 interface ImageProps {
@@ -45,7 +45,7 @@ export function HeroSection({ data }: Readonly<HeroSectionProps>) {
             <Button
               asChild
               variant="outline"
-              className="px-8 py-6 text-lg bg-transparent text-white"
+              className="px-8 py-6 text-lg bg-transparent text-white transition-all duration-200 ease-in"
             >
               <Link href="/">Learn More</Link>
             </Button>

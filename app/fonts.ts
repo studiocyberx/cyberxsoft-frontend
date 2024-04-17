@@ -14,6 +14,7 @@ export const bebas = Bebas_Neue({
 
 export const madeTommy = localFont({
   src: [
+    { path: "../public/fonts/made-tommy-black-outline.otf", weight: "900" },
     { path: "../public/fonts/made-tommy-bold-outline.otf", weight: "700" },
     { path: "../public/fonts/made-tommy-bold.otf", weight: "400" },
   ],

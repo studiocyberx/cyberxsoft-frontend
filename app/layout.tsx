@@ -33,7 +33,7 @@ export default async function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light">
           <Header />
           {children}
-          <Footer data={globalData.footer} />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
