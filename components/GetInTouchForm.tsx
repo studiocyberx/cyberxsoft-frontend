@@ -51,7 +51,11 @@ const GetInTouchForm = () => {
                   <FormLabel>Name</FormLabel>
 
                   <FormControl>
-                    <Input placeholder="Enter name" {...field} />
+                    <Input
+                      placeholder="Enter name"
+                      {...field}
+                      className="text-black"
+                    />
                   </FormControl>
 
                   <FormMessage />
@@ -66,7 +70,12 @@ const GetInTouchForm = () => {
                   <FormLabel>Email</FormLabel>
 
                   <FormControl>
-                    <Input placeholder="Enter email" type="email" {...field} />
+                    <Input
+                      placeholder="Enter email"
+                      type="email"
+                      {...field}
+                      className="text-black"
+                    />
                   </FormControl>
                   {}
                   <FormMessage />
@@ -85,7 +94,7 @@ const GetInTouchForm = () => {
                 <FormControl>
                   <Textarea
                     placeholder="Type your message..."
-                    className="resize-y"
+                    className="resize-y text-black"
                     {...field}
                   />
                 </FormControl>
