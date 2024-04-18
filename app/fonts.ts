@@ -4,12 +4,13 @@ import { Quicksand as FontSans, Bebas_Neue } from "next/font/google";
 export const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
+  weight: ["400", "500", "700"],
 });
 
 export const bebas = Bebas_Neue({
   weight: "400",
   variable: "--font-bebas",
-  preload: false,
+  subsets: ["latin-ext"],
 });
 
 export const madeTommy = localFont({

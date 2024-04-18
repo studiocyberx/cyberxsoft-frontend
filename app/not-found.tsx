@@ -10,7 +10,7 @@ export default function NotFoundRoot() {
           404
         </h1>
         <p className="text-lg text-gray-700 dark:text-gray-300">
-          Something went wrong
+          Page Not Found
         </p>
         <Link
           href="/"

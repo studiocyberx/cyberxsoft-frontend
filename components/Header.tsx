@@ -63,7 +63,8 @@ export function Header() {
             +92-321-2311231
           </Link>
           <Link
-            href="maps.google.com"
+            href="https://maps.app.goo.gl/2L9f9WYFS6Anjjg39"
+            target="_blank"
             className="flex items-center gap-2 text-white hover:text-custom-purple-100 transition-all duration-300"
           >
             <FaLocationDot size={20} />

@@ -44,26 +44,26 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="dark bg-custom-purple-600 text-white py-8">
-      <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between">
+    <footer className="dark bg-custom-purple-600 text-white py-8 space-y-8">
+      <div className="container mx-auto flex flex-row flex-wrap gap-4 md:flex-nowrap items-center justify-center md:justify-between">
         <Logo />
 
-        <ul className="flex items-center gap-4 flex-col md:flex-row">
+        <ul className="flex items-center justify-center sm:justify-normal gap-4 flex-row flex-wrap sm:flex-nowrap">
           {navItems.map((navLink, index) => (
             <li
               key={index}
-              className="text-white hover:text-gray-400 transition-all duration-300 font-semibold"
+              className="text-white hover:text-gray-400 transition-all duration-300"
             >
               <Link href={navLink.href}>{navLink.title}</Link>
             </li>
           ))}
         </ul>
 
-        <ul className="flex items-center gap-4 flex-col md:flex-row">
+        <ul className="flex items-center gap-4 flex-row">
           {socialLinks.map((link, index) => (
             <li
               key={index}
-              className="text-white hover:text-gray-400 transition-all duration-300 font-semibold"
+              className="text-white hover:text-gray-400 transition-all duration-300"
             >
               <Link href={link.href} target="_blank">
                 {link.icon}
@@ -72,6 +72,21 @@ export function Footer() {
           ))}
         </ul>
       </div>
+
+      <ul className="flex items-center justify-center gap-4 flex-wrap md:flex-nowrap">
+        <li className="text-gray-400 hover:text-white">
+          © 2023 BigO. All rights reserved.
+        </li>
+        <li className="text-gray-400 hover:text-white">
+          <Link href="/">Privacy Policy</Link>
+        </li>
+        <li className="text-gray-400 hover:text-white">
+          <Link href="/">Terms of Service</Link>
+        </li>
+        <li className="text-gray-400 hover:text-white">
+          <Link href="/">Cookies Settings</Link>
+        </li>
+      </ul>
     </footer>
   );
 }

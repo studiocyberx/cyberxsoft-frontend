@@ -42,7 +42,7 @@ export function FeatureSection({ data }: Readonly<FeatureSectionProps>) {
             Bring Impact with <span className="font-bold">no compromise</span>{" "}
             on trust{" "}
           </h2>
-          <p className="">{description}</p>
+          <p>{description}</p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 pt-12 max-w-[1400px] mx-auto px-10">
           {feature.map((feature) => (

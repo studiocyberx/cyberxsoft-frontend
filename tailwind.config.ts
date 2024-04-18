@@ -19,6 +19,9 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        md: "800px",
+      },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         tommy: ["var(--font-tommy)"],

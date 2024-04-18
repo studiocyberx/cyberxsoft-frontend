@@ -35,8 +35,8 @@ export function HeroSection({ data }: Readonly<HeroSectionProps>) {
   return (
     <header className="relative h-screen sm:h-auto overflow-hidden z-0">
       <BackgroundVideo src={introBackground}>
-        <div className="absolute top-0 bottom-0 w-full flex items-start justify-center px-20 flex-col bg-custom-purple-700 bg-opacity-70 space-y-10">
-          <h1 className="font-tommy text-4xl text-primary-foreground md:text-5xl lg:text-6xl max-w-5xl uppercase">
+        <div className="absolute top-0 bottom-0 w-full flex items-start justify-center px-8 sm:px-20 flex-col bg-custom-purple-700 bg-opacity-70 space-y-10">
+          <h1 className="font-tommy text-4xl text-center md:text-left text-primary-foreground md:text-5xl lg:text-6xl max-w-5xl uppercase">
             Next Level{" "}
             <span className="font-tommy font-bold">Innovation Grounded in</span>{" "}
             responsibility
@@ -49,7 +49,7 @@ export function HeroSection({ data }: Readonly<HeroSectionProps>) {
             >
               <Link href="/">Learn More</Link>
             </Button>
-            <p className="text-lg md:text-xl text-secondary max-w-lg ">
+            <p className="text-lg md:text-xl text-center md:text-left text-secondary max-w-lg ">
               Enabling Businesses to Make Smart Choices by Bringing Endless
               Automation Possibilities to their Disposal
             </p>
