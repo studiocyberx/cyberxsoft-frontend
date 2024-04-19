@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-const { withNextVideo } = require("next-video/process");
-const { hostname } = require("os");
-
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -23,4 +20,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withNextVideo(nextConfig);
+module.exports = nextConfig;
