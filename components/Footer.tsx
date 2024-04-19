@@ -45,7 +45,7 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="dark bg-custom-purple-600 text-white py-8 space-y-8">
-      <div className="container mx-auto flex flex-row flex-wrap gap-4 md:flex-nowrap items-center justify-center md:justify-between">
+      <div className="max-w-[1400px] px-2 sm:px-8 mx-auto flex flex-row flex-wrap gap-4 md:flex-nowrap items-center justify-center md:justify-between">
         <Logo />
 
         <ul className="flex items-center justify-center sm:justify-normal gap-4 flex-row flex-wrap sm:flex-nowrap">
@@ -74,8 +74,8 @@ export function Footer() {
       </div>
 
       <ul className="flex items-center justify-center gap-4 flex-wrap md:flex-nowrap">
-        <li className="text-gray-400 hover:text-white">
-          © 2023 BigO. All rights reserved.
+        <li className="text-white pointer-events-none">
+          © 2024 BigO. All rights reserved.
         </li>
         <li className="text-gray-400 hover:text-white">
           <Link href="/">Privacy Policy</Link>

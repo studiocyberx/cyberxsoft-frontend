@@ -28,7 +28,7 @@ const Faqs = ({ faqItems }: { faqItems: faqItemsProps[] }) => {
               </AccordionTrigger>
               <AccordionContent>{faq.answer}</AccordionContent>
             </AccordionItem>
-            <Separator className="bg-custom-purple-300" />
+            <Separator className="bg-custom-purple-300 h-[1.5px]" />
           </div>
         ))}
       </Accordion>

@@ -31,10 +31,10 @@ export function FeatureSection({ data }: Readonly<FeatureSectionProps>) {
 
   return (
     <>
-      <section className="px-4 py-6 mx-auto md:px-6 lg:px-14 lg:py-11">
+      <section className="container px-4 py-6 mx-auto md:px-6 lg:px-14 lg:py-11">
         <h2 className="text-3xl uppercase font-semibold">What we can do</h2>
         <Separator className="w-full bg-gray-500 mt-5 mb-8 relative after:absolute after:content-[''] after:bg-drop-pattern after:w-full after:min-h-[420px] after:bg-no-repeat after:z-0" />
-        <div className="max-w-[1400px] mx-auto px-10">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-5 md:px-10">
           <strong className="text-custom-purple-300 uppercase font-tommy font-normal">
             {subtitle}
           </strong>
@@ -44,18 +44,18 @@ export function FeatureSection({ data }: Readonly<FeatureSectionProps>) {
           </h2>
           <p>{description}</p>
         </div>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 pt-12 max-w-[1400px] mx-auto px-10">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 pt-12 max-w-[1400px] mx-auto px-4 sm:px-5 md:px-10">
           {feature.map((feature) => (
             <FeatureCard feature={feature} key={feature.id} />
           ))}
         </div>
       </section>
 
-      <section className="flex items-center justify-center flex-col py-8">
-        <h5 className="text-xl font-bold uppercase">
+      <section className="flex items-center justify-center flex-col py-8 px-4 sm:px-5 md:px-10">
+        <h5 className="text-xl font-bold uppercase text-center">
           Reimage Your Business Success
         </h5>
-        <p className="mt-1 mb-4">
+        <p className="mt-1 mb-4 text-center">
           Request a Personalized, Responsible AI, BI, IoT, or Cloud Service to
           Find Out
         </p>

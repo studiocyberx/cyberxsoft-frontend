@@ -41,7 +41,7 @@ const socialIcons: SocialIconProps[] = [
 export function Header() {
   return (
     <header>
-      <div className="flex items-center flex-wrap justify-between gap-8 px-10 lg:px-20 py-1 bg-custom-purple-500">
+      <div className="flex items-center flex-wrap lg:flex-nowrap justify-center md:justify-between gap-4 md:gap-8 px-10 lg:px-20 py-4 md:py-1 bg-custom-purple-500">
         <div className="flex items-center gap-6 text-white">
           {socialIcons.map((icon) => (
             <Link
@@ -54,7 +54,7 @@ export function Header() {
             </Link>
           ))}
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 justify-center md:justify-start flex-wrap md:flex-nowrap">
           <Link
             href="tel:9232132121"
             className="flex items-center gap-2 text-white hover:text-custom-purple-100 transition-all duration-300"
@@ -65,7 +65,7 @@ export function Header() {
           <Link
             href="https://maps.app.goo.gl/2L9f9WYFS6Anjjg39"
             target="_blank"
-            className="flex items-center gap-2 text-white hover:text-custom-purple-100 transition-all duration-300"
+            className="flex items-center text-center md:text-left gap-2 text-white hover:text-custom-purple-100 transition-all duration-300"
           >
             <FaLocationDot size={20} />
             First Floor, Plaza #54, Sector F, DHA Phase 1, Rawalpindi{" "}

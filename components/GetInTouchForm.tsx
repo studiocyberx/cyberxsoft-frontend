@@ -21,7 +21,6 @@ const formSchema = z.object({
   message: z
     .string()
     .max(350, { message: "Message cannot be longer than 350 characters" }),
-  terms: z.boolean().default(false),
 });
 const GetInTouchForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -30,7 +29,6 @@ const GetInTouchForm = () => {
       name: "",
       email: "",
       message: "",
-      terms: false,
     },
   });
 
@@ -102,7 +100,7 @@ const GetInTouchForm = () => {
             )}
           />
 
-          <FormField
+          {/* <FormField
             control={form.control}
             name="terms"
             render={({ field }) => (
@@ -119,7 +117,7 @@ const GetInTouchForm = () => {
                 </FormLabel>
               </FormItem>
             )}
-          />
+          /> */}
 
           <Button
             variant="outline"

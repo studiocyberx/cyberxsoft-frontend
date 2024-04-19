@@ -16,11 +16,13 @@ const Resources = () => {
       </h2>
 
       <div className="space-y-6 py-8 px-0 lg:px-4">
-        <Card className="flex items-center justify-between gap-8 p-4 bg-custom-purple-500 rounded-2xl">
+        <Card className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-between gap-8 p-4 bg-custom-purple-500 rounded-2xl">
           <Image src="/case-study.png" alt="" width={54} height={54} />
           <CardContent className="p-0">
-            <CardTitle className="text-white">Case Studies</CardTitle>
-            <CardDescription className="text-white">
+            <CardTitle className="text-white text-center sm:text-left">
+              Case Studies
+            </CardTitle>
+            <CardDescription className="text-white text-center sm:text-left">
               Discover how we have empowered businesses like yours with our
               bespoke AI, cloud, IoT, and BI services
             </CardDescription>
@@ -34,11 +36,13 @@ const Resources = () => {
           </Link>
         </Card>
 
-        <Card className="flex items-center justify-between gap-8 p-4 bg-custom-purple-500 rounded-2xl">
+        <Card className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-between gap-8 p-4 bg-custom-purple-500 rounded-2xl">
           <Image src="/blogging.png" alt="" width={54} height={54} />
           <CardContent className="p-0">
-            <CardTitle className="text-white">Blogs</CardTitle>
-            <CardDescription className="text-white">
+            <CardTitle className="text-white text-center sm:text-left">
+              Blogs
+            </CardTitle>
+            <CardDescription className="text-white text-center sm:text-left">
               Discover how we have empowered businesses like yours with our
               bespoke AI, cloud, IoT, and BI services
             </CardDescription>
@@ -52,11 +56,13 @@ const Resources = () => {
           </Link>
         </Card>
 
-        <Card className="flex items-center justify-between gap-8 p-4 bg-custom-purple-500 rounded-2xl">
+        <Card className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-between gap-8 p-4 bg-custom-purple-500 rounded-2xl">
           <Image src="/news.png" alt="" width={54} height={54} />
           <CardContent className="p-0">
-            <CardTitle className="text-white">News</CardTitle>
-            <CardDescription className="text-white">
+            <CardTitle className="text-white text-center sm:text-left">
+              News
+            </CardTitle>
+            <CardDescription className="text-white text-center sm:text-left">
               Discover how we have empowered businesses like yours with our
               bespoke AI, cloud, IoT, and BI services
             </CardDescription>

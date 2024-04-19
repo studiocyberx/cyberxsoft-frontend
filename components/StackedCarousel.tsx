@@ -51,7 +51,7 @@ const carouselItems: carouselItemsProps[] = [
 const StackedCarousel = () => {
   const totalItems = carouselItems.length;
   return (
-    <div className="px-5 md:px-24">
+    <div className="px-5 sm:px-14 md:px-24 ">
       <Carousel
         opts={{
           align: "center",
@@ -62,23 +62,26 @@ const StackedCarousel = () => {
             delay: 4500,
           }),
         ]}
-        className="max-w-4xl mx-auto mt-8 w-full"
+        className="max-w-4xl 2xl:max-w-6xl mx-auto mt-8 w-full"
       >
         <CarouselContent className="h-full -ml-0">
           {carouselItems.map((item, index) => (
-            <CarouselItem key={item.id} className="w-full p-4 h-full">
+            <CarouselItem
+              key={item.id}
+              className="w-full py-4 px-0 sm:px-4 h-full"
+            >
               <Card className="bg-custom-purple-500 flex flex-wrap md:flex-nowrap items-center justify-between gap-4 overflow-hidden">
                 <Image
                   src={item.image}
                   alt=""
-                  className="h-full max-h-64 md:min-h-[300px] object-cover w-full md:w-[400px]"
+                  className="h-[250px] sm:h-full max-h-64 md:min-h-[300px] object-cover w-full md:w-[400px]"
                 />
 
                 <CardContent className="p-4 w-full h-full md:pr-10 space-y-3">
                   <span className="text-white text-xs">
                     {index + 1} / {totalItems}
                   </span>
-                  <CardTitle className="text-white text-3xl">
+                  <CardTitle className="text-white text-xl sm:text-3xl">
                     {item.title}
                   </CardTitle>
                   <CardDescription className="text-white">

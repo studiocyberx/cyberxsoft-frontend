@@ -11,8 +11,6 @@ import GetInTouch from "@/components/GetInTouch";
 //Function to render the components from strapi
 function blockRenderer(block: any) {
   switch (block.__component) {
-    case "layout.hero-section":
-      return <HeroSection key={block.id} data={block} />;
     case "layout.features-section":
       return <FeatureSection key={block.id} data={block} />;
     default:
@@ -56,13 +54,16 @@ const Home = async () => {
 
   return (
     <main className="bg-gray-200 h-full">
-      {blockRenderer(blocks[0])}
+      <HeroSection />;
       <IntroSection />
       {blockRenderer(blocks[1])}
       <CarouselSection />
-      <section className="container h-full mt-8 flex items-center justify-between gap-4 flex-wrap lg:flex-nowrap">
+      <section className="container px-6 sm:px-8 lg:h-screen 2xl:max-h-[800px] my-8 flex items-center justify-between gap-4 flex-wrap lg:flex-nowrap">
         <Resources />
-        <Separator className="bg-custom-purple-300" orientation="vertical" />
+        <Separator
+          className="bg-custom-purple-300 hidden sm:block h-[1px] w-full lg:h-full lg:w-[1.5px]"
+          orientation="vertical"
+        />
         <Faqs faqItems={faqItems} />
       </section>
       <GetInTouch />
