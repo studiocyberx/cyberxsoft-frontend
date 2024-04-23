@@ -7,7 +7,7 @@ import { MdEmail } from "react-icons/md";
 const page = () => {
   return (
     <section className="h-full lg:h-screen lg:max-h-[850px] py-20 bg-custom-purple-700 grid place-items-center relative">
-      <div className="container px-8 sm:px-10 lg:px-20 flex items-center gap-10 lg:gap-32 justify-between flex-col lg:flex-row">
+      <div className="container z-50 px-8 sm:px-10 lg:px-20 flex items-center gap-10 lg:gap-32 justify-between flex-col lg:flex-row">
         <div className="text-white lg:max-w-2xl space-y-4">
           <strong className="uppercase">Connect</strong>
           <h1 className="text-4xl sm:text-5xl font-bold">
