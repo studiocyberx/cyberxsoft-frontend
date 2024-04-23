@@ -80,7 +80,7 @@ const page = () => {
         src="/contact-bg.png"
         alt=""
         fill={true}
-        className="object-contain"
+        className="object-cover md:object-contain"
       />
     </section>
   );
