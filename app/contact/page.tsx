@@ -1,8 +1,13 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+
+export const metadata: Metadata = {
+  title: "BigO - Contact",
+};
 
 const page = () => {
   return (

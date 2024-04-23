@@ -1,7 +1,6 @@
 import FeatureCard from "@/components/FeatureCard";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import dropPattern from "@/public/drop-pattern.png";
 
 interface ImageProps {
   id: number;
@@ -34,7 +33,7 @@ export function FeatureSection({ data }: Readonly<FeatureSectionProps>) {
       <section className="container px-4 py-6 mx-auto md:px-6 lg:px-14 lg:py-11">
         <h2 className="text-3xl uppercase font-semibold">What we can do</h2>
         <Separator className="w-full bg-gray-500 mt-5 mb-8 relative after:absolute after:content-[''] after:bg-drop-pattern after:w-full after:min-h-[420px] after:bg-no-repeat after:z-0" />
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-5 md:px-10">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-5 md:px-10 relative z-10">
           <strong className="text-custom-purple-300 uppercase font-tommy font-normal">
             {subtitle}
           </strong>

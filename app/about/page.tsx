@@ -1,68 +1,15 @@
 import Image from "next/image";
 import bgImage from "@/public/about-intro.png";
 import GetInTouch from "@/components/GetInTouch";
+import CoreValues from "./CoreValues";
+import WhyUs from "./WhyUs";
+import { Metadata } from "next";
 
-interface valuesDataProps {
-  title: string;
-  description: string;
-  imageSrc: string;
-}
-
-interface whyUsProps {
-  title: string;
-  description: string;
-}
+export const metadata: Metadata = {
+  title: "BigO - About Us",
+};
 
 const page = () => {
-  const valuesData: valuesDataProps[] = [
-    {
-      title: "Innovation",
-      description:
-        "We are curious to incorporate advanced technology, and look out for breakthroughs.",
-      imageSrc: "/innovation.png",
-    },
-    {
-      title: "commitment",
-      description:
-        "We are dedicated to helping businesses grow and progress like never before.",
-      imageSrc: "/commitment.png",
-    },
-    {
-      title: "integrity",
-      description:
-        "We are reliable, transparent, and genuine partners for our clients.",
-      imageSrc: "/integrity.png",
-    },
-    {
-      title: "Customer Centric Approach",
-      description:
-        "Customers are our pride, and customer satisfaction is at the heart of our operations.",
-      imageSrc: "/customer-centric-approach.png",
-    },
-  ];
-
-  const whyUs: whyUsProps[] = [
-    {
-      title: "Expertise That Speaks Volumes",
-      description:
-        "Achieve excellence with our team of seasoned data analysts, AI project architects, and data experts. We are masters at harnessing the potential of cutting-edge BI tools like Power BI, Tableau, Qlik, and more.",
-    },
-    {
-      title: "Tailored Solutions for Your Unique Business",
-      description:
-        "Achieve excellence with our team of seasoned data analysts, AI project architects, and data experts. We are masters at harnessing the potential of cutting-edge BI tools like Power BI, Tableau, Qlik, and more.",
-    },
-    {
-      title: "User-Friendly Dashboards",
-      description:
-        "Bid farewell to complexity. Our BI dashboards are visually stunning and have a simple navigational architecture. Extracting insights becomes a breeze, empowering every member of your organization to be a data analyst.",
-    },
-    {
-      title: "Data Security",
-      description:
-        "We take data security seriously, ensuring your sensitive information is treated with the utmost care. You can trust us with your confidential data. We adhere to international standards such as HIPAA, GDPR etc",
-    },
-  ];
   return (
     <>
       <section className="h-full flex flex-col xl:flex-row gap-10 xl:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 md:px-28 pt-10 sm:pt-20">
@@ -77,7 +24,7 @@ const page = () => {
             Our commitment extends to fostering a culture of continuous
             improvement by channeling resources into talent acquisition,
             ensuring our team possesses specialized skills adept at solving
-            intricate business challenges. 
+            intricate business challenges.
           </p>
           <p className="text-lg md:text-xl text-center md:text-left text-secondary">
             We are devoted to delivering sustainable and substantial value to
@@ -90,7 +37,7 @@ const page = () => {
         <Image
           src={bgImage}
           alt=""
-          className="max-h-[650px] h-full w-full self-end"
+          className="h-full w-full self-end mix-blend-multiply"
         />
       </section>
 
@@ -137,54 +84,8 @@ const page = () => {
         />
       </div>
 
-      <section className="py-20 px-8 sm:px-10 md:px-20 space-y-8 container">
-        <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy text-center">
-          Core Values
-        </h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-center">
-          {valuesData.map((value, index) => (
-            <div key={index} className="flex flex-col gap-2 items-center">
-              <Image
-                src={value.imageSrc}
-                alt={value.title}
-                width={150}
-                height={150}
-              />
-              <h4 className="text-custom-purple-300 uppercase text-lg font-bold text-center">
-                {value.title}
-              </h4>
-              <p className="text-center">{value.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="h-full w-full bg-custom-purple-700 px-8 sm:px-14 md:px-28 pt-10 sm:pt-20 relative overflow-hidden">
-        <div className="container flex flex-col gap-10 xl:gap-20 justify-between">
-          <h2 className="text-white font-tommy uppercase text-center md:text-left text-5xl lg:text-6xl">
-            <span className="font-bold">Why</span> <br /> choose us?
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-4xl pb-10 md:pb-20">
-            {whyUs.map((item) => (
-              <div key={item.title} className="flex flex-col gap-2 items-start">
-                <h4 className="text-custom-purple-300 uppercase text-lg font-bold">
-                  {item.title}
-                </h4>
-                <p className="text-white">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-        <Image
-          src="/about-why-us.png"
-          alt=""
-          fill={true}
-          className="hidden md:block object-contain max-w-[350px] !right-0 !left-auto top-0"
-        />
-      </section>
-
+      <CoreValues />
+      <WhyUs />
       <GetInTouch />
     </>
   );
