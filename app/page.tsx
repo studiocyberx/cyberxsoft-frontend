@@ -54,7 +54,7 @@ const Home = async () => {
 
   return (
     <main className="bg-gray-200 h-full">
-      <HeroSection />;
+      <HeroSection />
       <IntroSection />
       {blockRenderer(blocks[1])}
       <CarouselSection />
