@@ -50,7 +50,7 @@ const WhyUs = () => {
         src="/about-why-us.png"
         alt=""
         fill={true}
-        className="hidden md:block object-contain max-w-[350px] !right-0 !left-auto top-0"
+        className="hidden md:block object-contain max-w-[350px] !right-0 !left-auto top-0 z-10"
       />
     </section>
   );

@@ -17,7 +17,7 @@ export function HeroSection() {
               variant="outline"
               className="px-8 py-6 text-lg bg-transparent text-white transition-all duration-200 ease-in"
             >
-              <Link href="/">Learn More</Link>
+              <Link href="/about">Learn More</Link>
             </Button>
             <p className="text-lg md:text-xl text-center md:text-left text-secondary max-w-lg ">
               Enabling Businesses to Make Smart Choices by Bringing Endless

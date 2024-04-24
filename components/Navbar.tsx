@@ -2,6 +2,7 @@
 import { useActivePath } from "@/app/helper";
 import Link from "next/link";
 import DropdownMenu from "./DropdownMenu";
+import { useEffect } from "react";
 
 interface NavItemProps {
   href: string;
@@ -38,11 +39,20 @@ const navItems: NavItemProps[] = [
   { title: "Industries", href: "/industries" },
   { title: "Resources", href: "/resources" },
   { title: "Contact", href: "/contact" },
-  { title: "Careers", href: "/careers" },
+  // { title: "Careers", href: "/careers" },
 ];
 
 const Navbar = ({ fonts, isOpen }: { fonts: FontProps; isOpen: boolean }) => {
   const activepath = useActivePath();
+
+  useEffect(() => {
+    const bodyElement = document.body;
+    if (isOpen) {
+      bodyElement.classList.add("overflow-hidden");
+    } else {
+      bodyElement.classList.remove("overflow-hidden");
+    }
+  }, [isOpen]);
 
   return (
     <nav

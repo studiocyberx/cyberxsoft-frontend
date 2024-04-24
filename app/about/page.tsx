@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <section className="h-full flex flex-col xl:flex-row gap-10 xl:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 md:px-28 pt-10 sm:pt-20">
-        <div className="pb-0 md:pb-20 space-y-4 container">
-          <h1 className="text-white font-tommy uppercase text-center md:text-left text-5xl lg:text-6xl">
+      <section className="h-full flex flex-col xl:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20">
+        <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
+          <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
             <span className="font-bold">Who</span> <br /> we are?
           </h1>
-          <p className="text-lg md:text-xl text-center md:text-left text-secondary">
+          <p className="text-lg md:text-xl text-secondary">
             At BigO, we take pride in our significant role as catalysts for
             transformative shifts. We actively engage in investing in
             cutting-edge capabilities to level up and stay ahead of the curve.
@@ -26,7 +26,7 @@ const page = () => {
             ensuring our team possesses specialized skills adept at solving
             intricate business challenges.
           </p>
-          <p className="text-lg md:text-xl text-center md:text-left text-secondary">
+          <p className="text-lg md:text-xl text-secondary">
             We are devoted to delivering sustainable and substantial value to
             every industry vertical. Empowered by our collective proficiency, we
             redefine possibilities and offer enduring contributions to the
@@ -37,7 +37,7 @@ const page = () => {
         <Image
           src={bgImage}
           alt=""
-          className="h-full w-full self-end mix-blend-multiply"
+          className="h-full w-full mix-blend-multiply"
         />
       </section>
 

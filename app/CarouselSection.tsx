@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator";
 const CarouselSection = () => {
   return (
     <section className="py-8 container sm:px-0">
-      <div className="px-5 sm:px-14 md:px-24 flex items-center justify-center gap-8 lg:h-40 min-[1200]:h-[100px] flex-wrap lg:flex-nowrap">
+      <div className="relative px-5 sm:px-14 md:px-24 flex items-center justify-center gap-8 lg:h-40 min-[1200]:h-[100px] flex-wrap lg:flex-nowrap">
         <div>
           <strong className="text-custom-purple-300 uppercase font-tommy font-normal">
             An Inclusive Approach
