@@ -10,7 +10,9 @@ import GetInTouch from "@/components/GetInTouch";
 import Faqs from "@/components/Faqs";
 
 export const metadata: Metadata = {
-  title: "BigO - Internet Of Things",
+  title: "Outcome-Driven Internet of Things (IoT) Services",
+  description:
+    "Facilitate your business operations through BigO’s IoT services. Strengthen the speed and reduce error frequency with a substantial cost. Learn more!",
 };
 
 const page = () => {
@@ -19,14 +21,14 @@ const page = () => {
       value: "question-1",
       question: "What is IoT and how can it help businesses?",
       answer:
-        "Privacy is our top priority. BigO uses strong encryption, authentication, and compliance methods to protect IoT data. We follow industry guidelines and regulations to maintain the integrity and security of your information.",
+        "The Internet of Things, or IoT, refers to the interconnectedness of devices and systems. IoT provides businesses with increased output, real-time data insights, and decision-making skills through linking and automating multiple operations.",
     },
     {
       value: "question-2",
       question:
         "Can BigO's IoT services be tailored to cater to the needs of diverse industries?",
       answer:
-        "Privacy is our top priority. BigO uses strong encryption, authentication, and compliance methods to protect IoT data. We follow industry guidelines and regulations to maintain the integrity and security of your information.",
+        "BigO recognizes the different needs of industries. We provide customized IoT solutions, collaborating closely with clients to tailor our services to specific industry needs, whether in manufacturing, healthcare, logistics, or other.",
     },
     {
       value: "question-3",
@@ -38,7 +40,7 @@ const page = () => {
       value: "question-4",
       question: "What makes BigO stand out in the IoT service industry?",
       answer:
-        "Privacy is our top priority. BigO uses strong encryption, authentication, and compliance methods to protect IoT data. We follow industry guidelines and regulations to maintain the integrity and security of your information.",
+        "BigO distinguishes itself with its experience, collaborative approach, and dedication to technological advances. We render our years of knowledge, cooperate closely with clients, and are always exploring emerging technologies to keep our IoT services at the forefront of industry innovations.",
     },
   ];
 
@@ -62,7 +64,7 @@ const page = () => {
             variant="outline"
             className="bg-transparent text-white text-lg p-6"
           >
-            <Link href="/contact">Request IoT Services</Link>
+            <Link href="/get-a-quote">Request IoT Services</Link>
           </Button>
         </div>
 

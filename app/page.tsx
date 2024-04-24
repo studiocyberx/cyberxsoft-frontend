@@ -23,14 +23,14 @@ const faqItems = [
     value: "question-1",
     question: "How Can Businesses Ensure Responsible AI Practices?",
     answer:
-      "BI helps businesses integrate and manage responsible data usage by implementing data privacy policies, promoting ethical practices, and ensuring compliance with regulatory standards. Hence, organizations need to choose wisely for their BI service providers that fall on both ethical and legal criteria.",
+      "Responsible AI, in the simplest sense, is the ethical and fair deployment of artificial intelligence and its derivants, such as machine learning, deep learning, and other technologies. Businesses can ensure this by implementing ethical guidelines, conducting regular audits, and prioritizing transparency and accountability. Furthermore, responsible AI service providers can be their go-to place for streamlining the ethical and fair use of artificial intelligence technologies.",
   },
   {
     value: "question-2",
     question:
       "What Challenges Are Faced by Businesses in Integrating BI Solutions?",
     answer:
-      "BI helps businesses integrate and manage responsible data usage by implementing data privacy policies, promoting ethical practices, and ensuring compliance with regulatory standards. Hence, organizations need to choose wisely for their BI service providers that fall on both ethical and legal criteria.",
+      "Organizations face several challenges while implementing BI solutions independently and without external help. These include understanding algorithms, integration complexities, data privacy issues, user adoption, and system monitoring.",
   },
   {
     value: "question-3",
@@ -43,7 +43,7 @@ const faqItems = [
     question:
       "What are the Key Considerations for Choosing a Cloud Service Provider?",
     answer:
-      "BI helps businesses integrate and manage responsible data usage by implementing data privacy policies, promoting ethical practices, and ensuring compliance with regulatory standards. Hence, organizations need to choose wisely for their BI service providers that fall on both ethical and legal criteria.",
+      "Businesses should consider before selecting a cloud service provider including security measures, compliance status, pricing models, reputation in the market, scalability, types of services, and the provider's track record in service reliability. If enterprises trust any service provider, they will more likely fall prey to an illicit moneymaker or con company.",
   },
 ];
 

@@ -100,25 +100,6 @@ const GetInTouchForm = () => {
             )}
           />
 
-          {/* <FormField
-            control={form.control}
-            name="terms"
-            render={({ field }) => (
-              <FormItem className="flex flex-row items-center space-y-0 space-x-2">
-                <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                    className="rounded-full border-white bg-white data-[state=checked]:bg-custom-purple-300"
-                  />
-                </FormControl>
-                <FormLabel className="cursor-pointer">
-                  I accept the terms
-                </FormLabel>
-              </FormItem>
-            )}
-          /> */}
-
           <Button
             variant="outline"
             className="bg-transparent hover:text-custom-purple-400"

@@ -61,11 +61,11 @@ export function FeatureSection({ data }: Readonly<FeatureSectionProps>) {
 
       <section className="flex items-center justify-center flex-col py-8 px-4 sm:px-5 md:px-10 relative">
         <h5 className="text-xl font-bold uppercase text-center">
-          Reimage Your Business Success
+          Amplify Your Business Success
         </h5>
         <p className="mt-1 mb-4 text-center">
           Request a Personalized, Responsible AI, BI, IoT, or Cloud Service to
-          Find Out
+          Find Out Best-Suited Solution for Your Business
         </p>
 
         <Button

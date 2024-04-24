@@ -33,9 +33,9 @@ const carouselItems: carouselItemsProps[] = [
   {
     id: 1,
     image: carouselImage1,
-    title: "Telecommunications and Media",
+    title: "Finance and Insurance",
     description:
-      "Telecommunication and media enterprises are enhancing their data processing, interpretation, and analysis for smooth functioning.",
+      "Finance and insurance companies are identifying fraud risks efficiently while improving their decision-making through real-time insights.",
     href: "/",
   },
   {
