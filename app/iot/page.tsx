@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import ChallengesSection from "./ChallengesSection";
 import IotServicesSection from "./IotServicesSection";
-import BeyondIotSection from "./BeyondIotSection";
+import BeyondSection from "@/components/BeyondSection";
 import GetInTouch from "@/components/GetInTouch";
 import Faqs from "@/components/Faqs";
 
@@ -44,6 +44,26 @@ const page = () => {
     },
   ];
 
+  const beyondSectionData = {
+    title: "Discover Full-Scale Digital Services Beyond IoT Solutions",
+    description:
+      "We understand the ever evolving demands of businesses, and finding the finest services has become a challenge for business owners. BigO in collaboration with CyberX Studio fulfills the holistic digital marketing requirements of its clients. If you are looking for services other than the Internet of Things (IoT), then look no further! Let CyberX Studio be your digital marketing partner and upscale your business's online visibility.",
+    image: "/beyond-iot.png",
+    serviceHeading: "Benefit from the following holistic services suite:",
+  };
+
+  const servicesList = [
+    "Comprehensive Digital Marketing Strategy",
+    "UI/UX Designing",
+    "Website Design and Development",
+    "SEO Mastery",
+    "PPC and Ad Campaigns",
+    "Social Media Management",
+    "Email Marketing",
+    "Content Marketing",
+    "Graphics and Animations",
+  ];
+
   return (
     <>
       <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20">
@@ -77,7 +97,7 @@ const page = () => {
 
       <ChallengesSection />
       <IotServicesSection />
-      <BeyondIotSection />
+      <BeyondSection data={beyondSectionData} servicesList={servicesList} />
 
       <section className="container px-6 sm:px-8 mb-8 flex items-center justify-between gap-4 ">
         <Faqs faqItems={faqItems} />
