@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Metadata } from "next";
 import ChallengesSection from "./ChallengesSection";
-import IotServicesSection from "./IotServicesSection";
+import ServicesCardsSection from "@/components/ServicesCardsSection";
 import BeyondSection from "@/components/BeyondSection";
 import GetInTouch from "@/components/GetInTouch";
 import Faqs from "@/components/Faqs";
@@ -64,6 +64,86 @@ const page = () => {
     "Graphics and Animations",
   ];
 
+  const serviceCardsData = [
+    {
+      title: "Predictive Equipment Care",
+      description:
+        "With our IoT services, remote tracking of equipment efficiency parameters becomes possible. You can prevent potential dysfunction from surfacing and delay in production.",
+      application: "Manufacturing Industry",
+      image: "/predictive-equipment.png",
+    },
+    {
+      title: "Remote Handling of Machinery/ Appliances",
+      description:
+        "Automate manual tasks via control applications for basic actions (activation/deactivation, opening/closing) and complex industrial processes like robot-assisted order picking.",
+      application: "Manufacturing and Smart Home Technology Industry",
+      image: "/remote-handling.png",
+    },
+    {
+      title: "Regulating Environmental Conditions",
+      description:
+        "Monitoring environmental factors (temperature, humidity, pollution, CO2) ensures storage compliance and optimizes industrial equipment and workspace conditions for safety and efficiency.",
+      application:
+        "Manufacturing, Smart Home Technology, and Agriculture Industry",
+      image: "/environmental-conditions.png",
+    },
+    {
+      title: "Optimizing Energy Utilization",
+      description:
+        "Our solutions optimize energy management by adjusting usage based on external conditions, benefiting personal environments like home lighting and public spaces such as street lighting.",
+      application: "Smart Home Technology Industry",
+      image: "/optimize-energy.png",
+    },
+    {
+      title: "Automated Inventory Administration",
+      description:
+        "Our system enables prompt and proactive actions by remote monitoring of asset locations and movements and sending out instant alerts for low stock levels.",
+      application: "Real Estate Industry",
+      image: "/inventory-admin.png",
+    },
+    {
+      title: "Remote Wellness Tracking",
+      description:
+        "We use wearables for telehealth, tracking patients' vital signs deviations from baseline, promptly notifying physicians, advancing remote monitoring in healthcare.",
+      application: "Healthcare Industry",
+      image: "/remote-wellness.png",
+    },
+    {
+      title: "Video Monitoring with Instant Signals",
+      description:
+        "We integrate cameras for swift detection of abnormal activity in surveillance zones, aiding in crime prevention, early fire detection, and traffic incident alerts, bolstering safety measures.",
+      application: "Smart Home Technology Industry",
+      image: "/video-monitoring.png",
+    },
+    {
+      title: "Service Charges Based on Consumption",
+      description:
+        "Keeping track of asset usage and its quality to pre-determine any alarming situation that may arise. Eventually, make tweaks to suit the pricing plan for service.",
+      application: "Insurance and Rental Industry",
+      image: "/services-charges.png",
+    },
+    {
+      title: "Interconnected Mobility",
+      description:
+        "Ensuring adherence to transportation standards by real-time tracking of cargo during transit.",
+      application: "Logistics and Transportation Industry",
+      image: "/interconnected-mobility.png",
+    },
+    {
+      title: "Quality Assurance for Products",
+      description:
+        "Heading manufacturing processes by monitoring the quality metrics of products and ensuring compliance with established standards.",
+      application: "Manufacturing Industry",
+      image: "/quality-assurance.png",
+    },
+  ];
+
+  const serviceCardContent = {
+    title: "Fueling Industry-Wide Progress with IoT Innovation",
+    description:
+      "Our services are structured to establish secure technology frameworks, empowering your enterprise for refined data operations. Recognizing the far-reaching advantages  of IoT, we strategically employ  this technology to achieve a range of industry goals.",
+  };
+
   return (
     <>
       <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20">
@@ -96,7 +176,10 @@ const page = () => {
       </section>
 
       <ChallengesSection />
-      <IotServicesSection />
+      <ServicesCardsSection
+        serviceCards={serviceCardsData}
+        content={serviceCardContent}
+      />
       <BeyondSection data={beyondSectionData} servicesList={servicesList} />
 
       <section className="container px-6 sm:px-8 mb-8 flex items-center justify-between gap-4 ">

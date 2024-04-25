@@ -3,7 +3,7 @@ import Image from "next/image";
 interface beyondSectionProps {
   title: string;
   description: string;
-  serviceHeading: string;
+  serviceHeading?: string;
   image: string;
   href?: string;
 }

@@ -3,15 +3,20 @@ import React from "react";
 interface BackgroundVideoProps {
   children: React.ReactNode;
   videoSrc: string;
+  height?: string;
 }
 
 const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
   children,
   videoSrc,
+  height,
   ...props
 }) => {
   return (
-    <div {...props} className="relative h-screen overflow-hidden">
+    <div
+      {...props}
+      className={`relative ${height ? height : "h-screen"} overflow-hidden`}
+    >
       <video
         autoPlay
         muted
