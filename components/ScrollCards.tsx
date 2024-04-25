@@ -25,7 +25,7 @@ const ScrollCards = ({
       </h2>
       <p>{scrollCardsSection.description}</p>
 
-      <ScrollArea className="w-full whitespace-nowrap rounded-md">
+      <ScrollArea className="w-full whitespace-nowrap">
         <div className="flex w-max space-x-4">
           {scrollCardsData.map((card) => (
             <Card
