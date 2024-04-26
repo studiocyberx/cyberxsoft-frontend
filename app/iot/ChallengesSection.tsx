@@ -1,5 +1,7 @@
 import iotChallenges from "@/public/iot-challenges.png";
 import Image, { StaticImageData } from "next/image";
+import { Suspense } from "react";
+import Loading from "../loading";
 
 interface solutionsProps {
   title?: string;
@@ -38,26 +40,28 @@ const solutions: solutionsProps[] = [
 
 const ChallengesSection = () => {
   return (
-    <section className="pt-12 pb-8 sm:py-12 px-8 sm:px-10 md:px-20 container">
-      <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy">
-        Resolving Your Business Challenges for Boosted Execution
-      </h2>
-      <p className="mt-2 mb-8">
-        BigO excels at identifying and providing solutions for the obstacles
-        that impede your company&apos;s expansion. We offer dynamic IoT
-        solutions that pave the way for sustainable progress and advancement.
-      </p>
+    <Suspense fallback={<Loading />}>
+      <section className="pt-12 pb-8 sm:py-12 px-8 sm:px-10 md:px-20 container">
+        <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy">
+          Resolving Your Business Challenges for Boosted Execution
+        </h2>
+        <p className="mt-2 mb-8">
+          BigO excels at identifying and providing solutions for the obstacles
+          that impede your company&apos;s expansion. We offer dynamic IoT
+          solutions that pave the way for sustainable progress and advancement.
+        </p>
 
-      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-        {solutions.map((item) => (
-          <div key={item.title} className="space-y-2">
-            <h3 className="font-bold text-lg">{item.title}</h3>
-            <p className="">{item.description}</p>
-            {item.image && <Image src={item.image} alt="" />}
-          </div>
-        ))}
-      </div>
-    </section>
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          {solutions.map((item) => (
+            <div key={item.title} className="space-y-2">
+              <h3 className="font-bold text-lg">{item.title}</h3>
+              <p className="">{item.description}</p>
+              {item.image && <Image src={item.image} alt="" />}
+            </div>
+          ))}
+        </div>
+      </section>
+    </Suspense>
   );
 };
 

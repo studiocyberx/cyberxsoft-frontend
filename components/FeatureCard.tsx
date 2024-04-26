@@ -15,6 +15,7 @@ interface Feature {
   subHeading: string;
   image: {
     url: string;
+    alternativeText: string;
   };
 }
 
@@ -30,7 +31,7 @@ const FeatureCard = ({ feature }: { feature: Feature }) => {
         <Image
           width={150}
           height={150}
-          alt=""
+          alt={feature.image.alternativeText}
           src={imageUrl ?? "https://placehold.co/150x150"}
         />
       </CardHeader>

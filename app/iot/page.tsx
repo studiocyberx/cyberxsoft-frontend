@@ -178,26 +178,27 @@ const page = () => {
           />
         </section>
       </Suspense>
-
       <ChallengesSection />
       <ServicesCardsSection
         serviceCards={serviceCardsData}
         content={serviceCardContent}
-      />
-      <BeyondSection data={beyondSectionData} servicesList={servicesList} />
+      />{" "}
+      <Suspense fallback={<Loading />}>
+        <BeyondSection data={beyondSectionData} servicesList={servicesList} />
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <section className="container px-6 sm:px-8 mb-8 flex items-center justify-between gap-4 ">
+          <Faqs faqItems={faqItems} />
 
-      <section className="container px-6 sm:px-8 mb-8 flex items-center justify-between gap-4 ">
-        <Faqs faqItems={faqItems} />
-
-        <Image
-          src="/faq-illustration.png"
-          alt="faq-illustration"
-          width={550}
-          height={550}
-          className="hidden md:block"
-        />
-      </section>
-
+          <Image
+            src="/faq-illustration.png"
+            alt="faq-illustration"
+            width={550}
+            height={550}
+            className="hidden md:block"
+          />
+        </section>
+      </Suspense>
       <GetInTouch />
     </>
   );

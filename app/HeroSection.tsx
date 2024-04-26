@@ -9,7 +9,7 @@ export function HeroSection() {
         <div className="absolute top-0 bottom-0 w-full flex items-start justify-center px-8 sm:px-20 flex-col bg-custom-purple-700 bg-opacity-70 space-y-10">
           <h1 className="font-tommy text-4xl text-center md:text-left text-primary-foreground md:text-5xl lg:text-6xl max-w-5xl uppercase">
             Next Level <span className="font-bold">Innovation Grounded in</span>{" "}
-            responsibility
+            responsibile AI
           </h1>
           <div className="flex items-center justify-between gap-8 w-full flex-col-reverse md:flex-row">
             <Button
@@ -20,8 +20,8 @@ export function HeroSection() {
               <Link href="/about">Learn More</Link>
             </Button>
             <p className="text-lg md:text-xl text-center md:text-left text-secondary max-w-lg ">
-              Enabling Businesses to Make Smart Choices by Bringing Endless
-              Automation Possibilities to their Disposal
+              Enabling Businesses Smart Decision-Making by Integrating Endless
+              Automation Possibilities Powered by Our responsible AI
             </p>
           </div>
         </div>

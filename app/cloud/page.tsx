@@ -11,6 +11,13 @@ import GetInTouch from "@/components/GetInTouch";
 import ScrollCards from "@/components/ScrollCards";
 import { Suspense } from "react";
 import Loading from "../loading";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cloud Service | BigO",
+  description:
+    "BigO facilitates innovation through customizable cloud services that ensure intelligence, automation, efficiency, agility, and 100% compliance.",
+};
 
 const CloudService = () => {
   const fiveCardsSectionCotent = {
@@ -48,7 +55,7 @@ const CloudService = () => {
   ];
 
   const videoCtaOneData = {
-    title: "From Concept to Cloud: a Strategic Path for Your Business Growth",
+    title: "Experience Unparalleled Growth and Efficiency",
     description:
       "With Our Cutting-Edge Cloud Services that Leverage Accuracy, Efficiency, Security, Speed, and Agility in One Place",
     height: "h-screen md:h-[500px]",
@@ -97,7 +104,6 @@ const CloudService = () => {
     description:
       "We are aware of the challenges that digitization and building an online presence can bring in this fast-paced time of tech-driven competition. As a joint venture, BigO, in collaboration with CyberX Studio, is committed to addressing its clients' digital visibility needs in addition to cloud services. From strategic planning to execution, CyberX Studio empowers your enterprise to thrive in the digital landscape by refining your online presence and amplifying customer engagement. Get in touch and benefit from the following suite of services:",
     image: "/beyond-cloud.png",
-    serviceHeading: "Benefit from the following holistic services suite:",
   };
 
   const servicesList = [
@@ -115,28 +121,29 @@ const CloudService = () => {
   const faqItems = [
     {
       value: "question-1",
-      question: "What is IoT and how can it help businesses?",
+      question: "What are Cloud Services, and How Do They Work?",
       answer:
-        "The Internet of Things, or IoT, refers to the interconnectedness of devices and systems. IoT provides businesses with increased output, real-time data insights, and decision-making skills through linking and automating multiple operations.",
+        "Cloud services refer to computing resources that include processing power, applications, ledgers, and storage provided over the Internet. These services are hosted on remote servers, allowing users to access and utilize them without the need for on-premises hardware. Cloud computing typically involves the use of virtualization technologies to manage and allocate data and resources efficiently.",
     },
     {
       value: "question-2",
       question:
-        "Can BigO's IoT services be tailored to cater to the needs of diverse industries?",
+        "How can Businesses Manage Costs and Resources When Using Cloud Services?",
       answer:
-        "BigO recognizes the different needs of industries. We provide customized IoT solutions, collaborating closely with clients to tailor our services to specific industry needs, whether in manufacturing, healthcare, logistics, or other.",
+        "Cloud services generally follow a pay-as-you-go model, enabling users to pay only for the resources they consume. To manage costs, you should regularly monitor your company’s usage, optimize resource allocation, and take advantage of cost-saving features provided by the cloud service provider. Implementing resource scaling based on demand and using reserved instances can also contribute to cost efficiency.",
     },
     {
       value: "question-3",
-      question: "How does BigO safeguard the confidentiality of IoT data?",
+      question: "What Benefits Do  Businesses Receive from Cloud Services?",
       answer:
-        "Privacy is our top priority. BigO uses strong encryption, authentication, and compliance methods to protect IoT data. We follow industry guidelines and regulations to maintain the integrity and security of your information.",
+        "Cloud services leverage a myriad of benefits, such as scalability, cost-efficiency, and flexibility. You can allocate or distribute resources up or down based on demand, only paying for what you use. Additionally, cloud services provide easy access to a wide range of tools and applications, promoting collaboration and enabling the rapid deployment of new projects.",
     },
     {
       value: "question-4",
-      question: "What makes BigO stand out in the IoT service industry?",
+      question:
+        "How can Businesses Ensure Compliance when Using Cloud Services?",
       answer:
-        "BigO distinguishes itself with its experience, collaborative approach, and dedication to technological advances. We render our years of knowledge, cooperate closely with clients, and are always exploring emerging technologies to keep our IoT services at the forefront of industry innovations.",
+        "Cloud service providers often comply with various industry standards and regulations. However, businesses are responsible for understanding and ensuring compliance with specific requirements related to their industry. This may involve implementing proper data governance, access controls, and encryption, as well as conducting regular audits to verify adherence to compliance standards.",
     },
   ];
 

@@ -10,14 +10,20 @@ import VideoCta from "@/components/VideoCta";
 import FiveCardsSection from "@/components/FiveCardsSection";
 import { Suspense } from "react";
 import Loading from "../loading";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Responsible AI Service | BigO",
+  description:
+    "BigO enables businesses to wield artificial intelligence with trust, confidence, and transparency through innovative and Responsible AI service.",
+};
 
 const page = () => {
   const beyondSectionData = {
-    title: "Explore Comprehensive Digital Solutions Beyond BI Services",
+    title: "Explore Beyond Responsible AI Service: Full-Scale Digital Suite",
     description:
-      "The tech-driven changes are fueling high competition, and the fittest will survive in the digital landscape. BigO, in collaboration with CyberX Studio, acknowledges the challenges in digitization and online visibility beyond Responsible AI expertise. It facilitates strategic planning, designing of course of action, and execution, empowering enterprises to excel in the digital realm by refining their online presence and elevating customer engagement. CyberX Studio is your one-stop shop for upscaling your business visibility and building worth in the global market. Connect and witness how this holistic suite of services accelerates your organization’s success!",
+      "The tech-driven changes are fueling high competition, and the fittest will survive in the digital landscape. BigO, in collaboration with CyberX Studio, acknowledges the challenges in digitization and online visibility beyond Responsible AI expertise. It facilitates strategic planning, designing of course of action, and execution, empowering enterprises to excel in the digital realm by refining their online presence and elevating customer engagement. CyberX Studio is your one-stop shop for upscaling your business visibility and building worth in the global market. Connect and witness how this holistic suite of services accelerates your organization`s success!",
     image: "/beyond-ai.png",
-    serviceHeading: "Benefit from the following holistic services suite:",
   };
 
   const servicesList = [
@@ -35,35 +41,37 @@ const page = () => {
   const faqItems = [
     {
       value: "question-1",
-      question: "What is IoT and how can it help businesses?",
+      question:
+        "What Steps Organizations Need to Take to Ensure Transparency in AI Decision-Making?",
       answer:
-        "The Internet of Things, or IoT, refers to the interconnectedness of devices and systems. IoT provides businesses with increased output, real-time data insights, and decision-making skills through linking and automating multiple operations.",
+        "Organizations can prioritize transparency in AI decision-making by providing clear explanations for model outputs, disclosing data sources, and documenting algorithms. They should ensure open communications with stakeholders, employees, and other concerned personnel regarding the decision-making process, including biases and limitations (if any), to build trust. Furthermore, adherence to ethical guidelines and legal obligations contribute to creating transparent and accountable AI systems.",
     },
     {
       value: "question-2",
-      question:
-        "Can BigO's IoT services be tailored to cater to the needs of diverse industries?",
+      question: "How can Organizations Mitigate Bias in AI Algorithms?",
       answer:
-        "BigO recognizes the different needs of industries. We provide customized IoT solutions, collaborating closely with clients to tailor our services to specific industry needs, whether in manufacturing, healthcare, logistics, or other.",
+        "Mitigating bias in AI algorithms involves integrating and using fairness-aware algorithms, careful data curation, and diverse and representative datasets. Regular testing, ongoing monitoring, and promoting diversity in AI teams further aid in identifying and addressing any biases that may emerge during the development and deployment of AI systems.",
     },
     {
       value: "question-3",
-      question: "How does BigO safeguard the confidentiality of IoT data?",
+      question:
+        "What Measures Can Organizations Take to Address AI’s Societal Impact?",
       answer:
-        "Privacy is our top priority. BigO uses strong encryption, authentication, and compliance methods to protect IoT data. We follow industry guidelines and regulations to maintain the integrity and security of your information.",
+        "Organizations can address the societal impact of AI technologies by engaging in collaborative efforts with policymakers, tech experts, the public, or end-users. Developing, implementing, and maintaining responsible governance frameworks, abiding by ethical standards, and promoting public awareness contribute to deploying responsible AI. Hence, organizations can ensure societal well-being as well as contribute to diverse communities' well-being at large.",
     },
     {
       value: "question-4",
-      question: "What makes BigO stand out in the IoT service industry?",
+      question:
+        "Are there any Global Standards, Obligations, or Frameworks for the Deployment of Responsible AI?",
       answer:
-        "BigO distinguishes itself with its experience, collaborative approach, and dedication to technological advances. We render our years of knowledge, cooperate closely with clients, and are always exploring emerging technologies to keep our IoT services at the forefront of industry innovations.",
+        "Yes, there are several existing and emerging international standards and frameworks for responsible AI integration. These include the EU’s AI Ethics Guidelines, the Partnership on AI (PAI), OECD AI Principles, and the IEEE Global Initiative on Ethics of Autonomous and Intelligent Systems. By adhering to these, organizations can ensure ethical AI development and system deployment.",
     },
   ];
 
   const serviceCardContent = {
-    title: "Fueling Industry-Wide Progress with IoT Innovation",
+    title: "Navigating Ethical Terrain with Strategic Phases",
     description:
-      "Our services are structured to establish secure technology frameworks, empowering your enterprise for refined data operations. Recognizing the far-reaching advantages  of IoT, we strategically employ this technology to achieve a range of industry goals.",
+      "Through strategic phases, our seasoned team of IT experts designs a comprehensive, responsible AI framework that aligns with not only your business's current operations but also the bottom line. From understanding your organizational values, legal considerations, and end goals to developing a transparent model and eliminating bias, we empower you to scale AI with confidence. Nonetheless, we commit to transparency, fairness, and accountability at every step.",
   };
 
   const serviceCardsData = [

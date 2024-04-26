@@ -4,7 +4,9 @@ import ResourceSection from "./ResourceSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "BigO - Resources",
+  title: "Resources Hub",
+  description:
+    "BigO Resources is the hub for info on latest trends, upcoming transformations, developments in compliance, and success powered by our extensive IT services.",
 };
 
 const page = () => {

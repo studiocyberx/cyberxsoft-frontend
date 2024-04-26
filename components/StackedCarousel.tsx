@@ -46,6 +46,14 @@ const carouselItems: carouselItemsProps[] = [
       "Telecommunication and media enterprises are enhancing their data processing, interpretation, and analysis for smooth functioning.",
     href: "/",
   },
+  {
+    id: 3,
+    image: carouselImage2,
+    title: "Healthcare ",
+    description:
+      "Healthcare service providers are improving patient care, research, diagnosis, and data privacy while reducing false insurance and free medical help claims.",
+    href: "/",
+  },
 ];
 
 const StackedCarousel = () => {
@@ -65,7 +73,7 @@ const StackedCarousel = () => {
         className="max-w-4xl 2xl:max-w-6xl mx-auto mt-8 w-full"
       >
         <CarouselContent className="h-full -ml-0">
-          {carouselItems.map((item, index) => (
+          {carouselItems.map((item) => (
             <CarouselItem
               key={item.id}
               className="w-full py-4 px-0 sm:px-4 h-full"
@@ -79,7 +87,7 @@ const StackedCarousel = () => {
 
                 <CardContent className="p-4 w-full h-full md:pr-10 space-y-3">
                   <span className="text-white text-xs">
-                    {index + 1} / {totalItems}
+                    {item.id} / {totalItems}
                   </span>
                   <CardTitle className="text-white text-xl sm:text-3xl">
                     {item.title}

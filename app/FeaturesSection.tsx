@@ -40,8 +40,8 @@ export function FeatureSection({ data }: Readonly<FeatureSectionProps>) {
             {subtitle}
           </strong>
           <h2 className="text-2xl md:text-4xl pb-4 font-tommy uppercase max-w-[550px]">
-            Bring Impact with <span className="font-bold">no compromise</span>{" "}
-            on trust{" "}
+            Make Big Impact: <span className="font-bold">no compromise</span> on
+            trust{" "}
           </h2>
           <p>{description}</p>
         </div>

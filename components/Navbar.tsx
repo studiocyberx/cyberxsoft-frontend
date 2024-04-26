@@ -36,7 +36,7 @@ const navItems: NavItemProps[] = [
       { title: "Internet Of Things (IOT)", href: "iot" },
     ],
   },
-  // { title: "Industries", href: "/industries" },
+  { title: "Industries", href: "/industries" },
   { title: "Resources", href: "/resources" },
   { title: "Contact", href: "/contact" },
   // { title: "Careers", href: "/careers" },

@@ -19,7 +19,7 @@ const page = () => {
           <div className="text-white lg:max-w-2xl space-y-4">
             <strong className="uppercase">Connect</strong>
             <h1 className="text-4xl sm:text-5xl font-bold">
-              Get in Touch With BigO Your Partner in Excellence
+              Get in Touch With BigO - Your Partner in Excellence
             </h1>
             <p className="">
               Whether you wish to dominate the digital arena by employing the

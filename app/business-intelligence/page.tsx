@@ -9,6 +9,13 @@ import ImageScrollCards from "@/components/ImageScrollCards";
 import TooltipSteps from "@/components/TooltipSteps";
 import { Suspense } from "react";
 import Loading from "../loading";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Make Precise Decisions with Business Intelligence Services",
+  description:
+    "Empower your business operations with data-driven decisions. Drive growth and success with our advanced business intelligence solutions. Get a quote!",
+};
 
 interface biSolutionsDataProps {
   title: string;
@@ -54,11 +61,10 @@ const BusinessIntelligence = () => {
     description:
       "In today's dynamic landscape, sourcing top-notch services can be demanding. Recognizing this need, we are cooperating with CyberX Studio to address the diverse digital marketing needs of its clientele. If your quest extends beyond business intelligence solutions, your search ends here! Choose CyberX Studio as your digital marketing partner and upgrade your business's digital presence. Enhance your brand`s visibility in the digital realm by taking advantage of the following holistic services:",
     image: "/beyond-iot.png",
-    serviceHeading: "Benefit from the following holistic services suite:",
   };
 
   const servicesList = [
-    "All-Inclusive Digital Marketing Strategy",
+    "Comprehensive Digital Marketing Strategy",
     "UI/UX Designing",
     "Website Design and Development",
     "SEO Mastery",
@@ -71,28 +77,30 @@ const BusinessIntelligence = () => {
   const faqItems = [
     {
       value: "question-1",
-      question: "What is IoT and how can it help businesses?",
+      question:
+        "What is Business Intelligence (BI) and why is it significant for businesses?",
       answer:
-        "The Internet of Things, or IoT, refers to the interconnectedness of devices and systems. IoT provides businesses with increased output, real-time data insights, and decision-making skills through linking and automating multiple operations.",
+        "Business Intelligence refers to technologies, processes, and tools that help businesses gather, scrutinize, and visualize data to make informed decisions. BI is crucial as it empowers organizations to gain insights, identify trends, and optimize strategies for improved outcomes.",
     },
     {
       value: "question-2",
       question:
-        "Can BigO's IoT services be tailored to cater to the needs of diverse industries?",
+        "How can BI services enhance collaboration within an organization?",
       answer:
-        "BigO recognizes the different needs of industries. We provide customized IoT solutions, collaborating closely with clients to tailor our services to specific industry needs, whether in manufacturing, healthcare, logistics, or other.",
+        "BI fosters collaboration by providing a shared platform for accessing and interpreting data. Teams can collaborate more effectively as they base their decisions on a common understanding of the insights derived from BI analysis.",
     },
     {
       value: "question-3",
-      question: "How does BigO safeguard the confidentiality of IoT data?",
+      question: "Is Business Intelligence suitable for small businesses?",
       answer:
-        "Privacy is our top priority. BigO uses strong encryption, authentication, and compliance methods to protect IoT data. We follow industry guidelines and regulations to maintain the integrity and security of your information.",
+        "Yes, BI services are scalable and can be customized to meet the specific needs of small, medium, or large enterprises. They offer valuable insights that are cost-effective for data-oriented decision-making.",
     },
     {
       value: "question-4",
-      question: "What makes BigO stand out in the IoT service industry?",
+      question:
+        "What security measures does BigO put in place to protect sensitive business data in BI systems?",
       answer:
-        "BigO distinguishes itself with its experience, collaborative approach, and dedication to technological advances. We render our years of knowledge, cooperate closely with clients, and are always exploring emerging technologies to keep our IoT services at the forefront of industry innovations.",
+        "Our BI systems implement sound security measures, including user authentication, encryption, and access controls. These measures ensure that only authorized personnel can access and alter sensitive business data.",
     },
   ];
 
@@ -126,43 +134,43 @@ const BusinessIntelligence = () => {
     {
       cardTitle: "Financial Intelligence",
       cardDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel egestas dolor, nec dignissim metus.Lorem ipsum dolor",
+        "Manage firm finances, including income, expenses, and revenue. Also, evaluate financial functioning. Strategize, make a budget and anticipate risks for a sound financial situation.",
       imageSrc: "/financial-intelligence.png",
     },
     {
       cardTitle: "Brand and Product Intelligence",
       cardDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel egestas dolor, nec dignissim ",
+        "Conduct analysis of product and service performance, optimize the product and service portfolio, analyze brand awareness, and benchmark against competitors for strategic insights.",
       imageSrc: "/brand-and-product-intelligence.png",
     },
     {
       cardTitle: "Supply Chain Intelligence",
       cardDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel egestas dolor, nec dignissim metus.Lorem ipsum dolor",
+        "Improve transparency in the supply chain, analyze factors driving demand, plan, and forecast demand, manage threats in the supply chain, and model or optimize costs associated with the supply chain.",
       imageSrc: "/supply-chain-intelligence.png",
     },
     {
       cardTitle: "Transportation and Logistics Intelligence",
       cardDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel egestas dolor, nec dignissim metus.Lorem ipsum dolor",
+        "Conduct operational planning, enhance efficiency through both static and dynamic route optimization and employ data-driven approaches to gauge fuel consumption.",
       imageSrc: "/transportation-and-logistics-intelligence.png",
     },
     {
       cardTitle: "Production Intelligence",
       cardDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel egestas dolor, nec dignissim metus.Lorem ipsum dolor",
+        "Analyze and optimize production procedures, track overall equipment health, and implement predictive maintenance for equipment.",
       imageSrc: "/production-intelligence.png",
     },
     {
       cardTitle: "HR Intelligence",
       cardDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel egestas dolor, nec dignissim metus.Lorem ipsum dolor",
+        "Monitor and assess employee performance, plan workforce management, predict and manage employee churn, and analyze employee recruiting for comprehensive HR insights.",
       imageSrc: "/hr-intelligence.png",
     },
     {
       cardTitle: "E-commerce Intelligence",
       cardDescription:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel egestas dolor, nec dignissim metus.Lorem ipsum dolor",
+        "Enhance operational efficiency by evaluating customer behavior through analytics, scrutinizing sales and marketing implementation, and integrating intelligent demand forecasting.",
       imageSrc: "/e-commerce-intelligence.png",
     },
   ];
@@ -252,7 +260,7 @@ const BusinessIntelligence = () => {
               variant="outline"
               className="bg-transparent text-white text-lg p-6"
             >
-              <Link href="/">Learn More</Link>
+              <Link href="/get-a-quote">Request A Demo</Link>
             </Button>
           </div>
 
