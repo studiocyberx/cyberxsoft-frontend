@@ -8,6 +8,8 @@ import ServicesCardsSection from "@/components/ServicesCardsSection";
 import BeyondSection from "@/components/BeyondSection";
 import GetInTouch from "@/components/GetInTouch";
 import Faqs from "@/components/Faqs";
+import { Suspense } from "react";
+import Loading from "../loading";
 
 export const metadata: Metadata = {
   title: "Outcome-Driven Internet of Things (IoT) Services",
@@ -146,34 +148,36 @@ const page = () => {
 
   return (
     <>
-      <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20">
-        <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
-          <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
-            <span className="font-bold">Outcome-Driven</span> Internet of Things
-            (IoT) Services
-          </h1>
-          <p className="text-lg md:text-xl text-secondary">
-            At BigO, the core motive of our IoT services is to reveal analytical
-            insights about operations, streamline work processes, minimize
-            potential challenges, and empower businesses to make informed,
-            data-driven decisions.
-          </p>
+      <Suspense fallback={<Loading />}>
+        <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20">
+          <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
+            <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
+              <span className="font-bold">Outcome-Driven</span> Internet of
+              Things (IoT) Services
+            </h1>
+            <p className="text-lg md:text-xl text-secondary">
+              At BigO, the core motive of our IoT services is to reveal
+              analytical insights about operations, streamline work processes,
+              minimize potential challenges, and empower businesses to make
+              informed, data-driven decisions.
+            </p>
 
-          <Button
-            asChild
-            variant="outline"
-            className="bg-transparent text-white text-lg p-6"
-          >
-            <Link href="/get-a-quote">Request IoT Services</Link>
-          </Button>
-        </div>
+            <Button
+              asChild
+              variant="outline"
+              className="bg-transparent text-white text-lg p-6"
+            >
+              <Link href="/get-a-quote">Request IoT Services</Link>
+            </Button>
+          </div>
 
-        <Image
-          src={iotHeader}
-          alt=""
-          className="h-full w-full mix-blend-multiply"
-        />
-      </section>
+          <Image
+            src={iotHeader}
+            alt=""
+            className="h-full w-full mix-blend-multiply"
+          />
+        </section>
+      </Suspense>
 
       <ChallengesSection />
       <ServicesCardsSection

@@ -6,6 +6,9 @@ import BeyondSection from "@/components/BeyondSection";
 import Faqs from "@/components/Faqs";
 import GetInTouch from "@/components/GetInTouch";
 import ImageScrollCards from "@/components/ImageScrollCards";
+import TooltipSteps from "@/components/TooltipSteps";
+import { Suspense } from "react";
+import Loading from "../loading";
 
 interface biSolutionsDataProps {
   title: string;
@@ -230,122 +233,142 @@ const BusinessIntelligence = () => {
 
   return (
     <>
-      <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
-        <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
-          <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
-            <span className="font-bold">Make Precise Decisions</span> with
-            Business Intelligence Services
-          </h1>
-          <p className="text-lg md:text-xl text-secondary">
-            We help transform your decentralized operations into a cohesive,
-            cutting-edge data visualization system that enhances everyday
-            operations, KPI implementation, and goal accomplishment. Customize
-            your BI systems as per your specific requirements.
-          </p>
+      <Suspense fallback={<Loading />}>
+        <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
+          <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
+            <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
+              <span className="font-bold">Make Precise Decisions</span> with
+              Business Intelligence Services
+            </h1>
+            <p className="text-lg md:text-xl text-secondary">
+              We help transform your decentralized operations into a cohesive,
+              cutting-edge data visualization system that enhances everyday
+              operations, KPI implementation, and goal accomplishment. Customize
+              your BI systems as per your specific requirements.
+            </p>
 
-          <Button
-            asChild
-            variant="outline"
-            className="bg-transparent text-white text-lg p-6"
-          >
-            <Link href="/">Learn More</Link>
-          </Button>
-        </div>
-
-        <Image src={biHeader} alt="" className="mix-blend-soft-light" />
-      </section>
-
-      <section className="py-8 sm:py-12 px-8 sm:px-10 lg:px-20 space-y-4 container">
-        <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy text-center">
-          Crafting Business Success with Our BI Solutions
-        </h2>
-
-        <div className="pt-8 flex flex-wrap justify-center gap-10 lg:gap-20 w-full">
-          {biSolutionsData.map((solution) => (
-            <div
-              key={solution.title}
-              className="flex items-start flex-wrap lg:flex-nowrap gap-6 w-full md:max-w-[350px] xl:max-w-[500px]"
+            <Button
+              asChild
+              variant="outline"
+              className="bg-transparent text-white text-lg p-6"
             >
-              <Image
-                src={solution.imageSrc}
-                alt={solution.title}
-                width={100}
-                height={100}
-                className="w-[100px] h-[100px]"
-              />
+              <Link href="/">Learn More</Link>
+            </Button>
+          </div>
 
-              <div className="space-y-3">
-                <h3 className="font-bold uppercase text-xl">
-                  {solution.title}
-                </h3>
-                <p>{solution.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <div className="bg-gray-200">
+          <Image src={biHeader} alt="" className="mix-blend-soft-light" />
+        </section>
+      </Suspense>
+      <Suspense fallback={<Loading />}>
         <section className="py-8 sm:py-12 px-8 sm:px-10 lg:px-20 space-y-4 container">
           <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy text-center">
-            Innovative Analytical Technologies for BI{" "}
+            Crafting Business Success with Our BI Solutions
           </h2>
 
-          <div className="pt-8 flex flex-wrap justify-center items-center gap-10 lg:gap-20 w-full">
-            {partnerLogos.map((logo, index) => (
-              <div key={index} className="w-full  max-w-max xl:max-w-[275px]">
+          <div className="pt-8 flex flex-wrap justify-center gap-10 lg:gap-20 w-full">
+            {biSolutionsData.map((solution) => (
+              <div
+                key={solution.title}
+                className="flex items-start flex-wrap lg:flex-nowrap gap-6 w-full md:max-w-[350px] xl:max-w-[500px]"
+              >
                 <Image
-                  src={`${logo}.png`}
-                  alt=""
-                  width={250}
+                  src={solution.imageSrc}
+                  alt={solution.title}
+                  width={100}
                   height={100}
-                  className="mix-blend-luminosity w-full"
+                  className="w-[100px] h-[100px]"
                 />
+
+                <div className="space-y-3">
+                  <h3 className="font-bold uppercase text-xl">
+                    {solution.title}
+                  </h3>
+                  <p>{solution.description}</p>
+                </div>
               </div>
             ))}
           </div>
         </section>
-      </div>
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <div className="bg-gray-300">
+          <section className="py-8 sm:py-12 px-8 sm:px-10 lg:px-20 space-y-4 container">
+            <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy text-center">
+              Innovative Analytical Technologies for BI{" "}
+            </h2>
 
-      <section className="py-8 sm:py-12 px-8 sm:px-10 md:px-20 space-y-4 container">
-        <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy mx-auto max-w-2xl text-center">
-          Navigating Insights with Business Intelligence Dashboards
-        </h2>
-
-        <ImageScrollCards imageScrollCardsData={imageScrollCardsData} />
-      </section>
-
-      <section className="py-8 sm:py-12 px-8 sm:px-10 md:px-20 space-y-4 container">
-        <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy text-center">
-          Convert Raw Data into Interactive BI Visuals{" "}
-        </h2>
-        <p className="mx-auto max-w-2xl text-center">
-          Dispersed and disorganized data can bring a lot of confusion and
-          frustration. Our BI dashboards are designed to be systematically and
-          visually engaging to analyze the performance trajectory of the
-          business and strengthen data management.
-        </p>
-
-        <div className="grid items-center grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8">
-          {visualCards.map((card) => (
-            <div
-              className="flex flex-col items-center text-center justify-center gap-2 cursor-pointer"
-              key={card.heading}
-            >
-              <Image
-                src={card.imageSrc}
-                alt={card.heading}
-                width={150}
-                height={150}
-              />
-
-              <h2 className="font-bold">{card.heading}</h2>
+            <div className="pt-8 flex flex-wrap justify-center items-center gap-10 lg:gap-20 w-full">
+              {partnerLogos.map((logo, index) => (
+                <div key={index} className="w-full  max-w-max xl:max-w-[275px]">
+                  <Image
+                    src={`${logo}.png`}
+                    alt=""
+                    width={250}
+                    height={100}
+                    className="mix-blend-luminosity w-full"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          </section>
         </div>
-      </section>
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <section className="py-8 sm:py-12 px-8 sm:px-10 md:px-20 space-y-4 container">
+          <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy mx-auto max-w-2xl text-center">
+            Navigating Insights with Business Intelligence Dashboards
+          </h2>
 
-      <div className="bg-gray-200">
+          <ImageScrollCards imageScrollCardsData={imageScrollCardsData} />
+        </section>
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <section className="py-8 sm:py-12 px-8 sm:px-10 md:px-20 space-y-4 container">
+          <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy text-center">
+            Convert Raw Data into Interactive BI Visuals{" "}
+          </h2>
+          <p className="mx-auto max-w-2xl text-center">
+            Dispersed and disorganized data can bring a lot of confusion and
+            frustration. Our BI dashboards are designed to be systematically and
+            visually engaging to analyze the performance trajectory of the
+            business and strengthen data management.
+          </p>
+
+          <div className="grid items-center grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8">
+            {visualCards.map((card) => (
+              <div
+                className="flex flex-col items-center text-center justify-center gap-2 cursor-pointer"
+                key={card.heading}
+              >
+                <Image
+                  src={card.imageSrc}
+                  alt={card.heading}
+                  width={150}
+                  height={150}
+                />
+
+                <h2 className="font-bold">{card.heading}</h2>
+              </div>
+            ))}
+          </div>
+        </section>
+      </Suspense>
+      <Suspense fallback={<Loading />}>
+        <section className="py-8 sm:py-12 px-8 sm:px-10 md:px-20 space-y-4 container">
+          <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy text-center">
+            Processes Driving Our Business Intelligence Services{" "}
+          </h2>
+          <p className="mx-auto max-w-2xl text-center">
+            We outshine by prioritizing purpose over flashy features to impress
+            customers. Our approach focuses on goal-oriented business
+            intelligence BI solutions, guaranteeing that every stage of the
+            process yields value.{" "}
+          </p>
+
+          <TooltipSteps />
+        </section>
+      </Suspense>
+      <div className="bg-gray-300">
         <BeyondSection data={beyondSectionData} servicesList={servicesList} />
         <section className="container px-6 sm:px-8 flex items-center justify-between gap-4">
           <Faqs faqItems={faqItems} />

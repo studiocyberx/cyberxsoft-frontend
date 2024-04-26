@@ -32,7 +32,7 @@ const ImageScrollCards = ({
                 alt={card.cardTitle}
                 className="h-fit w-full object-cover"
                 width={300}
-                height={400}
+                height={150}
               />
             </div>
             <CardContent className="p-4 max-w-[300px] whitespace-pre-wrap text-center space-y-2">

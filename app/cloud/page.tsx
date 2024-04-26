@@ -9,6 +9,8 @@ import BeyondSection from "@/components/BeyondSection";
 import Faqs from "@/components/Faqs";
 import GetInTouch from "@/components/GetInTouch";
 import ScrollCards from "@/components/ScrollCards";
+import { Suspense } from "react";
+import Loading from "../loading";
 
 const CloudService = () => {
   const fiveCardsSectionCotent = {
@@ -185,27 +187,29 @@ const CloudService = () => {
 
   return (
     <>
-      <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
-        <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
-          <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
-            Cloud <span className="font-bold">Service</span>
-          </h1>
-          <p className="text-lg md:text-xl text-secondary">
-            Where Agility and Efficiency Meets Innovation to Propel Your
-            Business Beyond Boundaries for Success
-          </p>
+      <Suspense fallback={<Loading />}>
+        <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
+          <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
+            <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
+              Cloud <span className="font-bold">Service</span>
+            </h1>
+            <p className="text-lg md:text-xl text-secondary">
+              Where Agility and Efficiency Meets Innovation to Propel Your
+              Business Beyond Boundaries for Success
+            </p>
 
-          <Button
-            asChild
-            variant="outline"
-            className="bg-transparent text-white text-lg p-6"
-          >
-            <Link href="/">Learn More</Link>
-          </Button>
-        </div>
+            <Button
+              asChild
+              variant="outline"
+              className="bg-transparent text-white text-lg p-6"
+            >
+              <Link href="/">Learn More</Link>
+            </Button>
+          </div>
 
-        <Image src={cloudHeader} alt="" className="mix-blend-overlay" />
-      </section>
+          <Image src={cloudHeader} alt="" className="mix-blend-overlay" />
+        </section>
+      </Suspense>
       <section className="h-full flex flex-col-reverse lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full px-8 sm:px-14 lg:px-20 2xl:px-28 py-12 container">
         <Image src="/cloud-intro.png" alt="" width={550} height={550} />
 
