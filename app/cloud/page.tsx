@@ -9,8 +9,6 @@ import BeyondSection from "@/components/BeyondSection";
 import Faqs from "@/components/Faqs";
 import GetInTouch from "@/components/GetInTouch";
 import ScrollCards from "@/components/ScrollCards";
-import { Suspense } from "react";
-import Loading from "../loading";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -147,13 +145,6 @@ const CloudService = () => {
     },
   ];
 
-  const scrollCardsSection = {
-    title:
-      "Capitalize on Efficiency with Our Comprehensive Cloud Service Offerings",
-    description:
-      "From tailored strategies enhancing performance and driving innovation to seamless transitions with Cloud Migration Services, we offer unparalleled flexibility, security, and efficiency. Experience the future of business, where our cloud service facilitates expansion and shows you how to embark on the life-changing process of realizing the whole potential of your operations.",
-  };
-
   const scrollCardsData = [
     {
       title: "Cloud Consultation and Strategy",
@@ -258,10 +249,23 @@ const CloudService = () => {
         fiveCardsSectionCotent={fiveCardsSectionCotent}
       />
       <VideoCta videoCtaData={videoCtaOneData} />
-      <ScrollCards
-        scrollCardsSection={scrollCardsSection}
-        scrollCardsData={scrollCardsData}
-      />
+
+      <section className="py-8 sm:py-12 px-8 sm:px-10 md:px-20 space-y-4 container">
+        <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy">
+          Capitalize on Efficiency with Our Comprehensive Cloud Service
+          Offerings
+        </h2>
+        <p>
+          From tailored strategies enhancing performance and driving innovation
+          to seamless transitions with Cloud Migration Services, we offer
+          unparalleled flexibility, security, and efficiency. Experience the
+          future of business, where our cloud service facilitates expansion and
+          shows you how to embark on the life-changing process of realizing the
+          whole potential of your operations.
+        </p>
+        <ScrollCards scrollCardsData={scrollCardsData} />
+      </section>
+
       <VideoCta videoCtaData={videoCtaTwoData} />
       <ServicesCardsSection
         content={serviceCardContent}

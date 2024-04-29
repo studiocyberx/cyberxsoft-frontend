@@ -20,7 +20,7 @@ const TooltipSteps = () => {
   ];
   return (
     <>
-      <div className="flex items-start justify-between flex-col gap-10 md:flex-row">
+      <div className="flex items-start justify-between flex-col gap-6 md:gap-10 md:flex-row">
         {stepsData.map((step, index) => (
           <div
             key={index}

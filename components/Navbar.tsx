@@ -56,8 +56,8 @@ const Navbar = ({ fonts, isOpen }: { fonts: FontProps; isOpen: boolean }) => {
     <nav
       className={`absolute md:block md:static top-0 left-0 bg-custom-purple-600/95 md:bg-none min-h-full z-50 px-10 md:p-0 py-8 ${
         isOpen
-          ? "flex items-center justify-start text-left animate-nav-slide overflow-hidden w-full"
-          : "hidden"
+          ? "flex items-center justify-start text-left animate-nav-slide overflow-hidden w-full h-full"
+          : "hidden animate-nav-slide-close"
       }`}
     >
       <ul
@@ -77,7 +77,9 @@ const Navbar = ({ fonts, isOpen }: { fonts: FontProps; isOpen: boolean }) => {
             {navLink.subItems ? (
               <DropdownMenu subItems={navLink.subItems} />
             ) : (
-              <Link href={navLink.href}>{navLink.title}</Link>
+              <Link href={navLink.href} onClick={() => !isOpen}>
+                {navLink.title}
+              </Link>
             )}
           </li>
         ))}

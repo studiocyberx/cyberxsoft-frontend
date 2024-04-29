@@ -1,4 +1,4 @@
-import FeatureCard from "@/components/FeatureCard";
+import FeatureCard from "@/app/_components/FeatureCard";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";

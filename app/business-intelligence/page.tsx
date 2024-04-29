@@ -5,11 +5,11 @@ import biHeader from "@/public/bi-intro.png";
 import BeyondSection from "@/components/BeyondSection";
 import Faqs from "@/components/Faqs";
 import GetInTouch from "@/components/GetInTouch";
-import ImageScrollCards from "@/components/ImageScrollCards";
 import TooltipSteps from "@/components/TooltipSteps";
 import { Suspense } from "react";
 import Loading from "../loading";
 import { Metadata } from "next";
+import ScrollCards from "@/components/ScrollCards";
 
 export const metadata: Metadata = {
   title: "Make Precise Decisions with Business Intelligence Services",
@@ -112,64 +112,64 @@ const BusinessIntelligence = () => {
     "/numpy-logo",
   ];
 
-  const imageScrollCardsData = [
+  const scrollCardsData = [
     {
-      cardTitle: "Enterprise Intelligence",
-      cardDescription:
+      title: "Enterprise Intelligence",
+      description:
         "Integrate and maintain company-wide data, monitor and assess performance, and support both managerial and strategic planning.",
       imageSrc: "/enterprise-intelligence.png",
     },
     {
-      cardTitle: "Operational Intelligence",
-      cardDescription:
+      title: "Operational Intelligence",
+      description:
         "Keep track of and evaluate operational processes, pinpoint challenges, and forecast working efficiency.",
       imageSrc: "/operational-intelligence.png",
     },
     {
-      cardTitle: "Customer Intelligence",
-      cardDescription:
+      title: "Customer Intelligence",
+      description:
         "Generate an extensive 360-degree customer view, monitor and model customer behavior, and oversee customer relationships.",
       imageSrc: "/customer-intelligence.png",
     },
     {
-      cardTitle: "Financial Intelligence",
-      cardDescription:
+      title: "Financial Intelligence",
+      description:
         "Manage firm finances, including income, expenses, and revenue. Also, evaluate financial functioning. Strategize, make a budget and anticipate risks for a sound financial situation.",
       imageSrc: "/financial-intelligence.png",
     },
     {
-      cardTitle: "Brand and Product Intelligence",
-      cardDescription:
+      title: "Brand and Product Intelligence",
+      description:
         "Conduct analysis of product and service performance, optimize the product and service portfolio, analyze brand awareness, and benchmark against competitors for strategic insights.",
       imageSrc: "/brand-and-product-intelligence.png",
     },
     {
-      cardTitle: "Supply Chain Intelligence",
-      cardDescription:
+      title: "Supply Chain Intelligence",
+      description:
         "Improve transparency in the supply chain, analyze factors driving demand, plan, and forecast demand, manage threats in the supply chain, and model or optimize costs associated with the supply chain.",
       imageSrc: "/supply-chain-intelligence.png",
     },
     {
-      cardTitle: "Transportation and Logistics Intelligence",
-      cardDescription:
+      title: "Transportation and Logistics Intelligence",
+      description:
         "Conduct operational planning, enhance efficiency through both static and dynamic route optimization and employ data-driven approaches to gauge fuel consumption.",
       imageSrc: "/transportation-and-logistics-intelligence.png",
     },
     {
-      cardTitle: "Production Intelligence",
-      cardDescription:
+      title: "Production Intelligence",
+      description:
         "Analyze and optimize production procedures, track overall equipment health, and implement predictive maintenance for equipment.",
       imageSrc: "/production-intelligence.png",
     },
     {
-      cardTitle: "HR Intelligence",
-      cardDescription:
+      title: "HR Intelligence",
+      description:
         "Monitor and assess employee performance, plan workforce management, predict and manage employee churn, and analyze employee recruiting for comprehensive HR insights.",
       imageSrc: "/hr-intelligence.png",
     },
     {
-      cardTitle: "E-commerce Intelligence",
-      cardDescription:
+      title: "E-commerce Intelligence",
+      description:
         "Enhance operational efficiency by evaluating customer behavior through analytics, scrutinizing sales and marketing implementation, and integrating intelligent demand forecasting.",
       imageSrc: "/e-commerce-intelligence.png",
     },
@@ -327,7 +327,7 @@ const BusinessIntelligence = () => {
             Navigating Insights with Business Intelligence Dashboards
           </h2>
 
-          <ImageScrollCards imageScrollCardsData={imageScrollCardsData} />
+          <ScrollCards scrollCardsData={scrollCardsData} />
         </section>
       </Suspense>
       <Suspense fallback={<Loading />}>
@@ -342,7 +342,7 @@ const BusinessIntelligence = () => {
             business and strengthen data management.
           </p>
 
-          <div className="grid items-center grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8">
+          <div className="grid items-start grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
             {visualCards.map((card) => (
               <div
                 className="flex flex-col items-center text-center justify-center gap-2 cursor-pointer"
@@ -376,19 +376,19 @@ const BusinessIntelligence = () => {
           <TooltipSteps />
         </section>
       </Suspense>
-      <div className="bg-gray-300">
-        <BeyondSection data={beyondSectionData} servicesList={servicesList} />
-        <section className="container px-6 sm:px-8 flex items-center justify-between gap-4">
-          <Faqs faqItems={faqItems} />
-          <Image
-            src="/faq-illustration.png"
-            alt="faq-illustration"
-            width={550}
-            height={550}
-            className="hidden md:block"
-          />
-        </section>
-      </div>
+
+      <BeyondSection data={beyondSectionData} servicesList={servicesList} />
+      <section className="container px-6 sm:px-8 flex items-center justify-between gap-4 xl:h-screen xl:max-h-[800px]">
+        <Faqs faqItems={faqItems} />
+        <Image
+          src="/faq-illustration.png"
+          alt="faq-illustration"
+          width={550}
+          height={550}
+          className="hidden md:block"
+        />
+      </section>
+
       <GetInTouch />
     </>
   );

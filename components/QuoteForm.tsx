@@ -101,6 +101,7 @@ const QuoteForm = () => {
                 <FormItem>
                   <FormControl>
                     <Input
+                      type="tel"
                       placeholder="Phone No. *"
                       {...field}
                       className="text-black"
@@ -215,6 +216,7 @@ const QuoteForm = () => {
                 <FormItem>
                   <FormControl>
                     <Input
+                      type="number"
                       placeholder="Budget *"
                       {...field}
                       className="text-black"
