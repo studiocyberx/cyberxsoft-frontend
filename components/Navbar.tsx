@@ -49,6 +49,8 @@ const Navbar = ({ fonts }: { fonts: FontProps }) => {
   const toggleOpen: () => void = () => {
     setIsOpen(!isOpen);
   };
+  const closeNav: () => void = () => setIsOpen(false);
+
   const activepath = useActivePath();
 
   //Give body overflow hidden when the navbar is open on smaller screens
@@ -86,7 +88,7 @@ const Navbar = ({ fonts }: { fonts: FontProps }) => {
               {navLink.subItems ? (
                 <DropdownMenu subItems={navLink.subItems} />
               ) : (
-                <Link href={navLink.href} onClick={toggleOpen}>
+                <Link href={navLink.href} onClick={closeNav}>
                   {navLink.title}
                 </Link>
               )}
