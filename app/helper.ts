@@ -1,6 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 
+//Return currently active path
 export function useActivePath(): (path: string) => boolean {
   const pathname = usePathname();
 

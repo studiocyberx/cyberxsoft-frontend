@@ -3,8 +3,6 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import GetInTouchForm from "./GetInTouchForm";
 import Link from "next/link";
-import { Suspense } from "react";
-import Loading from "@/app/loading";
 
 const GetInTouch = () => {
   return (
@@ -45,7 +43,7 @@ const GetInTouch = () => {
                 className="hover:text-custom-purple-100 transition-all duration-200"
                 href="tel:+923165143252"
               >
-                +92 316 514 3252
+                +92-316-514-3252
               </Link>
             </div>
           </div>

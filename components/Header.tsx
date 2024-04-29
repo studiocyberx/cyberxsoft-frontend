@@ -8,22 +8,8 @@ import {
   FaPhone,
   FaLocationDot,
 } from "react-icons/fa6";
-import Navigation from "./Navigation";
-
-interface HeaderProps {
-  data: {
-    logoText: {
-      id: number;
-      text: string;
-      url: string;
-    };
-    ctaButton: {
-      id: number;
-      text: string;
-      url: string;
-    };
-  };
-}
+import Navbar from "./Navbar";
+import { bebas } from "@/app/fonts";
 
 interface SocialIconProps {
   id: number;
@@ -56,11 +42,11 @@ export function Header() {
         </div>
         <div className="flex items-center gap-4 justify-center md:justify-start flex-wrap md:flex-nowrap">
           <Link
-            href="tel:9232132121"
+            href="tel:+923165143252"
             className="flex items-center gap-2 text-white hover:text-custom-purple-100 transition-all duration-300"
           >
             <FaPhone size={20} />
-            +92-321-2311231
+            +92-316-514-3252
           </Link>
           <Link
             href="https://maps.app.goo.gl/2L9f9WYFS6Anjjg39"
@@ -75,7 +61,7 @@ export function Header() {
 
       <div className="flex items-center gap-4 justify-between px-10 lg:px-20 py-1 bg-custom-purple-600">
         <Logo />
-        <Navigation />
+        <Navbar fonts={bebas} />
       </div>
     </header>
   );
