@@ -1,4 +1,4 @@
-import StackedCarousel from "@/components/StackedCarousel";
+import StackedCarousel from "@/app/_components/StackedCarousel";
 import { Separator } from "@/components/ui/separator";
 
 const CarouselSection = () => {

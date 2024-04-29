@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { Button } from "@/components/ui/button";
-
 import carouselImage1 from "@/public/carousel-image-1.png";
 import carouselImage2 from "@/public/carousel-image-2.png";
 import Image, { StaticImageData } from "next/image";

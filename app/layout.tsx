@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { madeTommy, fontSans } from "@/app/fonts";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 //Get metadata from strapi
 export async function generateMetadata(): Promise<Metadata> {
@@ -31,7 +33,7 @@ export default async function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="light">
           <Header />
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
           <Footer />
         </ThemeProvider>
       </body>
