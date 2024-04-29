@@ -1,3 +1,5 @@
+"use client";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -6,7 +8,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 
@@ -15,11 +16,13 @@ interface SubItemProps {
   title: string;
 }
 
-interface DropdownMenuProps {
+const DropdownMenu = ({
+  subItems,
+  closeNav,
+}: {
   subItems: SubItemProps[];
-}
-
-const DropdownMenu = ({ subItems }: DropdownMenuProps) => {
+  closeNav: () => void;
+}) => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -34,6 +37,7 @@ const DropdownMenu = ({ subItems }: DropdownMenuProps) => {
                   <NavigationMenuLink asChild>
                     <Link
                       href={item.href}
+                      onClick={closeNav}
                       className="hover:text-custom-purple-400 transition-all duration-300"
                     >
                       {item.title}

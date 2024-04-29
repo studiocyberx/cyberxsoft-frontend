@@ -86,7 +86,7 @@ const Navbar = ({ fonts }: { fonts: FontProps }) => {
               }`}
             >
               {navLink.subItems ? (
-                <DropdownMenu subItems={navLink.subItems} />
+                <DropdownMenu subItems={navLink.subItems} closeNav={closeNav} />
               ) : (
                 <Link href={navLink.href} onClick={closeNav}>
                   {navLink.title}
