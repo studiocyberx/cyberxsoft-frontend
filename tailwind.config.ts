@@ -86,16 +86,11 @@ const config = {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(0%)" },
         },
-        navSlideClose: {
-          "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(100%)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "nav-slide": "navSlide 0.75s ease",
-        "nav-slide-close": "navSlideClose 0.75s ease",
       },
       backgroundImage: {
         "drop-pattern": "url(/drop-pattern.png)",
