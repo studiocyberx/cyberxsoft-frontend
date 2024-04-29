@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "BigO - Contact",
 };
 
-const page = () => {
+const ContactUs = () => {
   return (
     <Suspense fallback={<Loading />}>
       <section className="h-full lg:h-screen lg:max-h-[850px] py-20 bg-custom-purple-700 grid place-items-center relative">
@@ -95,4 +95,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ContactUs;

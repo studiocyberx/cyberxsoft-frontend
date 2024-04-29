@@ -1,22 +1,62 @@
-import { FeatureSection } from "@/app/FeaturesSection";
-import { HeroSection } from "@/app/HeroSection";
+import { FeatureSection } from "@/app/_components/FeaturesSection";
+import { HeroSection } from "@/app/_components/HeroSection";
 import { getHomePageData } from "@/data/loaders";
-import IntroSection from "./IntroSection";
-import CarouselSection from "./CarouselSection";
+import IntroSection from "@/app/_components/IntroSection";
+import CarouselSection from "@/app/_components/CarouselSection";
 import Faqs from "@/components/Faqs";
 import Resources from "@/components/Resources";
 import { Separator } from "@/components/ui/separator";
 import GetInTouch from "@/components/GetInTouch";
 
-//Function to render the components from strapi
-function blockRenderer(block: any) {
-  switch (block.__component) {
-    case "layout.features-section":
-      return <FeatureSection key={block.id} data={block} />;
-    default:
-      return null;
-  }
-}
+const featuresData = [
+  {
+    id: 1,
+    heading: "Business Intelligence (BI) Services",
+    subHeading:
+      "We develop interactive dashboards for real-time data visualization, turning it into a business advantage through Extract, Transform, and Load (ETL) pipeline development. Our BI services leverage industrial-grade tools like Apache Spark, SQL, Python, R, Numpy, Pandas and more to deliver impactful analytics services.",
+    image: {
+      id: 1,
+      url: "/meeting.png",
+      alternativeText:
+        "Tapping into the Potential of AI, ML, and Connected Intelligence for Business Automation",
+    },
+  },
+  {
+    id: 2,
+    heading: "Responsible AI Services",
+    subHeading:
+      "We offer custom-made AI model development using TensorFlow or PyTorch, federated learning solutions for privacy preservation, and predictive insights for resource handling and equipment or machinery maintenance.",
+    image: {
+      id: 2,
+      url: "/artificial_intelligence.png",
+      alternativeText:
+        "Leveraging an Innovative, Unified, and Personalized Experience for Our Clients",
+    },
+  },
+  {
+    id: 3,
+    heading: "Cloud Services",
+    subHeading:
+      "We provide end-to-end cloud infrastructure setup and management using AWS, Terraform, Docker, and Kubernetes along with DevOps integration through Jenkins and GIT. In addition, our cloud services include big data analytics and processing.",
+    image: {
+      id: 3,
+      url: "/cloud_services.png",
+      alternativeText: "Helping Businesses Scale and Revamp For Diverse Needs",
+    },
+  },
+  {
+    id: 4,
+    heading: "Internet of Things (IoT) Services",
+    subHeading:
+      "We empower clients to adapt to their changing needs and integrate IoT technology into their infrastructures. Our IoT services provide business automation by leveraging real-time data analytics and processing and improving operational efficiency.",
+    image: {
+      id: 4,
+      url: "/iot_services.png",
+      alternativeText:
+        "Embracing Modern Technology and Delivering the Finest to Our Clients",
+    },
+  },
+];
 
 const faqItems = [
   {
@@ -48,15 +88,11 @@ const faqItems = [
 ];
 
 const Home = async () => {
-  const strapiData = await getHomePageData();
-  const { blocks } = strapiData;
-  if (!blocks) return <p>No sections found</p>;
-
   return (
     <main className="bg-gray-200 h-full">
       <HeroSection />
       <IntroSection />
-      {blockRenderer(blocks[1])}
+      <FeatureSection data={featuresData} />
       <CarouselSection />
       <section className="container px-6 sm:px-8 lg:h-screen 2xl:max-h-[800px] my-8 flex items-center justify-between gap-4 flex-wrap lg:flex-nowrap">
         <Resources />

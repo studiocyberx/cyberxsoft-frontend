@@ -1,7 +1,7 @@
 import iotChallenges from "@/public/iot-challenges.png";
 import Image, { StaticImageData } from "next/image";
 import { Suspense } from "react";
-import Loading from "../loading";
+import Loading from "../../loading";
 
 interface solutionsProps {
   title?: string;

@@ -15,11 +15,7 @@ async function fetchData(url: string) {
   };
 
   try {
-    const response = await fetch(
-      url,
-
-      authToken ? headers : {}
-    );
+    const response = await fetch(url, authToken ? headers : {});
     const data = await response.json();
     return flattenAttributes(data);
   } catch (error) {

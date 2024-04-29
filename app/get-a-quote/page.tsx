@@ -1,7 +1,7 @@
 import BackgroundVideo from "@/components/BackgroundVideo";
 import GetInTouch from "@/components/GetInTouch";
 import { Metadata } from "next";
-import GetQuoteForm from "./GetQuoteForm";
+import GetQuoteForm from "./_components/GetQuoteForm";
 import { Suspense } from "react";
 import Loading from "../loading";
 
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "BigO - Get A Quote",
 };
 
-const page = () => {
+const GetAQuote = () => {
   return (
     <>
       <Suspense fallback={<Loading />}>
@@ -34,4 +34,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default GetAQuote;

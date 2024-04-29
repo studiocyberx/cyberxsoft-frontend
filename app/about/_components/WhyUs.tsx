@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Suspense } from "react";
-import Loading from "../loading";
+import Loading from "../../loading";
 
 interface whyUsProps {
   title: string;

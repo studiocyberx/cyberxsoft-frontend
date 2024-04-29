@@ -3,7 +3,7 @@ import iotHeader from "@/public/iot-header.png";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Metadata } from "next";
-import ChallengesSection from "./ChallengesSection";
+import ChallengesSection from "./_components/ChallengesSection";
 import ServicesCardsSection from "@/components/ServicesCardsSection";
 import BeyondSection from "@/components/BeyondSection";
 import GetInTouch from "@/components/GetInTouch";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Facilitate your business operations through BigO’s IoT services. Strengthen the speed and reduce error frequency with a substantial cost. Learn more!",
 };
 
-const page = () => {
+const InternetOfThings = () => {
   const faqItems = [
     {
       value: "question-1",
@@ -204,4 +204,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default InternetOfThings;

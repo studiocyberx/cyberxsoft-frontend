@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "BigO enables businesses to wield artificial intelligence with trust, confidence, and transparency through innovative and Responsible AI service.",
 };
 
-const page = () => {
+const ResponsibleAi = () => {
   const beyondSectionData = {
     title: "Explore Beyond Responsible AI Service: Full-Scale Digital Suite",
     description:
@@ -245,4 +245,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ResponsibleAi;

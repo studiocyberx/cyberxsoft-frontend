@@ -1,8 +1,8 @@
 import Image from "next/image";
 import bgImage from "@/public/about-intro.png";
 import GetInTouch from "@/components/GetInTouch";
-import CoreValues from "./CoreValues";
-import WhyUs from "./WhyUs";
+import CoreValues from "./_components/CoreValues";
+import WhyUs from "./_components/WhyUs";
 import { Metadata } from "next";
 import { Suspense } from "react";
 import Loading from "../loading";
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "BigO - About Us",
 };
 
-const page = () => {
+const AboutUs = () => {
   return (
     <>
       <Suspense fallback={<Loading />}>
@@ -99,4 +99,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default AboutUs;

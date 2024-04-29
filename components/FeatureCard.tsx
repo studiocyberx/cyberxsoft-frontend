@@ -7,7 +7,6 @@ import {
   CardTitle,
 } from "./ui/card";
 import Image from "next/image";
-import { getStrapiMedia } from "@/lib/utils";
 
 interface Feature {
   id: number;
@@ -20,8 +19,6 @@ interface Feature {
 }
 
 const FeatureCard = ({ feature }: { feature: Feature }) => {
-  const imageUrl = getStrapiMedia(feature.image.url);
-
   return (
     <Card
       key={feature.id}
@@ -32,7 +29,7 @@ const FeatureCard = ({ feature }: { feature: Feature }) => {
           width={150}
           height={150}
           alt={feature.image.alternativeText}
-          src={imageUrl ?? "https://placehold.co/150x150"}
+          src={feature.image.url ?? "https://placehold.co/150x150"}
         />
       </CardHeader>
       <CardContent className="p-0 flex justify-between flex-col gap-2">

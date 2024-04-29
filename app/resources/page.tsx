@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "BigO Resources is the hub for info on latest trends, upcoming transformations, developments in compliance, and success powered by our extensive IT services.",
 };
 
-const page = () => {
+const Resources = () => {
   return (
     <>
       <BackgroundVideo videoSrc="/resource-bg.mp4">
@@ -34,4 +34,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Resources;

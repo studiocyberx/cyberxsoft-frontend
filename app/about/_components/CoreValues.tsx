@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Suspense } from "react";
-import Loading from "../loading";
+import Loading from "../../loading";
 
 interface valuesDataProps {
   title: string;
@@ -16,13 +16,13 @@ const valuesData: valuesDataProps[] = [
     imageSrc: "/innovation.png",
   },
   {
-    title: "commitment",
+    title: "Commitment",
     description:
       "We are dedicated to helping businesses grow and progress like never before.",
     imageSrc: "/commitment.png",
   },
   {
-    title: "integrity",
+    title: "Integrity",
     description:
       "We are reliable, transparent, and genuine partners for our clients.",
     imageSrc: "/integrity.png",
