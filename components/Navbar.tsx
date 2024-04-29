@@ -1,7 +1,7 @@
 "use client";
-import { useActivePath } from "@/app/helper";
 import Link from "next/link";
 import DropdownMenu from "./DropdownMenu";
+import { useActivePath } from "@/app/helper";
 import { useEffect } from "react";
 
 interface NavItemProps {
@@ -44,19 +44,17 @@ const navItems: NavItemProps[] = [
 
 const Navbar = ({ fonts, isOpen }: { fonts: FontProps; isOpen: boolean }) => {
   const activepath = useActivePath();
-
   useEffect(() => {
-    const bodyElement = document.body;
     if (isOpen) {
-      bodyElement.classList.add("overflow-hidden");
+      document.body.classList.add("overflow-hidden");
     } else {
-      bodyElement.classList.remove("overflow-hidden");
+      document.body.classList.remove("overflow-hidden");
     }
   }, [isOpen]);
 
   return (
     <nav
-      className={`absolute md:block md:static top-0 left-0 bg-custom-purple-600/95 md:bg-none min-h-full z-40 px-10 md:p-0 py-8 ${
+      className={`absolute md:block md:static top-0 left-0 bg-custom-purple-600/95 md:bg-none min-h-full z-50 px-10 md:p-0 py-8 ${
         isOpen
           ? "flex items-center justify-start text-left animate-nav-slide overflow-hidden w-full"
           : "hidden"
