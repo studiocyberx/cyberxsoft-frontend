@@ -50,30 +50,20 @@ const Navbar = ({ fonts }: { fonts: FontProps }) => {
     setIsOpen(!isOpen);
   };
   const closeNav: () => void = () => setIsOpen(false);
-
   const activepath = useActivePath();
-
-  //Give body overflow hidden when the navbar is open on smaller screens
-  React.useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-  }, [isOpen]);
 
   return (
     <>
       <nav
-        className={`absolute md:block md:static top-0 left-0 bg-custom-purple-600/95 md:bg-none min-h-full z-50 px-10 md:p-0 py-8 ${
+        className={`absolute w-full min-h-full md:w-auto md:min-h-auto md:block md:static top-full left-0 bg-custom-purple-600 md:bg-none z-50 px-10 md:p-0 py-8 ${
           isOpen
-            ? "flex items-center justify-start text-left animate-nav-slide h-full w-full"
-            : "hidden"
+            ? "flex items-center justify-start text-left animate-nav-slide md:animate-none"
+            : "animate-nav-slide-reverse hidden md:animate-none"
         }`}
       >
         <ul
           className={`flex ${
-            isOpen ? "items-start" : "items-center"
+            isOpen && "items-start"
           } gap-4 flex-col md:flex-row`}
         >
           {navItems.map((navLink, index) => (

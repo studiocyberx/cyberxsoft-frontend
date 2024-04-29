@@ -26,7 +26,7 @@ const socialIcons: SocialIconProps[] = [
 
 export function Header() {
   return (
-    <header>
+    <header className="relative">
       <div className="flex items-center flex-wrap lg:flex-nowrap justify-center md:justify-between gap-4 md:gap-8 px-10 lg:px-20 py-4 md:py-1 bg-custom-purple-500">
         <div className="flex items-center gap-6 text-white">
           {socialIcons.map((icon) => (

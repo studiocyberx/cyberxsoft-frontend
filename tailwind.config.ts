@@ -86,11 +86,16 @@ const config = {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(0%)" },
         },
+        navSlideReverse: {
+          "0%": { transform: "translateX(0%)", display: "flex" },
+          "100%": { transform: "translateX(100%)", display: "none" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "nav-slide": "navSlide 0.75s ease",
+        "nav-slide-reverse": "navSlideReverse 0.75s ease",
       },
       backgroundImage: {
         "drop-pattern": "url(/drop-pattern.png)",
