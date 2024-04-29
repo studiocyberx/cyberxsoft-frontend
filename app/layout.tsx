@@ -2,15 +2,17 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
-import { getGlobalPageData, getGlobalPageMetaData } from "@/data/loaders";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { madeTommy, fontSans } from "@/app/fonts";
 
 //Get metadata from strapi
 export async function generateMetadata(): Promise<Metadata> {
-  const metaData = await getGlobalPageMetaData();
-  return { title: metaData?.title, description: metaData?.description };
+  return {
+    title: "BigO",
+    description:
+      "BigO is a responsible AI-driven Business Intelligence (BI) service provider, leveraging the power of technology to drive meaningful change for their clients.",
+  };
 }
 
 export default async function RootLayout({
@@ -18,8 +20,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const globalData = await getGlobalPageData();
-
   return (
     <html lang="en">
       <body
