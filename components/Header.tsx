@@ -59,7 +59,7 @@ export function Header() {
         </div>
       </div>
 
-      <div className="flex items-center gap-4 justify-between px-10 lg:px-20 py-1 bg-custom-purple-600">
+      <div className="flex items-center gap-4 justify-between px-10 lg:px-20 py-2 bg-custom-purple-600">
         <Logo />
         <Navbar fonts={bebas} />
       </div>

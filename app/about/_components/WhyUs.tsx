@@ -53,6 +53,7 @@ const WhyUs = () => {
           src="/about-why-us.png"
           alt=""
           fill={true}
+          sizes="(min-width: 808px) 50vw, 100vw"
           className="hidden md:block object-contain max-w-[350px] !right-0 !left-auto top-0 z-10"
         />
       </section>

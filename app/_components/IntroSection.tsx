@@ -3,9 +3,9 @@ import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 const IntroSection = () => {
   return (
     <Card className="bg-custom-purple-500 max-w-[95%] md:max-w-[70%] 2xl:max-w-[1400px] mx-auto px-4 py-8 mt-4 sm:-mt-10 lg:-mt-20 z-30 relative border-none">
-      <h6 className="text-custom-purple-50 font-bold text-lg uppercase">
+      <strong className="text-custom-purple-50 font-bold text-lg uppercase">
         Who are We?
-      </h6>
+      </strong>
       <CardTitle className="text-white uppercase text-3xl font-tommy font-normal">
         BigO Comprehensive Services: Transforming Data into{" "}
         <span className="font-bold">Insights</span>

@@ -4,7 +4,14 @@ import Link from "next/link";
 export function Logo() {
   return (
     <Link href="/">
-      <Image src="/bigo-logo.png" alt="" height={75} width={150} />
+      <Image
+        src="/bigo-logo.png"
+        alt=""
+        height={100}
+        width={350}
+        className="w-full h-auto"
+        priority={true}
+      />
     </Link>
   );
 }

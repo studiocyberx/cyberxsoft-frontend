@@ -31,7 +31,7 @@ const navItems: NavItemProps[] = [
   },
   // { title: "Industries", href: "/industries" },
   { title: "Resources", href: "/resources" },
-  { title: "Contact", href: "/contact" },
+  { title: "Insights", href: "/insights" },
   { title: "Careers", href: "/careers" },
 ];
 

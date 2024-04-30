@@ -171,11 +171,7 @@ const InternetOfThings = () => {
             </Button>
           </div>
 
-          <Image
-            src={iotHeader}
-            alt=""
-            className="h-full w-full mix-blend-multiply"
-          />
+          <Image src={iotHeader} alt="" className="mix-blend-multiply" />
         </section>
       </Suspense>
       <ChallengesSection />

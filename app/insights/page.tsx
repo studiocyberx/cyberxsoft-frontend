@@ -15,7 +15,7 @@ const Resources = () => {
       <BackgroundVideo videoSrc="/resource-bg.mp4">
         <div className="absolute top-0 bottom-0 w-full flex items-center justify-center px-8 sm:px-20 flex-col bg-custom-purple-700 bg-opacity-80 space-y-8">
           <h1 className="text-5xl md:text-6xl 2xl:text-7xl uppercase font-tommy text-white">
-            Resources
+            Insights
           </h1>
           <p className="text-white text-center text-xl 2xl:text-2xl max-w-2xl 2xl:max-w-3xl mx-auto">
             <span className="font-bold">All In One Place:</span> client success

@@ -14,12 +14,16 @@ const config = {
     container: {
       center: true,
       screens: {
-        "2xl": "1440px",
+        "2xl": "1500px",
       },
     },
     extend: {
       screens: {
+        sm: "640px",
         md: "800px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
