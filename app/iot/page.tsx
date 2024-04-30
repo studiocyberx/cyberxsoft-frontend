@@ -149,7 +149,7 @@ const InternetOfThings = () => {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20">
+        <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
           <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
             <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
               <span className="font-bold">Outcome-Driven</span> Internet of

@@ -351,8 +351,9 @@ const BusinessIntelligence = () => {
                 <Image
                   src={card.imageSrc}
                   alt={card.heading}
-                  width={150}
-                  height={150}
+                  width={100}
+                  height={100}
+                  className="w-[150px] h-[150px"
                 />
 
                 <h2 className="font-bold">{card.heading}</h2>

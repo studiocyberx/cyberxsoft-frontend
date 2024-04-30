@@ -5,7 +5,7 @@ import Link from "next/link";
 import biHeader from "@/public/bi-intro.png";
 import Image from "next/image";
 
-export const removeHyphens: (slug: string) => string = (slug: string) =>
+const removeHyphens: (slug: string) => string = (slug: string) =>
   slug.replace(/-/g, " ");
 
 const Service = ({ params }: { params: { slug: string } }) => {
