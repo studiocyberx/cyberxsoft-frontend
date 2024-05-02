@@ -6,7 +6,7 @@ import DropdownMenu from "./DropdownMenu";
 import { useActivePath } from "@/app/helper";
 import { MdClose, MdOutlineMenu } from "react-icons/md";
 
-interface NavItemProps {
+export interface NavItemProps {
   href: string;
   title: string;
   subItems?: {
@@ -15,7 +15,7 @@ interface NavItemProps {
   }[];
 }
 
-interface FontProps {
+export interface FontProps {
   className: string;
   style: {
     fontFamily: string;
@@ -25,26 +25,13 @@ interface FontProps {
   variable: string;
 }
 
-const navItems: NavItemProps[] = [
-  { title: "Home", href: "/" },
-  { title: "About Us", href: "/about" },
-  {
-    title: "Services",
-    href: "/services",
-    subItems: [
-      { title: "Business Intelligence", href: "/business-intelligence" },
-      { title: "Responsible AI", href: "/responsible-ai" },
-      { title: "Cloud", href: "/cloud" },
-      { title: "Internet Of Things (IOT)", href: "/iot" },
-    ],
-  },
-  // { title: "Industries", href: "/industries" },
-  { title: "Insights", href: "/insights" },
-  { title: "Contact", href: "/contact" },
-  // { title: "Careers", href: "/careers" },
-];
-
-const Navbar = ({ fonts }: { fonts: FontProps }) => {
+const Navbar = ({
+  fonts,
+  navItems,
+}: {
+  fonts: FontProps;
+  navItems: NavItemProps[];
+}) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const toggleOpen: () => void = () => {
     setIsOpen(!isOpen);

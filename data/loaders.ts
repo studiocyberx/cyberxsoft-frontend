@@ -71,3 +71,37 @@ export async function getGlobalPageMetaData() {
 
   return await fetchData(url.href);
 }
+
+export async function getSubServicePage() {
+  noStore();
+  const url = new URL("/api/sub-service-pages", baseUrl);
+  url.search = qs.stringify({
+    populate: {
+      cardsdata: {
+        populate: "*",
+      },
+      introImage: {
+        fields: ["name", "url", "alternativeText"],
+      },
+    },
+  });
+
+  return await fetchData(url.href);
+}
+
+export async function getSubServiceBySlug(slug: string) {
+  noStore();
+  const url = new URL(`/api/sub-service-pages/${slug}`, baseUrl);
+  url.search = qs.stringify({
+    populate: {
+      cardsdata: {
+        populate: "*",
+      },
+      introImage: {
+        fields: ["name", "url", "alternativeText"],
+      },
+    },
+  });
+
+  return await fetchData(url.href);
+}

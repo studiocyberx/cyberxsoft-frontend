@@ -26,7 +26,7 @@ export default async function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "bg-background font-sans antialiased",
+          "bg-background font-sans antialiased overflow-x-hidden",
           fontSans.variable,
           madeTommy.variable
         )}

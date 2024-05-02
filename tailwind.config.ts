@@ -94,12 +94,17 @@ const config = {
           "0%": { transform: "translateX(0%)", display: "flex" },
           "100%": { transform: "translateX(100%)", display: "none" },
         },
+        lineWidth: {
+          "0%": { width: "0" },
+          "100%": { width: "100%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "nav-slide": "navSlide 0.75s ease",
         "nav-slide-reverse": "navSlideReverse 0.75s ease",
+        "line-width": "lineWidth 1s ease 0.25s",
       },
       backgroundImage: {
         "drop-pattern": "url(/drop-pattern.png)",

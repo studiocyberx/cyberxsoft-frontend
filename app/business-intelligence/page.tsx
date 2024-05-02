@@ -379,6 +379,7 @@ const BusinessIntelligence = () => {
       </Suspense>
 
       <BeyondSection data={beyondSectionData} servicesList={servicesList} />
+
       <section className="container px-6 sm:px-8 flex items-center justify-between gap-4 xl:h-screen xl:max-h-[800px]">
         <Faqs faqItems={faqItems} />
         <Image
