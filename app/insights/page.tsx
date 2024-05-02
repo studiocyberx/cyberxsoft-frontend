@@ -1,7 +1,8 @@
 import BackgroundVideo from "@/components/BackgroundVideo";
 import GetInTouch from "@/components/GetInTouch";
-import ResourceSection from "./ResourceSection";
+import ResourceSection from "./_components/ResourceSection";
 import { Metadata } from "next";
+import FilterAccordion from "./_components/FilterAccordion";
 
 export const metadata: Metadata = {
   title: "Resources Hub",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
     "BigO Resources is the hub for info on latest trends, upcoming transformations, developments in compliance, and success powered by our extensive IT services.",
 };
 
-const Resources = () => {
+const Resources = async () => {
   return (
     <>
       <BackgroundVideo
@@ -31,6 +32,7 @@ const Resources = () => {
           </p>
         </div>
       </BackgroundVideo>
+      <FilterAccordion />
       <ResourceSection />
       <GetInTouch />
     </>
