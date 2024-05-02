@@ -22,7 +22,7 @@ const FeatureCard = ({ feature }: { feature: Feature }) => {
   return (
     <Card
       key={feature.id}
-      className="space-y-4 px-6 py-4 bg-custom-purple-500 border-none z-20"
+      className="space-y-4 px-6 py-4 bg-custom-purple-500 border-none z-20 flex flex-col h-full"
     >
       <CardHeader className="items-center p-0 lg:-mt-14">
         <Image
@@ -32,11 +32,11 @@ const FeatureCard = ({ feature }: { feature: Feature }) => {
           src={feature.image.url ?? "https://placehold.co/150x150"}
         />
       </CardHeader>
-      <CardContent className="p-0 flex justify-between flex-col gap-2">
-        <CardTitle className="mb-4 text-2xl font-bold text-white">
+      <CardContent className="p-0 space-y-4 h-full">
+        <CardTitle className="text-2xl font-bold text-white">
           {feature.heading}
         </CardTitle>
-        <CardDescription className="text-gray-100">
+        <CardDescription className="text-white">
           {feature.subHeading}
         </CardDescription>
       </CardContent>

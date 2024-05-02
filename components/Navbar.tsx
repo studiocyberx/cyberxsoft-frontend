@@ -63,7 +63,11 @@ const Navbar = ({
               }`}
             >
               {navLink.subItems ? (
-                <DropdownMenu subItems={navLink.subItems} closeNav={closeNav} />
+                <DropdownMenu
+                  subItems={navLink.subItems}
+                  closeNav={closeNav}
+                  title={navLink.title}
+                />
               ) : (
                 <Link href={navLink.href} onClick={closeNav}>
                   {navLink.title}

@@ -7,6 +7,7 @@ import Faqs from "@/components/Faqs";
 import Resources from "@/components/Resources";
 import { Separator } from "@/components/ui/separator";
 import GetInTouch from "@/components/GetInTouch";
+import Image from "next/image";
 
 const featuresData = [
   {
@@ -95,9 +96,15 @@ const Home = async () => {
       <FeatureSection data={featuresData} />
       <CarouselSection />
       <section className="container px-6 sm:px-8 lg:h-screen 2xl:max-h-[800px] my-8 flex items-center justify-between gap-4 flex-wrap lg:flex-nowrap">
-        <Resources />
+        <Image
+          src="/faq-illustration.png"
+          alt="faq-illustration"
+          width={800}
+          height={720}
+          className="hidden md:block"
+        />
         <Separator
-          className="bg-custom-purple-300 hidden sm:block h-[1px] w-full lg:h-full lg:w-[1.5px]"
+          className="bg-custom-purple-300 hidden md:block h-[1px] w-full lg:h-full lg:w-[1.5px]"
           orientation="vertical"
         />
         <Faqs faqItems={faqItems} />

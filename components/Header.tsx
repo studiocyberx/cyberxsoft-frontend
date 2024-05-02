@@ -27,9 +27,9 @@ const socialIcons: SocialIconProps[] = [
 export function Header() {
   const navItems = [
     { title: "Home", href: "/" },
-    { title: "About Us", href: "/about" },
+    { title: "Who we are", href: "/about" },
     {
-      title: "Services",
+      title: "What we do",
       href: "/services",
       subItems: [
         { title: "Business Intelligence", href: "/business-intelligence" },
@@ -39,13 +39,13 @@ export function Header() {
       ],
     },
     // { title: "Industries", href: "/industries" },
-    { title: "Insights", href: "/insights" },
+    { title: "What we think", href: "/insights" },
     { title: "Contact", href: "/contact" },
     // { title: "Careers", href: "/careers" },
   ];
   return (
     <header className="relative">
-      <div className="flex items-center flex-wrap lg:flex-nowrap justify-center md:justify-between gap-4 md:gap-8 px-10 lg:px-20 py-4 md:py-1 bg-custom-purple-500">
+      <div className="hidden sm:flex items-center flex-wrap lg:flex-nowrap justify-center md:justify-between gap-4 md:gap-8 px-10 lg:px-20 py-4 md:py-1 bg-custom-purple-500">
         <div className="flex items-center gap-6 text-white">
           {socialIcons.map((icon) => (
             <Link

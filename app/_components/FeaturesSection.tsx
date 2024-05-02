@@ -43,7 +43,7 @@ export function FeatureSection({ data }: Readonly<FeatureSectionProps>) {
           </p>
         </div>
         <AnimatedCards>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 pt-12 max-w-[1400px] mx-auto px-4 sm:px-5 md:px-10 ">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 pt-12 max-w-[1400px] mx-auto px-4 sm:px-5 md:px-10">
             {data.map((feature) => (
               <FeatureCard feature={feature} key={feature.id} />
             ))}

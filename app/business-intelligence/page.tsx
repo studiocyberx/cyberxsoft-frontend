@@ -385,8 +385,8 @@ const BusinessIntelligence = () => {
         <Image
           src="/faq-illustration.png"
           alt="faq-illustration"
-          width={550}
-          height={550}
+          width={800}
+          height={720}
           className="hidden md:block"
         />
       </section>

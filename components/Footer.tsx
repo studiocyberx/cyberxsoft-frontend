@@ -18,21 +18,11 @@ interface NavItemProps {
 
 const navItems: NavItemProps[] = [
   { title: "Home", href: "/" },
-  { title: "About Us", href: "/about" },
-  {
-    title: "Services",
-    href: "/services",
-    subItems: [
-      { title: "Business Intelligence", href: "business-intelligence" },
-      { title: "Responsible AI", href: "responsible-ai" },
-      { title: "Cloud", href: "cloud" },
-      { title: "Internet Of Things (IOT)", href: "iot" },
-    ],
-  },
+  { title: "Who we are", href: "/about" },
   // { title: "Industries", href: "/industries" },
-  { title: "Resources", href: "/resources" },
-  { title: "Insights", href: "/insights" },
-  { title: "Careers", href: "/careers" },
+  { title: "What we think", href: "/insights" },
+  { title: "Contact", href: "/contact" },
+  // { title: "Careers", href: "/careers" },
 ];
 
 const socialLinks = [

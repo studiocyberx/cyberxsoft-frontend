@@ -19,16 +19,18 @@ interface SubItemProps {
 const DropdownMenu = ({
   subItems,
   closeNav,
+  title,
 }: {
   subItems: SubItemProps[];
   closeNav: () => void;
+  title: string;
 }) => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem className="rounded-none">
           <NavigationMenuTrigger className="text-xl p-0 bg-transparent hover:bg-transparent data-[active]:bg-transparent focus:text-gray-400 data-[state=open]:bg-transparent text-gray-400 hover:text-white h-0">
-            Services
+            {title}
           </NavigationMenuTrigger>
           <NavigationMenuContent className="p-4">
             <ul className="space-y-2 w-full min-w-[175px]">

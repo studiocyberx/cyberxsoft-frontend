@@ -12,7 +12,10 @@ export const metadata: Metadata = {
 const Resources = () => {
   return (
     <>
-      <BackgroundVideo videoSrc="/resource-bg.mp4">
+      <BackgroundVideo
+        videoSrc="/resource-bg.mp4"
+        height="h-screen md:h-[500px]"
+      >
         <div className="absolute top-0 bottom-0 w-full flex items-center justify-center px-8 sm:px-20 flex-col bg-custom-purple-700 bg-opacity-80 space-y-8">
           <h1 className="text-5xl md:text-6xl 2xl:text-7xl uppercase font-tommy text-white">
             Insights
