@@ -1,6 +1,5 @@
 import Loading from "@/app/loading";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
-import { Suspense } from "react";
 
 interface fiveCardsSectionCotentProps {
   title: string;

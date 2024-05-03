@@ -3,6 +3,8 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import GetInTouchForm from "./GetInTouchForm";
 import Link from "next/link";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const GetInTouch = () => {
   return (
@@ -16,7 +18,7 @@ const GetInTouch = () => {
       <div className="container px-0 mt-8 flex items-start justify-between gap-8 md:gap-20  flex-wrap md:flex-nowrap">
         <GetInTouchForm />
 
-        <div className="space-y-4">
+        <div className="space-y-4 w-full">
           <div className="flex items-center gap-4">
             <span className="p-2 bg-custom-purple-300/50 rounded-md">
               <MdEmail size={25} className="text-white" />
@@ -62,6 +64,16 @@ const GetInTouch = () => {
                 First Floor, Plaza #54, Sector F, DHA Phase 1, Rawalpindi
               </Link>
             </div>
+          </div>
+
+          <div className="flex items-center pt-4 max-w-lg">
+            <Input
+              className="rounded-l-sm rounded-r-none text-black"
+              placeholder="Subscribe To Newsletter"
+            />
+            <Button className="rounded-r-sm rounded-l-none bg-custom-purple-300/50 hover:bg-custom-purple-300 px-8">
+              Subscribe
+            </Button>
           </div>
         </div>
       </div>

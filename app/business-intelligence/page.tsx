@@ -1,16 +1,16 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import Link from "next/link";
-import biHeader from "@/public/bi-intro.png";
-import BeyondSection from "@/components/BeyondSection";
-import Faqs from "@/components/Faqs";
-import GetInTouch from "@/components/GetInTouch";
-import TooltipSteps from "@/components/TooltipSteps";
 import { Suspense } from "react";
-import Loading from "../loading";
 import { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import Loading from "../loading";
+import Faqs from "@/components/Faqs";
+import biHeader from "@/public/bi-intro.png";
+import { Button } from "@/components/ui/button";
+import GetInTouch from "@/components/GetInTouch";
 import ScrollCards from "@/components/ScrollCards";
-import VisualCards from "./_components/VisualCards";
+import { MapDialog } from "@/components/MapDialog";
+import TooltipSteps from "@/components/TooltipSteps";
+import BeyondSection from "@/components/BeyondSection";
 
 export const metadata: Metadata = {
   title: "Make Precise Decisions with Business Intelligence Services",
@@ -177,7 +177,7 @@ const BusinessIntelligence = () => {
   ];
 
   const visualCards = [
-    { heading: "Symbol Map", imageSrc: "/symbol-map.png" },
+    { heading: "Radar Chart", imageSrc: "/symbol-map.png" },
     {
       heading: "Line Chart",
       imageSrc: "/line-chart.png",
@@ -195,11 +195,7 @@ const BusinessIntelligence = () => {
       imageSrc: "/donut-chart.png",
     },
     {
-      heading: "Heatmaps",
-      imageSrc: "/heat-map.png",
-    },
-    {
-      heading: "Funnel Charts",
+      heading: "Polar Chart",
       imageSrc: "/funnel-chart.png",
     },
     {
@@ -210,34 +206,38 @@ const BusinessIntelligence = () => {
       heading: "Scatterplots",
       imageSrc: "/scatterplot.png",
     },
-    {
-      heading: "Sparklines",
-      imageSrc: "/sparkline.png",
-    },
-    {
-      heading: "Matrices",
-      imageSrc: "/matrix.png",
-    },
-    {
-      heading: "Pivot Tables",
-      imageSrc: "/pivot-table.png",
-    },
-    {
-      heading: "Guage Charts",
-      imageSrc: "/gauge-chart.png",
-    },
-    {
-      heading: "Waterfall Charts",
-      imageSrc: "/waterfall-chart.png",
-    },
-    {
-      heading: "Card Charts",
-      imageSrc: "/card-chart.png",
-    },
-    {
-      heading: "Custom Charts",
-      imageSrc: "/thermometer-chart.png",
-    },
+    // {
+    //   heading: "Heatmaps",
+    //   imageSrc: "/heat-map.png",
+    // },
+    // {
+    //   heading: "Sparklines",
+    //   imageSrc: "/sparkline.png",
+    // },
+    // {
+    //   heading: "Matrices",
+    //   imageSrc: "/matrix.png",
+    // },
+    // {
+    //   heading: "Pivot Tables",
+    //   imageSrc: "/pivot-table.png",
+    // },
+    // {
+    //   heading: "Guage Charts",
+    //   imageSrc: "/gauge-chart.png",
+    // },
+    // {
+    //   heading: "Waterfall Charts",
+    //   imageSrc: "/waterfall-chart.png",
+    // },
+    // {
+    //   heading: "Card Charts",
+    //   imageSrc: "/card-chart.png",
+    // },
+    // {
+    //   heading: "Custom Charts",
+    //   imageSrc: "/thermometer-chart.png",
+    // },
   ];
 
   return (
@@ -343,7 +343,21 @@ const BusinessIntelligence = () => {
             business and strengthen data management.
           </p>
 
-          <VisualCards visualCards={visualCards} />
+          <div className="grid items-start grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+            {visualCards.map((card) => (
+              <div
+                className="flex flex-col items-center text-center justify-center gap-2 cursor-pointer"
+                key={card.heading}
+              >
+                <MapDialog
+                  src={card.imageSrc}
+                  alt={card.heading}
+                  heading={card.heading}
+                  chartType={card.heading.replace(" ", "").toLowerCase()}
+                />
+              </div>
+            ))}
+          </div>
         </section>
       </Suspense>
       <Suspense fallback={<Loading />}>
@@ -369,8 +383,8 @@ const BusinessIntelligence = () => {
         <Image
           src="/faq-illustration.png"
           alt="faq-illustration"
-          width={800}
-          height={720}
+          width={550}
+          height={550}
           className="hidden md:block"
         />
       </section>
