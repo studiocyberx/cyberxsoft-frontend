@@ -40,10 +40,9 @@ const FilterAccordion = () => {
               {item.list.map((list, index) => (
                 <Button
                   key={index}
-                  asChild
-                  className="rounded-sm capitalize bg-transparent text-primary hover:bg-gray-800 hover:text-primary-foreground border-gray-800 border-2"
+                  className="rounded-sm capitalize bg-transparent text-primary hover:bg-gray-800 hover:text-primary-foreground border-gray-800 border-2 active:bg-gray-800"
                 >
-                  <Link href="/insights">{list}</Link>
+                  {list}
                 </Button>
               ))}
             </AccordionContent>
