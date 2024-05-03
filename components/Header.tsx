@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa6";
 import Navbar from "./Navbar";
 import { bebas } from "@/app/fonts";
+import Sidebar from "./Sidebar";
 
 interface SocialIconProps {
   id: number;
@@ -80,6 +81,7 @@ export function Header() {
       <div className="flex items-center gap-4 justify-between px-10 lg:px-20 py-2 bg-custom-purple-600">
         <Logo />
         <Navbar fonts={bebas} navItems={navItems} />
+        <Sidebar fonts={bebas} navItems={navItems} />
       </div>
     </header>
   );

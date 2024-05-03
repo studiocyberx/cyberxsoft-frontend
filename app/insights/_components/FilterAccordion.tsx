@@ -25,7 +25,7 @@ const FilterAccordion = () => {
       <Accordion
         type="single"
         collapsible
-        className="grid grid-cols-1 md:grid-cols-3"
+        className="grid grid-cols-1 sm:grid-cols-3"
       >
         {accordionItems.map((item, index) => (
           <AccordionItem value={item.category} className="px-8" key={index}>
