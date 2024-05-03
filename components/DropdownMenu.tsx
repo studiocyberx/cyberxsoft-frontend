@@ -8,6 +8,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 
@@ -19,9 +20,11 @@ interface SubItemProps {
 const DropdownMenu = ({
   subItems,
   title,
+  onClose,
 }: {
   subItems: SubItemProps[];
   title: string;
+  onClose?: () => void;
 }) => {
   return (
     <NavigationMenu>
@@ -34,14 +37,13 @@ const DropdownMenu = ({
             <ul className="space-y-2 w-full min-w-[175px]">
               {subItems.map((item, index) => (
                 <li key={index}>
-                  <NavigationMenuLink asChild>
-                    <Link
-                      href={item.href}
-                      className="hover:text-custom-purple-400 transition-all duration-300"
+                  <Link href={item.href} onClick={onClose} className="p-0">
+                    <NavigationMenuLink
+                      className={`${navigationMenuTriggerStyle()} hover:text-custom-purple-400 transition-all duration-300 !p-0 text-xl hover:bg-transparent focus:bg-transparent`}
                     >
                       {item.title}
-                    </Link>
-                  </NavigationMenuLink>
+                    </NavigationMenuLink>
+                  </Link>
                 </li>
               ))}
             </ul>

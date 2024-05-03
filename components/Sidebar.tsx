@@ -20,9 +20,11 @@ const Sidebar = ({
   fonts: FontProps;
   navItems: NavItemProps[];
 }) => {
+  const [sheetOpen, setSheetOpen] = React.useState(false);
+
   return (
     <div className="block md:hidden">
-      <Sheet>
+      <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
         <SheetTrigger>
           <MdOutlineMenu className="text-2xl text-white block md:hidden z-50 cursor-pointer" />
         </SheetTrigger>
@@ -45,9 +47,15 @@ const Sidebar = ({
                     <DropdownMenu
                       subItems={navLink.subItems}
                       title={navLink.title}
+                      onClose={() => setSheetOpen(false)}
                     />
                   ) : (
-                    <Link href={navLink.href}>{navLink.title}</Link>
+                    <Link
+                      href={navLink.href}
+                      onClick={() => setSheetOpen(false)}
+                    >
+                      {navLink.title}
+                    </Link>
                   )}
                 </li>
               ))}
