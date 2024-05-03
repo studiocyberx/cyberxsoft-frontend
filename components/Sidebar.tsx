@@ -23,10 +23,10 @@ const Sidebar = ({
   const [sheetOpen, setSheetOpen] = React.useState(false);
 
   return (
-    <div className="block md:hidden">
+    <div className="flex  md:hidden">
       <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
         <SheetTrigger>
-          <MdOutlineMenu className="text-2xl text-white block md:hidden z-50 cursor-pointer" />
+          <MdOutlineMenu className="text-2xl text-white block cursor-pointer" />
         </SheetTrigger>
 
         <SheetContent className="bg-custom-purple-500 border-none">
