@@ -10,6 +10,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+
 import Link from "next/link";
 
 interface SubItemProps {
@@ -30,7 +31,7 @@ const DropdownMenu = ({
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem className="rounded-none">
-          <NavigationMenuTrigger className="text-xl p-0 bg-transparent hover:bg-transparent data-[active]:bg-transparent focus:text-white md:focus:text-gray-400 data-[state=open]:bg-transparent text-white md:text-gray-400 hover:text-white h-0">
+          <NavigationMenuTrigger className="text-xl p-0 bg-transparent hover:bg-transparent data-[active]:bg-transparent focus:text-white md:focus:text-gray-400 data-[state=open]:bg-transparent text-white md:text-gray-400 md:hover:text-white h-0">
             {title}
           </NavigationMenuTrigger>
           <NavigationMenuContent className="p-4">

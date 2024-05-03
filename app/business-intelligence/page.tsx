@@ -10,6 +10,7 @@ import { Suspense } from "react";
 import Loading from "../loading";
 import { Metadata } from "next";
 import ScrollCards from "@/components/ScrollCards";
+import VisualCards from "./_components/VisualCards";
 
 export const metadata: Metadata = {
   title: "Make Precise Decisions with Business Intelligence Services",
@@ -342,24 +343,7 @@ const BusinessIntelligence = () => {
             business and strengthen data management.
           </p>
 
-          <div className="grid items-start grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-            {visualCards.map((card) => (
-              <div
-                className="flex flex-col items-center text-center justify-center gap-2 cursor-pointer"
-                key={card.heading}
-              >
-                <Image
-                  src={card.imageSrc}
-                  alt={card.heading}
-                  width={100}
-                  height={100}
-                  className="w-[150px] h-[150px"
-                />
-
-                <h2 className="font-bold">{card.heading}</h2>
-              </div>
-            ))}
-          </div>
+          <VisualCards visualCards={visualCards} />
         </section>
       </Suspense>
       <Suspense fallback={<Loading />}>
