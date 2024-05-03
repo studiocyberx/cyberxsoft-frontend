@@ -25,6 +25,9 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/icon.png" />
+      </head>
       <body
         className={cn(
           "bg-background font-sans antialiased overflow-x-hidden",

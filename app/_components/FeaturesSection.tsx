@@ -50,13 +50,13 @@ export function FeatureSection({ data }: Readonly<FeatureSectionProps>) {
           </div>
         </AnimatedCards>
 
-        <Image
+        {/* <Image
           fill={true}
           src="/bg-globe.png"
           alt=""
           sizes="(min-width: 808px) 50vw, 100vw"
-          className="hidden md:block  !left-auto !right-0 !-bottom-1/2 !w-auto"
-        />
+          className="hidden !left-auto !right-0 !-bottom-1/2 !w-auto"
+        /> */}
       </section>
 
       <section className="flex items-center justify-center flex-col py-8 px-4 sm:px-5 md:px-10 relative">

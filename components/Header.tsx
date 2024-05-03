@@ -41,7 +41,7 @@ export function Header() {
     },
     // { title: "Industries", href: "/industries" },
     { title: "What we think", href: "/insights" },
-    { title: "Contact", href: "/contact" },
+    { title: "Get in touch", href: "/contact" },
     // { title: "Careers", href: "/careers" },
   ];
   return (
