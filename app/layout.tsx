@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { madeTommy, fontSans } from "@/app/fonts";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { ScrollToTopButton } from "@/components/ScrollToTop";
 
 //Get metadata from strapi
 export async function generateMetadata(): Promise<Metadata> {
@@ -35,6 +36,8 @@ export default async function RootLayout({
           <Header />
           <Suspense fallback={<Loading />}>{children}</Suspense>
           <Footer />
+
+          <ScrollToTopButton />
         </ThemeProvider>
       </body>
     </html>

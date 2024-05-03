@@ -1,13 +1,11 @@
-import { FeatureSection } from "@/app/_components/FeaturesSection";
-import { HeroSection } from "@/app/_components/HeroSection";
-import { getHomePageData } from "@/data/loaders";
-import IntroSection from "@/app/_components/IntroSection";
-import CarouselSection from "@/app/_components/CarouselSection";
-import Faqs from "@/components/Faqs";
-import Resources from "@/components/Resources";
-import { Separator } from "@/components/ui/separator";
-import GetInTouch from "@/components/GetInTouch";
 import Image from "next/image";
+import Faqs from "@/components/Faqs";
+import GetInTouch from "@/components/GetInTouch";
+import { Separator } from "@/components/ui/separator";
+import IntroSection from "@/app/_components/IntroSection";
+import { HeroSection } from "@/app/_components/HeroSection";
+import { FeatureSection } from "@/app/_components/FeaturesSection";
+import CarouselSection from "@/app/_components/CarouselSection";
 
 const featuresData = [
   {
