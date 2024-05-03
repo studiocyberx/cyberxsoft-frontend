@@ -76,6 +76,9 @@ export function Footer() {
         <li className="text-gray-400 hover:text-white">
           <Link href="/">Cookies Settings</Link>
         </li>
+        <li className="text-gray-400 hover:text-white">
+          <Link href="/">Sitemap</Link>
+        </li>
       </ul>
     </footer>
   );
