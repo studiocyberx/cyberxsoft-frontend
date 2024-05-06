@@ -1,7 +1,7 @@
 "use client";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import Image from "next/image";
-import DynamicChart from "@/app/business-intelligence/dynamic_chart/page";
+import DynamicChart from "@/app/business-intelligence/_components/DynamicChart";
 
 type ChartType =
   | "bar"
@@ -11,8 +11,8 @@ type ChartType =
   | "connectivitycharts"
   | "scatterplots"
   | "polarchart"
-  | "radarchart"
-  | string;
+  | "radarchart";
+
 export function MapDialog({
   alt,
   src,

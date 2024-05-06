@@ -11,6 +11,7 @@ import ScrollCards from "@/components/ScrollCards";
 import { MapDialog } from "@/components/MapDialog";
 import TooltipSteps from "@/components/TooltipSteps";
 import BeyondSection from "@/components/BeyondSection";
+import { ChartType } from "./_components/DynamicChart";
 
 export const metadata: Metadata = {
   title: "Make Precise Decisions with Business Intelligence Services",
@@ -344,19 +345,25 @@ const BusinessIntelligence = () => {
           </p>
 
           <div className="grid items-start grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-            {visualCards.map((card) => (
-              <div
-                className="flex flex-col items-center text-center justify-center gap-2 cursor-pointer"
-                key={card.heading}
-              >
-                <MapDialog
-                  src={card.imageSrc}
-                  alt={card.heading}
-                  heading={card.heading}
-                  chartType={card.heading.replace(" ", "").toLowerCase()}
-                />
-              </div>
-            ))}
+            {visualCards.map((card, index) => {
+              let chartData = card.heading.replace(" ", "").toLowerCase();
+
+              return (
+                <div
+                  className="flex flex-col items-center text-center justify-center gap-2 cursor-pointer"
+                  key={index}
+                >
+                  <MapDialog
+                    src={card.imageSrc}
+                    alt={card.heading}
+                    heading={card.heading}
+                    chartType={
+                      card.heading.replace(" ", "").toLowerCase() as ChartType
+                    }
+                  />
+                </div>
+              );
+            })}
           </div>
         </section>
       </Suspense>

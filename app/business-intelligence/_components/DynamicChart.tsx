@@ -1,15 +1,15 @@
 import React from "react";
-import BarChart from "@/app/business-intelligence/charts/barchart";
-import LineChart from "@/app/business-intelligence/charts/linechart";
-import PieChart from "@/app/business-intelligence/charts/piechart";
-import DoughnutChart from "@/app/business-intelligence/charts/dounut";
-import ScatterChart from "@/app/business-intelligence/charts/scatter";
-import ConnectivityChart from "@/app/business-intelligence/charts/bubble";
-import RadarChart from "@/app/business-intelligence/charts/raddarchart";
-import { UserData } from "../charts/data";
-import PolarAreaChart from "@/app/business-intelligence/charts/polarareachart";
+import { UserData } from "./charts/data";
+import BarChart from "@/app/business-intelligence/_components/charts/barchart";
+import LineChart from "@/app/business-intelligence/_components/charts/linechart";
+import PieChart from "@/app/business-intelligence/_components/charts/piechart";
+import DoughnutChart from "@/app/business-intelligence/_components/charts/dounut";
+import ScatterChart from "@/app/business-intelligence/_components/charts/scatter";
+import ConnectivityChart from "@/app/business-intelligence/_components/charts/bubble";
+import RadarChart from "@/app/business-intelligence/_components/charts/raddarchart";
+import PolarAreaChart from "@/app/business-intelligence/_components/charts/polarareachart";
 
-type ChartType =
+export type ChartType =
   | "bar"
   | "linechart"
   | "piecharts"
@@ -17,12 +17,12 @@ type ChartType =
   | "connectivitycharts"
   | "scatterplots"
   | "polarchart"
-  | "radarchart"
-  | string;
-interface Props {
+  | "radarchart";
+
+interface ChartProps {
   chartType: ChartType;
 }
-const DynamicChart: React.FC<Props> = ({ chartType }) => {
+const DynamicChart: React.FC<ChartProps> = ({ chartType }: ChartProps) => {
   const chartData = {
     labels: UserData.map((data) => data.year),
     datasets: [

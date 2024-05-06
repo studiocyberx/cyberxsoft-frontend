@@ -43,9 +43,9 @@ const ScrollCards = ({
     >
       <CarouselContent className="-ml-0">
         {/* <div className="flex w-max space-x-4"> */}
-        {scrollCardsData.map((card) => (
+        {scrollCardsData.map((card, index) => (
           <>
-            <CarouselItem key={card.title} className="pl-1 lg:basis-1/3">
+            <CarouselItem key={index} className="pl-1 lg:basis-1/3">
               {card.imageSrc ? (
                 <>
                   <Card className="shrink-0 bg-custom-purple-400 overflow-hidden rounded-xl h-full">
