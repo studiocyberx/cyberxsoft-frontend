@@ -50,10 +50,8 @@ const Service = async ({ params }: { params: { slug: string } }) => {
               {removeHyphens(params.slug)}
             </h1>
             <p className="text-lg md:text-xl text-secondary">
-              We help transform your decentralized operations into a cohesive,
-              cutting-edge data visualization system that enhances everyday
-              operations, KPI implementation, and goal accomplishment. Customize
-              your BI systems as per your specific requirements.
+              Where Agility and Efficiency Meets Innovation to Propel Your
+              Business Beyond Boundaries for Success
             </p>
 
             <Button
@@ -97,8 +95,8 @@ const Service = async ({ params }: { params: { slug: string } }) => {
         <Image
           src="/faq-illustration.png"
           alt="faq-illustration"
-          width={550}
-          height={550}
+          width={800}
+          height={720}
           className="hidden md:block"
         />
       </section>

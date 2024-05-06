@@ -42,7 +42,7 @@ const ServicesCardsSection = ({
                 />
               ) : null}
               <div className="space-y-3">
-                <h3 className="text-white font-bold uppercase text-xl">
+                <h3 className="text-white font-bold inline-block uppercase text-xl relative after:absolute after:content-[''] after:w-full after:h-1 after:block after:bg-custom-purple-400 after:top-full after:right-0  after:left-0 after:animate-line-width">
                   {service.title}
                 </h3>
                 <p className="text-white">{service.description}</p>

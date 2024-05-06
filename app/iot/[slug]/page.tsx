@@ -50,10 +50,10 @@ const Service = async ({ params }: { params: { slug: string } }) => {
               {removeHyphens(params.slug)}
             </h1>
             <p className="text-lg md:text-xl text-secondary">
-              We help transform your decentralized operations into a cohesive,
-              cutting-edge data visualization system that enhances everyday
-              operations, KPI implementation, and goal accomplishment. Customize
-              your BI systems as per your specific requirements.
+              At BigO, the core motive of our IoT services is to reveal
+              analytical insights about operations, streamline work processes,
+              minimize potential challenges, and empower businesses to make
+              informed, data-driven decisions.
             </p>
 
             <Button
@@ -97,8 +97,8 @@ const Service = async ({ params }: { params: { slug: string } }) => {
         <Image
           src="/faq-illustration.png"
           alt="faq-illustration"
-          width={550}
-          height={550}
+          width={800}
+          height={720}
           className="hidden md:block"
         />
       </section>

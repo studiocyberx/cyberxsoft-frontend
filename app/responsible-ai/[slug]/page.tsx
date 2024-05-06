@@ -11,8 +11,6 @@ const removeHyphens: (slug: string) => string = (slug: string) =>
   slug.replace(/-/g, " ");
 
 const Service = async ({ params }: { params: { slug: string } }) => {
-  const { slug } = params;
-
   const faqItems = [
     {
       value: "question-1",
@@ -49,13 +47,11 @@ const Service = async ({ params }: { params: { slug: string } }) => {
         <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
           <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
             <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
-              {removeHyphens(slug)}
+              {removeHyphens(params.slug)}
             </h1>
             <p className="text-lg md:text-xl text-secondary">
-              We help transform your decentralized operations into a cohesive,
-              cutting-edge data visualization system that enhances everyday
-              operations, KPI implementation, and goal accomplishment. Customize
-              your BI systems as per your specific requirements.
+              Develop and Deploy AI Capabilities that are Compliant and Inspire
+              Confidence and Responsibility
             </p>
 
             <Button
@@ -99,8 +95,8 @@ const Service = async ({ params }: { params: { slug: string } }) => {
         <Image
           src="/faq-illustration.png"
           alt="faq-illustration"
-          width={550}
-          height={550}
+          width={800}
+          height={720}
           className="hidden md:block"
         />
       </section>

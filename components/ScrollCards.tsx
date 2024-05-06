@@ -1,6 +1,5 @@
 "use client";
 
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import {
   Card,
   CardContent,
@@ -44,44 +43,38 @@ const ScrollCards = ({
       <CarouselContent className="-ml-0">
         {/* <div className="flex w-max space-x-4"> */}
         {scrollCardsData.map((card, index) => (
-          <>
-            <CarouselItem key={index} className="pl-1 lg:basis-1/3">
-              {card.imageSrc ? (
-                <>
-                  <Card className="shrink-0 bg-custom-purple-400 overflow-hidden rounded-xl h-full">
-                    <div className="overflow-hidden rounded-md">
-                      <Image
-                        src={card.imageSrc}
-                        alt={card.title}
-                        className="h-fit w-full object-cover"
-                        width={300}
-                        height={150}
-                      />
-                    </div>
-                    <CardContent className="p-4 whitespace-pre-wrap text-center space-y-2">
-                      <CardTitle className="text-white uppercase text-xl">
-                        {card.title}
-                      </CardTitle>
-                      <CardDescription className="text-white ">
-                        {card.description}
-                      </CardDescription>
-                    </CardContent>
-                  </Card>
-                </>
-              ) : (
-                <>
-                  <Card className="p-8 h-full w-full md:max-w-[400px] flex items-center gap-4 flex-col justify-center border-none text-center bg-custom-purple-500">
-                    <CardTitle className="text-white whitespace-pre-wrap">
-                      {card.title}
-                    </CardTitle>
-                    <CardDescription className="text-white whitespace-pre-wrap">
-                      {card.description}
-                    </CardDescription>
-                  </Card>
-                </>
-              )}
-            </CarouselItem>
-          </>
+          <CarouselItem key={index} className="pl-1 lg:basis-1/3">
+            {card.imageSrc ? (
+              <Card className="shrink-0 bg-custom-purple-400 overflow-hidden rounded-xl h-full">
+                <div className="overflow-hidden rounded-md">
+                  <Image
+                    src={card.imageSrc}
+                    alt={card.title}
+                    className="h-fit w-full object-cover"
+                    width={300}
+                    height={150}
+                  />
+                </div>
+                <CardContent className="p-4 whitespace-pre-wrap text-center space-y-2">
+                  <CardTitle className="text-white uppercase text-xl">
+                    {card.title}
+                  </CardTitle>
+                  <CardDescription className="text-white ">
+                    {card.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ) : (
+              <Card className="p-8 h-full w-full md:max-w-[400px] flex items-center gap-4 flex-col justify-center border-none text-center bg-custom-purple-500">
+                <CardTitle className="text-white whitespace-pre-wrap">
+                  {card.title}
+                </CardTitle>
+                <CardDescription className="text-white whitespace-pre-wrap">
+                  {card.description}
+                </CardDescription>
+              </Card>
+            )}
+          </CarouselItem>
         ))}
         {/* </div> */}
       </CarouselContent>

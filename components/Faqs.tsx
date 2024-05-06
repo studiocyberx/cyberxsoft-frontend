@@ -14,7 +14,7 @@ interface faqItemsProps {
 
 const Faqs = ({ faqItems }: { faqItems: faqItemsProps[] }) => {
   return (
-    <section className="pb-8 md:py-8 lg:p-8 w-full lg:max-w-[600px]">
+    <section className="pb-8 md:py-8 lg:p-8 w-full lg:max-w-[700px]">
       <h2 className="font-tommy text-4xl uppercase">
         Frequently Asked <br /> <span className="font-bold">Questions</span>
       </h2>
