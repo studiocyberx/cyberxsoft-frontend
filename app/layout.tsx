@@ -9,7 +9,6 @@ import { Suspense } from "react";
 import Loading from "./loading";
 import { ScrollToTopButton } from "@/components/ScrollToTop";
 
-//Get metadata from strapi
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "BigO",

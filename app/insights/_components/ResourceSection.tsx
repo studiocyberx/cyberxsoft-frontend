@@ -1,86 +1,58 @@
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { getInsights } from "@/data/loaders";
+import { getStrapiURL } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { FaChevronRight } from "react-icons/fa6";
 
 interface cardProps {
   title: string;
   category: string;
   subtitle: string;
   image: string;
-  href?: string;
+  alternativeText: string;
+  href: string;
 }
-const cardItems: cardProps[] = [
-  {
-    title: "News Title 1",
-    category: "news",
-    subtitle: "Some text for the card Some text for the card",
-    image: "/insights-1.jpeg",
-  },
-  {
-    title: "News Title 2",
-    category: "case study",
-    subtitle: "Some text for the card Some text for the card",
-    image: "/insights-2.png",
-  },
-  {
-    title: "News Title 4",
-    category: "blog",
-    subtitle: "Some text for the card Some text for the card",
-    image: "/insights-3.png",
-  },
-  {
-    title: "News Title 5",
-    category: "news",
-    subtitle: "Some text for the card Some text for the card",
-    image: "/insights-1.jpeg",
-  },
-  {
-    title: "News Title 6",
-    category: "case study",
-    subtitle: "Some text for the card Some text for the card",
-    image: "/insights-2.png",
-  },
-  {
-    title: "News Title 7",
-    category: "case study",
-    subtitle: "Some text for the card Some text for the card",
-    image: "/insights-1.jpeg",
-  },
-  {
-    title: "News Title 8",
-    category: "blog",
-    subtitle: "Some text for the card Some text for the card",
-    image: "/insights-4.png",
-  },
-  {
-    title: "News Title 3",
-    category: "case study",
-    subtitle: "Some text for the card Some text for the card",
-    image: "/insights-2.png",
-  },
-];
 
-const ResourceSection = () => {
+interface InsightItemProps {
+  CardTitle: string;
+  InsightType: string;
+  CardText: string;
+  CardImage: {
+    url: string;
+    alternativeText: string;
+  };
+  slug: string;
+}
+
+const ResourceSection = async () => {
+  const data = await getInsights();
+  const cardItems: cardProps[] = data.data.map((item: InsightItemProps) => {
+    return {
+      title: item.CardTitle,
+      category: item.InsightType,
+      subtitle: item.CardText,
+      image: item.CardImage.url,
+      href: `/insights/${item.InsightType.toLowerCase().replace(/\s+/g, "-")}/${
+        item.slug
+      }`,
+      alternativeText: item.CardImage.alternativeText,
+    };
+  });
+
+  const baseUrl = getStrapiURL();
   return (
     <section className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8 sm:px-12 md:px-20">
       {cardItems.map((item) => (
-        <Link
-          href={item.href ? item.href : "/insights"}
-          key={item.title}
-          className="group"
-        >
+        <Link href={item.href} key={item.title} className="group">
           <Card className="relative h-[450px] flex flex-col justify-between items-center rounded-lg border-slate-700 overflow-hidden md:group-hover:scale-105 transition-transform">
             <Image
-              src={item.image}
-              alt={item.title}
+              src={baseUrl + item.image}
+              alt={item.alternativeText}
               fill={true}
               className="group-hover:scale-110 transition-transform ease-in-out duration-300 object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 33vw"

@@ -1,4 +1,4 @@
-import QuoteForm from "@/components/QuoteForm";
+import QuoteForm from "./QuoteForm";
 import { Card } from "@/components/ui/card";
 
 const GetQuoteForm = () => {

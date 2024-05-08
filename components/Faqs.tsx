@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { Separator } from "@/components/ui/separator";
 
-interface faqItemsProps {
+export interface faqItemsProps {
   value: string;
   question: string;
   answer: string;

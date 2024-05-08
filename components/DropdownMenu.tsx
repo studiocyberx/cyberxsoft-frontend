@@ -1,59 +1,99 @@
 "use client";
 
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import React from "react";
+import { FontProps, NavItemTypes } from "./Navbar";
 import Link from "next/link";
+import { FaChevronDown } from "react-icons/fa6";
 
-interface SubItemProps {
-  href: string;
-  title: string;
-}
-
-const DropdownMenu = ({
-  subItems,
-  title,
-  onClose,
+export const NavDropDownMenu = ({
+  item,
+  fonts,
 }: {
-  subItems: SubItemProps[];
-  title: string;
-  onClose?: () => void;
+  item: NavItemTypes;
+  fonts: FontProps;
 }) => {
+  const [open, setOpen] = React.useState(false);
+
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem className="rounded-none">
-          <NavigationMenuTrigger className="text-xl p-0 bg-transparent hover:bg-transparent data-[active]:bg-transparent focus:text-white md:focus:text-gray-400 data-[state=open]:bg-transparent text-white md:text-gray-400 md:hover:text-white h-0">
-            {title}
-          </NavigationMenuTrigger>
-          <NavigationMenuContent className="p-4">
-            <ul className="space-y-2 w-full min-w-[175px]">
-              {subItems.map((item, index) => (
-                <li key={index}>
-                  <Link href={item.href} onClick={onClose} className="p-0">
-                    <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} hover:text-custom-purple-400 transition-all duration-300 !p-0 text-xl hover:bg-transparent focus:bg-transparent`}
-                    >
-                      {item.title}
-                    </NavigationMenuLink>
+    <DropdownMenu open={open} onOpenChange={setOpen}>
+      <DropdownMenuTrigger>
+        <Link
+          href={item.href}
+          onMouseEnter={() => setOpen(!open)}
+          className="flex items-center gap-2"
+        >
+          {item.title} {item.children.length > 0 && <FaChevronDown size={12} />}
+        </Link>
+      </DropdownMenuTrigger>
+      <div className="" onMouseLeave={() => setOpen(!open)}>
+        {item.children.length > 0 && (
+          <DropdownMenuContent>
+            {item.children.map((item, index) =>
+              item.children.length > 0 ? (
+                <NavSubMenu item={item} key={index} fonts={fonts} />
+              ) : (
+                <DropdownMenuItem key={index} className="group cursor-pointer">
+                  <Link
+                    href={item.href}
+                    className={`group-hover:text-custom-purple-400 transition-all duration-300 group-hover:bg-transparent group-focus:bg-transparent uppercase text-xl ${fonts.className}`}
+                  >
+                    {item.title}
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuIndicator />
-      </NavigationMenuList>
-    </NavigationMenu>
+                </DropdownMenuItem>
+              )
+            )}
+          </DropdownMenuContent>
+        )}
+      </div>
+    </DropdownMenu>
   );
 };
 
-export default DropdownMenu;
+export const NavSubMenu = ({
+  item,
+  fonts,
+}: {
+  item: NavItemTypes;
+  fonts: FontProps;
+}) => {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <DropdownMenuSub open={open} onOpenChange={setOpen}>
+      <DropdownMenuSubTrigger>
+        <Link
+          href={item.href}
+          className={`group-hover:text-custom-purple-400 transition-all duration-300 group-hover:bg-transparent group-focus:bg-transparent uppercase text-xl ${fonts.className}`}
+        >
+          {item.title}
+        </Link>
+      </DropdownMenuSubTrigger>
+      <div className="" onMouseLeave={() => setOpen(!open)}>
+        <DropdownMenuSubContent>
+          {item.children.map((item, index) =>
+            item.children.length > 0 ? (
+              <NavSubMenu item={item} key={index} fonts={fonts} />
+            ) : (
+              <DropdownMenuItem key={index} className="group cursor-pointer">
+                <Link
+                  href={item.href}
+                  className={`group-hover:text-custom-purple-400 transition-all duration-300 group-hover:bg-transparent group-focus:bg-transparent uppercase text-xl ${fonts.className}`}
+                >
+                  {item.title}
+                </Link>
+              </DropdownMenuItem>
+            )
+          )}
+        </DropdownMenuSubContent>
+      </div>
+    </DropdownMenuSub>
+  );
+};

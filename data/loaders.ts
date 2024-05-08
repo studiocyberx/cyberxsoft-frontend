@@ -24,44 +24,6 @@ async function fetchData(url: string) {
   }
 }
 
-export async function getHomePageData() {
-  const url = new URL("/api/home-page", baseUrl);
-  url.search = qs.stringify({
-    populate: {
-      blocks: {
-        populate: {
-          image: {
-            fields: ["url", "alternativeText"],
-          },
-          link: {
-            populate: true,
-          },
-          feature: {
-            populate: ["heading", "subHeading", "image"],
-          },
-        },
-      },
-    },
-  });
-
-  return await fetchData(url.href);
-}
-
-export async function getGlobalPageData() {
-  noStore();
-  const url = new URL("/api/global", baseUrl);
-  url.search = qs.stringify({
-    populate: [
-      "header.logoText",
-      "header.ctaButton",
-      "footer.logoText",
-      "footer.socialLinks",
-    ],
-  });
-
-  return await fetchData(url.href);
-}
-
 export async function getGlobalPageMetaData() {
   noStore();
   const url = new URL("/api/global", baseUrl);
@@ -85,7 +47,6 @@ export async function getSubServicePage() {
       },
     },
   });
-
   return await fetchData(url.href);
 }
 
@@ -99,6 +60,38 @@ export async function getSubServiceBySlug(slug: string) {
       },
       introImage: {
         fields: ["name", "url", "alternativeText"],
+      },
+    },
+  });
+
+  return await fetchData(url.href);
+}
+
+export async function getInsights() {
+  const url = new URL("/api/insights", baseUrl);
+  url.search = qs.stringify({
+    populate: {
+      CardImage: {
+        fields: ["name", "url", "alternativeText"],
+      },
+      InsightTags: {
+        populate: true,
+      },
+    },
+  });
+
+  return await fetchData(url.href);
+}
+
+export async function getInsightsBySlug(slug: string) {
+  const url = new URL(`/api/insights/${slug}`, baseUrl);
+  url.search = qs.stringify({
+    populate: {
+      CardImage: {
+        fields: ["name", "url", "alternativeText"],
+      },
+      InsightTags: {
+        populate: true,
       },
     },
   });

@@ -8,14 +8,21 @@ import {
   FaPhone,
   FaLocationDot,
 } from "react-icons/fa6";
-import Navbar from "./Navbar";
+import Navbar, { NavItemTypes } from "./Navbar";
 import { bebas } from "@/app/fonts";
 import Sidebar from "./Sidebar";
+import { getSubServicePage } from "@/data/loaders";
 
 interface SocialIconProps {
   id: number;
   icon: JSX.Element;
   url: string;
+}
+
+interface ServiceItem {
+  navtitle: string;
+  servicetype: string;
+  slug: string;
 }
 
 const socialIcons: SocialIconProps[] = [
@@ -25,25 +32,63 @@ const socialIcons: SocialIconProps[] = [
   { id: 4, icon: <FaLinkedin />, url: "/" },
 ];
 
-export function Header() {
-  const navItems = [
-    { title: "Home", href: "/" },
-    { title: "Who we are", href: "/about" },
+export async function Header() {
+  const serviceItems = await getSubServicePage();
+  const navDropdownItems: NavItemTypes[] = [
+    { title: "Home", href: "/", children: [] },
+    { title: "Who we are", href: "/about", children: [] },
     {
       title: "What we do",
       href: "/services",
-      subItems: [
-        { title: "Business Intelligence", href: "/business-intelligence" },
-        { title: "Responsible AI", href: "/responsible-ai" },
-        { title: "Cloud", href: "/cloud" },
-        { title: "Internet Of Things (IOT)", href: "/iot" },
+      children: [
+        {
+          title: "Business Intelligence",
+          href: "/business-intelligence",
+          children: [],
+        },
+        { title: "Cloud", href: "/cloud", children: [] },
+        { title: "Responsible AI", href: "/responsible-ai", children: [] },
+        {
+          title: "Internet Of Things",
+          href: "/iot",
+          children: [],
+        },
       ],
     },
-    // { title: "Industries", href: "/industries" },
-    { title: "What we think", href: "/insights" },
-    { title: "Get in touch", href: "/contact" },
-    // { title: "Careers", href: "/careers" },
+    { title: "What we think", href: "/insights", children: [] },
+    { title: "Get in touch", href: "/contact", children: [] },
   ];
+
+  //Append subservice pages to the navitems
+  serviceItems.data.forEach((item: ServiceItem) => {
+    const existingServiceType = navDropdownItems[2].children.find(
+      (child) => child.title.toLowerCase() === item.servicetype.toLowerCase()
+    );
+    if (existingServiceType) {
+      existingServiceType.children.push({
+        title: item.navtitle,
+        href: `/${item.servicetype.toLowerCase().replace(/\s+/g, "-")}/${
+          item.slug
+        }`,
+        children: [],
+      });
+    } else {
+      navDropdownItems[2].children.push({
+        title: item.servicetype,
+        href: `/${item.servicetype.toLowerCase().replace(/\s+/g, "-")}`,
+        children: [
+          {
+            title: item.navtitle,
+            href: `/${item.servicetype.toLowerCase().replace(/\s+/g, "-")}/${
+              item.slug
+            }`,
+            children: [],
+          },
+        ],
+      });
+    }
+  });
+
   return (
     <header className="relative">
       <div className="hidden sm:flex items-center flex-wrap lg:flex-nowrap justify-center md:justify-between gap-4 md:gap-8 px-10 lg:px-20 py-4 md:py-1 bg-custom-purple-500">
@@ -80,8 +125,8 @@ export function Header() {
 
       <div className="flex items-center gap-4 justify-between px-10 lg:px-20 py-2 bg-custom-purple-600">
         <Logo />
-        <Navbar fonts={bebas} navItems={navItems} />
-        <Sidebar fonts={bebas} navItems={navItems} />
+        <Navbar fonts={bebas} navItems={navDropdownItems} />
+        <Sidebar fonts={bebas} navItems={navDropdownItems} />
       </div>
     </header>
   );

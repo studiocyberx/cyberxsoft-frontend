@@ -37,7 +37,11 @@ const formSchema = z.object({
   service: z.string({
     required_error: "Please select a service",
   }),
-  budget: z.number({ required_error: "Please enter a budget range" }),
+  budget: z
+    .number({
+      required_error: "Please enter a budget range",
+    })
+    .min(0, { message: "Budget cannot be negative" }),
 });
 
 const QuoteForm = () => {
@@ -161,12 +165,7 @@ const QuoteForm = () => {
                           <SelectValue placeholder="Project Type *" />
                         </SelectTrigger>
                       </FormControl>
-                      <SelectContent>
-                        <SelectItem value="project-1">Project 1</SelectItem>
-                        <SelectItem value="project-2">Project 2</SelectItem>
-                        <SelectItem value="project-3">Project 3</SelectItem>
-                        <SelectItem value="project-4">Project 4</SelectItem>
-                      </SelectContent>
+                      <SelectContent></SelectContent>
                     </Select>
                   </FormControl>
 

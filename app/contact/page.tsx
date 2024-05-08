@@ -57,7 +57,7 @@ const ContactUs = () => {
                   className="text-white hover:text-custom-purple-100 transition-all duration-200"
                   href="tel:+923165143252"
                 >
-                  +92 316 514 3252
+                  +92-316-514-3252
                 </Link>
               </div>
             </div>
