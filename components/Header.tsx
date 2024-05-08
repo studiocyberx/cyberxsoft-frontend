@@ -39,7 +39,7 @@ export async function Header() {
     { title: "Who we are", href: "/about", children: [] },
     {
       title: "What we do",
-      href: "/services",
+      href: "",
       children: [
         {
           title: "Business Intelligence",

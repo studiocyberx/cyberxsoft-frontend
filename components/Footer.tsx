@@ -68,10 +68,10 @@ export function Footer() {
           © 2024 BigO. All rights reserved.
         </li>
         <li className="text-gray-400 hover:text-white">
-          <Link href="/">Privacy Policy</Link>
+          <Link href="/policy">Privacy Policy</Link>
         </li>
         <li className="text-gray-400 hover:text-white">
-          <Link href="/">Terms of Service</Link>
+          <Link href="/terms">Terms of Service</Link>
         </li>
         <li className="text-gray-400 hover:text-white">
           <Link href="/">Cookies Settings</Link>

@@ -75,7 +75,7 @@ const Service = async ({ params }: { params: { slug: string } }) => {
         </section>
       </Suspense>
 
-      <section className="container px-6 sm:px-8 flex items-center justify-between gap-4 xl:h-screen xl:max-h-[800px]">
+      <section className="container px-6 sm:px-8 flex items-center justify-between gap-4">
         <Faqs faqItems={faqItems[0]} />
         <Image
           src="/faq-illustration.png"

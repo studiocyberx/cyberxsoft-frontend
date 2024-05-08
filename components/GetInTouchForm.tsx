@@ -13,13 +13,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 
 const formSchema = z.object({
   name: z.string().min(4, { message: "Cannot be empty!!!" }),
   email: z.string().email().min(5, { message: "Cannot be empty!!!" }),
   message: z
-    .string()
+    .string({ required_error: "Required" })
     .max(350, { message: "Message cannot be longer than 350 characters" }),
 });
 const GetInTouchForm = () => {
@@ -46,7 +45,7 @@ const GetInTouchForm = () => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Name *</FormLabel>
 
                   <FormControl>
                     <Input
@@ -65,7 +64,7 @@ const GetInTouchForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>Email *</FormLabel>
 
                   <FormControl>
                     <Input
@@ -75,7 +74,6 @@ const GetInTouchForm = () => {
                       className="text-black"
                     />
                   </FormControl>
-                  {}
                   <FormMessage />
                 </FormItem>
               )}
@@ -96,6 +94,7 @@ const GetInTouchForm = () => {
                     {...field}
                   />
                 </FormControl>
+                <FormMessage />
               </FormItem>
             )}
           />

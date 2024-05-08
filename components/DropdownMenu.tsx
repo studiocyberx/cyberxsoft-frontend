@@ -36,7 +36,7 @@ export const NavDropDownMenu = ({
       </DropdownMenuTrigger>
       <div className="" onMouseLeave={() => setOpen(!open)}>
         {item.children.length > 0 && (
-          <DropdownMenuContent>
+          <DropdownMenuContent className="rounded-sm">
             {item.children.map((item, index) =>
               item.children.length > 0 ? (
                 <NavSubMenu item={item} key={index} fonts={fonts} />
@@ -71,13 +71,13 @@ export const NavSubMenu = ({
       <DropdownMenuSubTrigger>
         <Link
           href={item.href}
-          className={`group-hover:text-custom-purple-400 transition-all duration-300 group-hover:bg-transparent group-focus:bg-transparent uppercase text-xl ${fonts.className}`}
+          className={`hover:text-custom-purple-400 transition-all duration-300 hover:bg-transparent focus:bg-transparent uppercase text-xl ${fonts.className}`}
         >
           {item.title}
         </Link>
       </DropdownMenuSubTrigger>
       <div className="" onMouseLeave={() => setOpen(!open)}>
-        <DropdownMenuSubContent>
+        <DropdownMenuSubContent className="rounded-sm">
           {item.children.map((item, index) =>
             item.children.length > 0 ? (
               <NavSubMenu item={item} key={index} fonts={fonts} />
