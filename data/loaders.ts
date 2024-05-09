@@ -24,16 +24,6 @@ async function fetchData(url: string) {
   }
 }
 
-export async function getGlobalPageMetaData() {
-  noStore();
-  const url = new URL("/api/global", baseUrl);
-  url.search = qs.stringify({
-    fields: ["title", "description"],
-  });
-
-  return await fetchData(url.href);
-}
-
 export async function getSubServicePage() {
   noStore();
   const url = new URL("/api/sub-service-pages", baseUrl);

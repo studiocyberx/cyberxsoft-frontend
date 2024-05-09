@@ -14,7 +14,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "light-blessing-0333ae3113.media.strapiapp.com",
+        hostname: "strapi.big0.dev",
       },
     ],
   },

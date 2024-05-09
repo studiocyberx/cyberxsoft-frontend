@@ -2,7 +2,6 @@ import FeatureCard from "@/app/_components/FeatureCard";
 import AnimatedCards from "@/components/AnimatedCards";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import Image from "next/image";
 import Link from "next/link";
 
 interface ImageProps {

@@ -10,7 +10,7 @@ import { getSubServiceBySlug } from "@/data/loaders";
 import { notFound } from "next/navigation";
 import { getStrapiURL } from "@/lib/utils";
 import { Metadata } from "next";
-import { PageProps } from "@/lib/globaltypes";
+import { PageProps } from "@/lib/definitions";
 
 export async function generateMetadata({
   params,

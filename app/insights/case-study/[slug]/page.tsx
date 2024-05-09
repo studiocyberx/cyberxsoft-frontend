@@ -1,6 +1,6 @@
 import ParseRichText from "@/components/ParseRichText";
 import { getInsightsBySlug } from "@/data/loaders";
-import { PageProps } from "@/lib/globaltypes";
+import { PageProps } from "@/lib/definitions";
 import { Metadata } from "next";
 
 export async function generateMetadata({

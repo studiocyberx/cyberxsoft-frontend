@@ -19,30 +19,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 
-const formSchema = z.object({
-  fullname: z.string().min(1, { message: "Cannot be empty!!!" }),
-  email: z.string().email().min(5, { message: "Cannot be empty!!!" }),
-  phone: z
-    .number()
-    .min(11, { message: "Required!!" })
-    .max(12, { message: "Invalid number" }),
-  company: z.string(),
-  industry: z.string(),
-  project: z.string({
-    required_error: "Please select a project",
-  }),
-  service: z.string({
-    required_error: "Please select a service",
-  }),
-  budget: z
-    .number({
-      required_error: "Please enter a budget range",
-    })
-    .min(0, { message: "Budget cannot be negative" }),
-});
+import { Button } from "@/components/ui/button";
+import { formSchema } from "@/lib/definitions";
 
 const QuoteForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({

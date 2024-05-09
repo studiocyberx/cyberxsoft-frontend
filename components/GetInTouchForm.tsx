@@ -13,17 +13,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { getInTouchFormSchema } from "@/lib/definitions";
 
-const formSchema = z.object({
-  name: z.string().min(4, { message: "Cannot be empty!!!" }),
-  email: z.string().email().min(5, { message: "Cannot be empty!!!" }),
-  message: z
-    .string({ required_error: "Required" })
-    .max(350, { message: "Message cannot be longer than 350 characters" }),
-});
 const GetInTouchForm = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof getInTouchFormSchema>>({
+    resolver: zodResolver(getInTouchFormSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -31,7 +25,7 @@ const GetInTouchForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: z.infer<typeof getInTouchFormSchema>) {
     console.log(values);
   }
 
