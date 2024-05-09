@@ -1,4 +1,14 @@
+import {
+  Chart as ChartJS,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import { Scatter } from "react-chartjs-2";
+
+ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
 
 function ScatterChart() {
   const data = {
@@ -6,104 +16,30 @@ function ScatterChart() {
       {
         label: "Scatter Dataset 1",
         data: [
-          {
-            x: -10,
-            y: 0,
-          },
-          {
-            x: 0,
-            y: 10,
-          },
-          {
-            x: 10,
-            y: 5,
-          },
-          {
-            x: 0.5,
-            y: 5.5,
-          },
-          {
-            x: 5,
-            y: 2,
-          },
-          {
-            x: -5,
-            y: 8,
-          },
-          {
-            x: 3,
-            y: 4,
-          },
-          {
-            x: -2,
-            y: 6,
-          },
-          {
-            x: 9,
-            y: 1,
-          },
-          {
-            x: -8,
-            y: 3,
-          },
-          {
-            x: 12,
-            y: 7,
-          },
-          {
-            x: -12,
-            y: 9,
-          },
+          { x: 20, y: 30 },
+          { x: 40, y: 10 },
+          { x: 50, y: 25 },
+          { x: 10, y: 40 },
+          { x: 35, y: 15 },
+          { x: 60, y: 20 },
+          { x: 25, y: 35 },
+          { x: 45, y: 10 },
         ],
         backgroundColor: "rgb(255, 167, 27)",
       },
       {
         label: "Scatter Dataset 2",
         data: [
-          {
-            x: 2,
-            y: 3,
-          },
-          {
-            x: 7,
-            y: 11,
-          },
-          {
-            x: -3,
-            y: 2,
-          },
-          {
-            x: 1,
-            y: 9,
-          },
-          {
-            x: 4,
-            y: 1,
-          },
-          {
-            x: -9,
-            y: 4,
-          },
-          {
-            x: 8,
-            y: 6,
-          },
-          {
-            x: -1,
-            y: 8,
-          },
-          {
-            x: 6,
-            y: 5,
-          },
-          {
-            x: -6,
-            y: 10,
-          },
-          {
-            x: 11,
-            y: 2,
-          },
+          { x: 30, y: 20 },
+          { x: 60, y: 35 },
+          { x: 25, y: 15 },
+          { x: 45, y: 45 },
+          { x: 35, y: 25 },
+          { x: 50, y: 10 },
+          { x: 40, y: 40 },
+          { x: 40, y: 40 },
+          { x: 55, y: 30 },
+          { x: 30, y: 20 },
         ],
         backgroundColor: "rgb(0, 120, 226)",
       },
