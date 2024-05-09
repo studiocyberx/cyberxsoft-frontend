@@ -34,7 +34,7 @@ const socialIcons: SocialIconProps[] = [
 
 export async function Header() {
   const serviceItems = await getSubServicePage();
-  const navDropdownItems: NavItemTypes[] = [
+  const navItems: NavItemTypes[] = [
     { title: "Home", href: "/", children: [] },
     { title: "Who we are", href: "/about", children: [] },
     {
@@ -61,7 +61,7 @@ export async function Header() {
 
   //Append subservice pages to the navitems
   serviceItems.data.forEach((item: ServiceItem) => {
-    const existingServiceType = navDropdownItems[2].children.find(
+    const existingServiceType = navItems[2].children.find(
       (child) => child.title.toLowerCase() === item.servicetype.toLowerCase()
     );
     if (existingServiceType) {
@@ -73,7 +73,7 @@ export async function Header() {
         children: [],
       });
     } else {
-      navDropdownItems[2].children.push({
+      navItems[2].children.push({
         title: item.servicetype,
         href: `/${item.servicetype.toLowerCase().replace(/\s+/g, "-")}`,
         children: [
@@ -125,8 +125,8 @@ export async function Header() {
 
       <div className="flex items-center gap-4 justify-between px-10 lg:px-20 py-2 bg-custom-purple-600">
         <Logo />
-        <Navbar fonts={bebas} navItems={navDropdownItems} />
-        <Sidebar fonts={bebas} navItems={navDropdownItems} />
+        <Navbar fonts={bebas} navItems={navItems} />
+        <Sidebar fonts={bebas} navItems={navItems} />
       </div>
     </header>
   );

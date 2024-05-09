@@ -1,5 +1,18 @@
 import ParseRichText from "@/components/ParseRichText";
 import { getInsightsBySlug } from "@/data/loaders";
+import { PageProps } from "@/lib/globaltypes";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const slug = params.slug;
+  const data = await getInsightsBySlug(slug);
+  return {
+    title: data.MetaTitle,
+    description: data.MetaDescription,
+  };
+}
 
 const Blog = async ({ params }: { params: { slug: string } }) => {
   const data = await getInsightsBySlug(params.slug);

@@ -14,7 +14,7 @@ interface DescriptionItemProps {
   text: string;
 }
 
-interface TabDataProps {
+export interface TabDataProps {
   title: string;
   subtitle: string;
   description: DescriptionItemProps[];

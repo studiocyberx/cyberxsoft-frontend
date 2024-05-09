@@ -9,9 +9,23 @@ import GetInTouch from "@/components/GetInTouch";
 import { getSubServiceBySlug } from "@/data/loaders";
 import { notFound } from "next/navigation";
 import { getStrapiURL } from "@/lib/utils";
+import { Metadata } from "next";
+import { PageProps } from "@/lib/globaltypes";
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const slug = params.slug;
+  const data = await getSubServiceBySlug(slug);
+  return {
+    title: data.metaTitle,
+    description: data.metaDescription,
+  };
+}
 
 const Service = async ({ params }: { params: { slug: string } }) => {
   const data = await getSubServiceBySlug(params.slug);
+
   if (data.error?.status === 404) {
     notFound();
   }
