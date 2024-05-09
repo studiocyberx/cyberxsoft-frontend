@@ -68,6 +68,7 @@ export async function getSubServiceBySlug(slug: string) {
 }
 
 export async function getInsights() {
+  noStore();
   const url = new URL("/api/insights", baseUrl);
   url.search = qs.stringify({
     populate: {

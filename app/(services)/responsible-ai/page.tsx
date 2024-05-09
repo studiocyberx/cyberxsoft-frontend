@@ -9,7 +9,7 @@ import ServicesCardsSection from "@/components/ServicesCardsSection";
 import VideoCta from "@/components/VideoCta";
 import FiveCardsSection from "@/components/FiveCardsSection";
 import { Suspense } from "react";
-import Loading from "../loading";
+import Loading from "./loading";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

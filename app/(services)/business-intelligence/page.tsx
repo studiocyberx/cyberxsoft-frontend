@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import Loading from "../loading";
+import Loading from "./loading";
 import Faqs from "@/components/Faqs";
 import biHeader from "@/public/bi-intro.png";
 import { Button } from "@/components/ui/button";

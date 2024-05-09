@@ -1,12 +1,12 @@
 import React from "react";
-import BarChart from "@/app/business-intelligence/_components/charts/barchart";
-import PieChart from "@/app/business-intelligence/_components/charts/piechart";
-import LineChart from "@/app/business-intelligence/_components/charts/linechart";
-import ScatterChart from "@/app/business-intelligence/_components/charts/scatter";
-import DoughnutChart from "@/app/business-intelligence/_components/charts/dounut";
-import RadarChart from "@/app/business-intelligence/_components/charts/raddarchart";
-import ConnectivityChart from "@/app/business-intelligence/_components/charts/bubble";
-import PolarAreaChart from "@/app/business-intelligence/_components/charts/polarareachart";
+import BarChart from "./charts/barchart";
+import PieChart from "./charts/piechart";
+import LineChart from "./charts/linechart";
+import ScatterChart from "./charts/scatter";
+import DoughnutChart from "./charts/dounut";
+import RadarChart from "./charts/raddarchart";
+import ConnectivityChart from "./charts/bubble";
+import PolarAreaChart from "./charts/polarareachart";
 
 export type ChartType =
   | "bar"

@@ -9,7 +9,7 @@ import BeyondSection from "@/components/BeyondSection";
 import GetInTouch from "@/components/GetInTouch";
 import Faqs from "@/components/Faqs";
 import { Suspense } from "react";
-import Loading from "../loading";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Outcome-Driven Internet of Things (IoT) Services",
