@@ -27,9 +27,9 @@ const navItems: NavItemProps[] = [
 
 const socialLinks = [
   { icon: <FaFacebook />, href: "https://www.facebook.com/" },
-  { icon: <FaInstagram />, href: "https://www.instagram.com" },
-  { icon: <FaXTwitter />, href: "https://www.twitter.com" },
-  { icon: <FaLinkedin />, href: "https://www.linkedin.com" },
+  { icon: <FaInstagram />, href: "https://www.instagram.com/" },
+  { icon: <FaXTwitter />, href: "https://www.twitter.com/" },
+  { icon: <FaLinkedin />, href: "https://www.linkedin.com/" },
 ];
 
 export function Footer() {
