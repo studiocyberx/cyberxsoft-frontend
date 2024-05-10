@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const ContactUs = () => {
   return (
     <Suspense fallback={<Loading />}>
-      <section className="h-full lg:h-screen lg:max-h-[850px] py-20 bg-custom-purple-700 grid place-items-center relative">
+      <section className="relative h-full lg:h-screen lg:max-h-[850px] py-20 bg-custom-purple-700 grid place-items-center">
         <div className="container z-50 px-8 sm:px-10 lg:px-20 flex items-center gap-10 lg:gap-32 justify-between flex-col lg:flex-row">
           <div className="text-white lg:max-w-2xl space-y-4">
             <strong className="uppercase">Connect</strong>
@@ -40,9 +40,9 @@ const ContactUs = () => {
                 <h5 className="text-lg font-bold text-white">Email</h5>
                 <Link
                   className="text-white hover:text-custom-purple-100 transition-all duration-200"
-                  href="mailto:info@BigO.com"
+                  href="mailto:info@Big0.dev"
                 >
-                  info@BigO.com
+                  info@Big0.dev
                 </Link>
               </div>
             </div>
@@ -55,9 +55,9 @@ const ContactUs = () => {
                 <h5 className="text-lg font-bold text-white">Phone</h5>
                 <Link
                   className="text-white hover:text-custom-purple-100 transition-all duration-200"
-                  href="tel:+923165143252"
+                  href="tel:+1-437-365-9377"
                 >
-                  +92-316-514-3252
+                  +1-437-365-9377
                 </Link>
               </div>
             </div>
@@ -70,10 +70,10 @@ const ContactUs = () => {
                 <h5 className="text-lg font-bold text-white">Office</h5>
                 <Link
                   className="text-white hover:text-custom-purple-100 transition-all duration-200"
-                  href="https://maps.app.goo.gl/2L9f9WYFS6Anjjg39"
+                  href="https://maps.app.goo.gl/3MQpn7aqJ6H7wCrG8"
                   target="_blank"
                 >
-                  First Floor, Plaza #54, Sector F, DHA Phase 1, Rawalpindi
+                  1054, East Avenue, Mississauga, Ontario L5E 1W9
                 </Link>
               </div>
             </div>

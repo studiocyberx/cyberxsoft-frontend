@@ -26,10 +26,10 @@ interface ServiceItem {
 }
 
 const socialIcons: SocialIconProps[] = [
-  { id: 1, icon: <FaFacebook />, url: "/" },
-  { id: 2, icon: <FaInstagram />, url: "/" },
-  { id: 3, icon: <FaXTwitter />, url: "/" },
-  { id: 4, icon: <FaLinkedin />, url: "/" },
+  { id: 1, icon: <FaFacebook />, url: "https://www.facebook.com" },
+  { id: 2, icon: <FaInstagram />, url: "https://www.instagram.com/" },
+  { id: 3, icon: <FaXTwitter />, url: "https://www.twitter.com" },
+  { id: 4, icon: <FaLinkedin />, url: "https://www.linkedin.com/" },
 ];
 
 export async function Header() {
@@ -106,19 +106,19 @@ export async function Header() {
         </div>
         <div className="flex items-center gap-4 justify-center md:justify-start flex-wrap md:flex-nowrap">
           <Link
-            href="tel:+923165143252"
+            href="tel:+1-437-365-9377"
             className="flex items-center gap-2 text-white hover:text-custom-purple-100 transition-all duration-300"
           >
             <FaPhone size={20} />
-            +92-316-514-3252
+            +1-437-365-9377
           </Link>
           <Link
-            href="https://maps.app.goo.gl/2L9f9WYFS6Anjjg39"
+            href="https://maps.app.goo.gl/3MQpn7aqJ6H7wCrG8"
             target="_blank"
             className="flex items-center text-center md:text-left gap-2 text-white hover:text-custom-purple-100 transition-all duration-300"
           >
             <FaLocationDot size={20} />
-            First Floor, Plaza #54, Sector F, DHA Phase 1, Rawalpindi{" "}
+            1054, East Avenue, Mississauga, Ontario L5E 1W9
           </Link>
         </div>
       </div>
