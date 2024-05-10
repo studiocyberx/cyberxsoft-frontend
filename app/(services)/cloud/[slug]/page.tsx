@@ -42,8 +42,8 @@ const Service = async ({ params }: { params: { slug: string } }) => {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
-          <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
+        <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 py-10 sm:py-20 overflow-hidden">
+          <div className="space-y-4 container text-center lg:text-left min-w-min">
             <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
               {data.introTitle}
             </h1>
@@ -64,9 +64,9 @@ const Service = async ({ params }: { params: { slug: string } }) => {
             src={baseUrl + data.introImage.url}
             width={720}
             height={600}
-            sizes="(min-width: 808px) 50vw, 100vw"
+            sizes="(max-width: 1000px) 100vw, (max-width: 1200px) 50vw, 33vw"
             alt={data.introImage.alternativeText}
-            className="mix-blend-soft-light"
+            className=""
           />
         </section>
       </Suspense>
