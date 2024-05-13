@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { Suspense } from "react";
-import Loading from "../../loading";
 
 interface valuesDataProps {
   title: string;
@@ -37,30 +35,28 @@ const valuesData: valuesDataProps[] = [
 
 const CoreValues = () => {
   return (
-    <Suspense fallback={<Loading />}>
-      <section className="py-20 px-8 sm:px-10 md:px-20 space-y-8 container">
-        <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy text-center">
-          Core Values
-        </h2>
+    <section className="py-20 px-8 sm:px-10 md:px-20 space-y-8 container">
+      <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy text-center">
+        Core Values
+      </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-center">
-          {valuesData.map((value, index) => (
-            <div key={index} className="flex flex-col gap-2 items-center">
-              <Image
-                src={value.imageSrc}
-                alt={value.title}
-                width={150}
-                height={150}
-              />
-              <h4 className="text-custom-purple-300 uppercase text-lg font-bold text-center">
-                {value.title}
-              </h4>
-              <p className="text-center">{value.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    </Suspense>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-center">
+        {valuesData.map((value, index) => (
+          <div key={index} className="flex flex-col gap-2 items-center">
+            <Image
+              src={value.imageSrc}
+              alt={value.title}
+              width={150}
+              height={150}
+            />
+            <h4 className="text-custom-purple-300 uppercase text-lg font-bold text-center">
+              {value.title}
+            </h4>
+            <p className="text-center">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
