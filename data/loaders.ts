@@ -25,16 +25,13 @@ async function fetchData(url: string) {
 }
 
 export async function getSubServicePage() {
-  noStore();
   const url = new URL("/api/sub-service-pages", baseUrl);
   url.search = qs.stringify({
     populate: {
-      cardsdata: {
-        populate: "*",
-      },
-      introImage: {
-        fields: ["name", "url", "alternativeText"],
-      },
+      fields: ["id", "slug", "navtitle", "servicetype"],
+    },
+    pagination: {
+      limit: 50,
     },
   });
   return await fetchData(url.href);
