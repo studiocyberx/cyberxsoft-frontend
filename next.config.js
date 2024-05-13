@@ -30,6 +30,16 @@ const nextConfig = {
         destination: "/insights",
         permanent: true,
       },
+      {
+        source: "/insights/case-study",
+        destination: "/insights",
+        permanent: true,
+      },
+      {
+        source: "/insights/blogs",
+        destination: "/insights",
+        permanent: true,
+      },
     ];
   },
 };

@@ -2,6 +2,7 @@ import ParseRichText from "@/components/ParseRichText";
 import { getInsightsBySlug } from "@/data/loaders";
 import { PageProps } from "@/lib/definitions";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params,
@@ -16,6 +17,10 @@ export async function generateMetadata({
 
 const Blog = async ({ params }: { params: { slug: string } }) => {
   const data = await getInsightsBySlug(params.slug);
+
+  if (data.error?.status === 404) {
+    notFound();
+  }
 
   return (
     <section className="p-8 sm:p-10 md:px-20 space-y-8 container">
