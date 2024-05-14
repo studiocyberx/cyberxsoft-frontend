@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { FaFacebook } from "react-icons/fa";
 import {
-  FaXTwitter,
+  FaYoutube,
   FaInstagram,
   FaLinkedin,
   FaPhone,
@@ -28,12 +28,13 @@ interface ServiceItem {
 const socialIcons: SocialIconProps[] = [
   { id: 1, icon: <FaFacebook />, url: "https://www.facebook.com" },
   { id: 2, icon: <FaInstagram />, url: "https://www.instagram.com/" },
-  { id: 3, icon: <FaXTwitter />, url: "https://www.twitter.com" },
+  { id: 3, icon: <FaYoutube />, url: "https://www.youtube.com" },
   { id: 4, icon: <FaLinkedin />, url: "https://www.linkedin.com/" },
 ];
 
 export async function Header() {
   const serviceItems = await getSubServicePage();
+  console.log(serviceItems);
   const navItems: NavItemTypes[] = [
     { title: "Home", href: "/", children: [] },
     { title: "Who we are", href: "/about", children: [] },

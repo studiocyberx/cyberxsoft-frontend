@@ -3,7 +3,7 @@ import { Logo } from "@/components/Logo";
 import {
   FaFacebook,
   FaInstagram,
-  FaXTwitter,
+  FaYoutube,
   FaLinkedin,
 } from "react-icons/fa6";
 
@@ -28,7 +28,7 @@ const navItems: NavItemProps[] = [
 const socialLinks = [
   { icon: <FaFacebook />, href: "https://www.facebook.com/" },
   { icon: <FaInstagram />, href: "https://www.instagram.com/" },
-  { icon: <FaXTwitter />, href: "https://www.twitter.com/" },
+  { icon: <FaYoutube />, href: "https://www.youtube.com/" },
   { icon: <FaLinkedin />, href: "https://www.linkedin.com/" },
 ];
 
@@ -77,7 +77,7 @@ export function Footer() {
           <Link href="/">Cookies Settings</Link>
         </li>
         <li className="text-gray-400 hover:text-white">
-          <Link href="/">Sitemap</Link>
+          <Link href="/sitemap.xml">Sitemap</Link>
         </li>
       </ul>
     </footer>
