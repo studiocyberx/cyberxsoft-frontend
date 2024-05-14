@@ -1,99 +1,41 @@
-"use client";
-
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import React from "react";
-import { FontProps, NavItemTypes } from "./Navbar";
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+import { NavItemTypes } from "./Navbar";
 import Link from "next/link";
-import { FaChevronDown } from "react-icons/fa6";
 
-export const NavDropDownMenu = ({
-  item,
-  fonts,
-}: {
-  item: NavItemTypes;
-  fonts: FontProps;
-}) => {
-  const [open, setOpen] = React.useState(false);
-
+export const NavDropDownMenu = ({ item }: { item: NavItemTypes }) => {
+  const navitems = item.children;
   return (
-    <DropdownMenu open={open} onOpenChange={setOpen}>
-      <DropdownMenuTrigger>
-        <Link
-          href={item.href}
-          onMouseEnter={() => setOpen(!open)}
-          className="flex items-center gap-2"
-        >
-          {item.title} {item.children.length > 0 && <FaChevronDown size={12} />}
-        </Link>
-      </DropdownMenuTrigger>
-      <div className="" onMouseLeave={() => setOpen(!open)}>
-        {item.children.length > 0 && (
-          <DropdownMenuContent className="rounded-sm">
-            {item.children.map((item, index) =>
-              item.children.length > 0 ? (
-                <NavSubMenu item={item} key={index} fonts={fonts} />
-              ) : (
-                <DropdownMenuItem key={index} className="group cursor-pointer">
-                  <Link
-                    href={item.href}
-                    className={`group-hover:text-custom-purple-400 transition-all duration-300 group-hover:bg-transparent group-focus:bg-transparent uppercase text-xl ${fonts.className}`}
-                  >
-                    {item.title}
-                  </Link>
-                </DropdownMenuItem>
-              )
-            )}
-          </DropdownMenuContent>
-        )}
-      </div>
-    </DropdownMenu>
-  );
-};
-
-export const NavSubMenu = ({
-  item,
-  fonts,
-}: {
-  item: NavItemTypes;
-  fonts: FontProps;
-}) => {
-  const [open, setOpen] = React.useState(false);
-  return (
-    <DropdownMenuSub open={open} onOpenChange={setOpen}>
-      <DropdownMenuSubTrigger>
-        <Link
-          href={item.href}
-          className={`hover:text-custom-purple-400 transition-all duration-300 hover:bg-transparent focus:bg-transparent uppercase text-xl ${fonts.className}`}
-        >
-          {item.title}
-        </Link>
-      </DropdownMenuSubTrigger>
-      <div className="" onMouseLeave={() => setOpen(!open)}>
-        <DropdownMenuSubContent className="rounded-sm">
-          {item.children.map((item, index) =>
-            item.children.length > 0 ? (
-              <NavSubMenu item={item} key={index} fonts={fonts} />
-            ) : (
-              <DropdownMenuItem key={index} className="group cursor-pointer">
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem className="">
+          <NavigationMenuTrigger className="text-xl p-0 bg-transparent hover:bg-transparent data-[active]:bg-transparent focus:text-white md:focus:text-gray-400 data-[state=open]:bg-transparent text-white md:text-gray-400 md:hover:text-white h-0">
+            {item.title}
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <div className="grid w-[400px] gap-3 p-4 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:w-[900px]">
+              {navitems.map((link, index) => (
                 <Link
-                  href={item.href}
-                  className={`group-hover:text-custom-purple-400 transition-all duration-300 group-hover:bg-transparent group-focus:bg-transparent uppercase text-xl ${fonts.className}`}
+                  href={link.href}
+                  key={index}
+                  className="text-lg hover:text-custom-purple-400 transition-all duration-200"
                 >
-                  {item.title}
+                  {link.title}
                 </Link>
-              </DropdownMenuItem>
-            )
-          )}
-        </DropdownMenuSubContent>
-      </div>
-    </DropdownMenuSub>
+              ))}
+            </div>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuViewport />
+        <NavigationMenuIndicator />
+      </NavigationMenuList>
+    </NavigationMenu>
   );
 };

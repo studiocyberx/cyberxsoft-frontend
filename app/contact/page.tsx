@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const ContactUs = () => {
   return (
-    <section className="relative h-full lg:h-screen lg:max-h-[850px] py-20 bg-custom-purple-700 grid place-items-center">
+    <section className="relative h-full lg:h-screen lg:max-h-[850px] py-20 bg-custom-purple-700 content-center">
       <div className="container z-50 px-8 sm:px-10 lg:px-20 flex items-center gap-10 lg:gap-32 justify-between flex-col lg:flex-row">
         <div className="text-white lg:max-w-2xl space-y-4">
           <strong className="uppercase">Connect</strong>
@@ -85,7 +85,7 @@ const ContactUs = () => {
         src="/contact-bg.png"
         alt=""
         fill={true}
-        className="object-cover md:object-contain"
+        className="object-cover "
       />
     </section>
   );

@@ -98,6 +98,10 @@ const config = {
           "0%": { width: "0" },
           "100%": { width: "100%" },
         },
+        sidebarDropdown: {
+          "0%": { height: "0", opacity: "0" },
+          "100%": { height: "100%", opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -105,6 +109,7 @@ const config = {
         "nav-slide": "navSlide 0.75s ease",
         "nav-slide-reverse": "navSlideReverse 0.75s ease",
         "line-width": "lineWidth 1s ease 0.25s",
+        "sidebar-dropdown": "sidebarDropdown 1s ease",
       },
       backgroundImage: {
         "drop-pattern": "url(/drop-pattern.png)",

@@ -11,9 +11,9 @@ import { ScrollToTopButton } from "@/components/ScrollToTop";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "BigO",
+    title: "Big0",
     description:
-      "BigO is a responsible AI-driven Business Intelligence (BI) service provider, leveraging the power of technology to drive meaningful change for their clients.",
+      "Big0 is a responsible AI-driven Business Intelligence (BI) service provider, leveraging the power of technology to drive meaningful change for their clients.",
   };
 }
 
@@ -29,7 +29,7 @@ export default async function RootLayout({
       </head>
       <body
         className={cn(
-          "bg-background font-sans antialiased overflow-x-hidden",
+          "bg-background font-sans antialiased overflow-x-hidden min-h-screen",
           fontSans.variable,
           madeTommy.variable
         )}

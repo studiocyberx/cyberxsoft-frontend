@@ -26,7 +26,7 @@ const valuesData: valuesDataProps[] = [
     imageSrc: "/integrity.png",
   },
   {
-    title: "Customer Centric Approach",
+    title: "Customer Centric",
     description:
       "Customers are our pride, and customer satisfaction is at the heart of our operations.",
     imageSrc: "/customer-centric-approach.png",
@@ -40,7 +40,7 @@ const CoreValues = () => {
         Core Values
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 items-start">
         {valuesData.map((value, index) => (
           <div key={index} className="flex flex-col gap-2 items-center">
             <Image

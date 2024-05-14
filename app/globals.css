@@ -74,3 +74,30 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom Scrollbar */
+
+/* Firefox */
+* {
+  /* scrollbar-width: thin; */
+  scrollbar-color: rgba(92, 38, 113, 0.591);
+  scrollbar-width: 2px;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(92, 38, 113, 0.591);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #5c2671;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7f3e98;
+}

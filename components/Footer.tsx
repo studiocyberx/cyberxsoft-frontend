@@ -65,7 +65,7 @@ export function Footer() {
 
       <ul className="flex items-center justify-center gap-4 flex-wrap md:flex-nowrap">
         <li className="text-white pointer-events-none">
-          © 2024 BigO. All rights reserved.
+          © 2024 Big0. All rights reserved.
         </li>
         <li className="text-gray-400 hover:text-white">
           <Link href="/policy">Privacy Policy</Link>

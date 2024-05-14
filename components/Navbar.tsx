@@ -3,6 +3,8 @@
 import React from "react";
 import { NavDropDownMenu } from "./DropdownMenu";
 import { useActivePath } from "@/app/helper";
+import { FontProps } from "@/lib/definitions";
+import Link from "next/link";
 
 export interface NavItemProps {
   href: string;
@@ -19,16 +21,6 @@ export interface NavItemTypes {
   children: NavItemTypes[];
 }
 
-export interface FontProps {
-  className: string;
-  style: {
-    fontFamily: string;
-    fontWeight?: number;
-    fontStyle?: string;
-  };
-  variable: string;
-}
-
 const Navbar = ({
   fonts,
   navItems,
@@ -39,25 +31,26 @@ const Navbar = ({
   const activepath = useActivePath();
 
   return (
-    <>
-      <nav className="hidden md:block px-10 md:p-0 py-8">
-        <ul className="flex gap-4 flex-col md:flex-row">
-          {navItems.map((item, index) => (
-            <li
-              key={index}
-              className={`${
-                activepath(item.href) ? "text-white" : "text-gray-400"
-              } hover:text-gray-200 transition-all duration-300 uppercase text-xl ${
-                fonts.className
-              }`}
-            >
-              <NavDropDownMenu item={item} fonts={fonts} />
-              {index < navItems.length - 1 && <div className="w-6" />}
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </>
+    <nav className="hidden md:block px-10 md:p-0 py-8">
+      <ul className="flex gap-4 flex-col md:flex-row">
+        {navItems.map((navItem, index) => (
+          <li
+            key={index}
+            className={`${
+              activepath(navItem.href) ? "text-white" : "text-gray-400"
+            } hover:text-gray-200 transition-all duration-300 uppercase text-xl ${
+              fonts.className
+            }`}
+          >
+            {navItem.children.length > 0 ? (
+              <NavDropDownMenu item={navItem} />
+            ) : (
+              <Link href={navItem.href}>{navItem.title}</Link>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

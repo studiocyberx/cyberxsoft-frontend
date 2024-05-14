@@ -58,37 +58,18 @@ export async function Header() {
     { title: "What we think", href: "/insights", children: [] },
     { title: "Get in touch", href: "/contact", children: [] },
   ];
-
   //Append subservice pages to the navitems
   serviceItems.data.forEach((item: ServiceItem) => {
-    // Check if servicetype is "Internet of Things" and replace it with "iot"
-    const serviceType =
-      item.servicetype.toLowerCase() === "internet of things"
-        ? "iot"
-        : item.servicetype.toLowerCase().replace(/\s+/g, "-");
-
-    const existingServiceType = navItems[2].children.find(
-      (child) => child.title.toLowerCase() === item.servicetype.toLowerCase()
-    );
-    if (existingServiceType) {
-      existingServiceType.children.push({
-        title: item.navtitle,
-        href: `/${serviceType}/${item.slug}`,
-        children: [],
-      });
-    } else {
-      navItems[2].children.push({
-        title: item.servicetype,
-        href: `/${serviceType}`,
-        children: [
-          {
-            title: item.navtitle,
-            href: `/${serviceType}/${item.slug}`,
-            children: [],
-          },
-        ],
-      });
-    }
+    const serviceType = item.servicetype.toLowerCase();
+    const href =
+      serviceType === "internet of things"
+        ? `/iot/${item.slug}`
+        : `/${serviceType.replace(/\s+/g, "-")}/${item.slug}`;
+    navItems[2].children.push({
+      title: item.navtitle,
+      href: href,
+      children: [],
+    });
   });
 
   return (

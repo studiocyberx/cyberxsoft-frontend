@@ -4,6 +4,16 @@ export interface PageProps {
   params: { slug: string };
 }
 
+export interface FontProps {
+  className: string;
+  style: {
+    fontFamily: string;
+    fontWeight?: number;
+    fontStyle?: string;
+  };
+  variable: string;
+}
+
 export const formSchema = z.object({
   fullname: z
     .string()

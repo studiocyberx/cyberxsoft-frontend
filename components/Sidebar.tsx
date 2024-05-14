@@ -8,11 +8,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { FontProps, NavItemTypes } from "./Navbar";
+import { NavItemTypes } from "./Navbar";
 import { MdOutlineMenu } from "react-icons/md";
 import { Logo } from "./Logo";
 import Link from "next/link";
-import { NavDropDownMenu } from "./DropdownMenu";
+import { FontProps } from "@/lib/definitions";
+import { FaChevronDown } from "react-icons/fa6";
 
 const Sidebar = ({
   fonts,
@@ -51,15 +52,6 @@ const Sidebar = ({
           </nav>
         </SheetContent>
       </Sheet>
-
-      <div className="hidden md:flex w-full justify-evenly items-center">
-        {navItems.map((item, idx) => (
-          <React.Fragment key={idx}>
-            <NavDropDownMenu fonts={fonts} item={item} />
-            {idx < navItems.length - 1 && <div className="w-6" />}
-          </React.Fragment>
-        ))}
-      </div>
     </div>
   );
 };
@@ -75,26 +67,46 @@ const NavMenu = ({
   open: boolean;
   setSheetOpen: (value: boolean) => void;
 }) => {
+  const [showChildren, setShowChildren] = React.useState(false);
+
+  const handleToggleChildren = () => {
+    setShowChildren(!showChildren);
+  };
   return (
-    <div className="">
-      <Link
-        href={item.href}
-        onClick={() => setSheetOpen(false)}
-        className={`flex w-full items-center rounded-md p-2 text-white hover:text-gray-400 focus:text-gray-400 transition-all duration-300 uppercase text-xl font-bold ${fonts.className}`}
-      >
-        <p>{item.title}</p>
-      </Link>
-      {item.children.map((item, index) => (
+    <div>
+      <div className="flex items-center gap-2">
         <Link
-          key={index}
           href={item.href}
           onClick={() => setSheetOpen(false)}
-          className={`text-white hover:text-gray-400 focus:text-gray-400 transition-all duration-300 uppercase text-xl ${fonts.className} translate-x-4 flex w-full items-center rounded-md p-2`}
+          className={`flex w-full items-center gap-2 rounded-md p-2 text-white hover:text-gray-400 focus:text-gray-400 transition-all duration-300 uppercase text-xl font-bold ${fonts.className}`}
         >
-          <p>
-            {item.title}
-            {item.children.map((child, index) => {
-              return (
+          {item.title}
+        </Link>
+
+        {item.children.length > 0 && (
+          <FaChevronDown
+            className={`text-sm text-white transition-transform duration-300 ${
+              showChildren ? "rotate-180" : ""
+            }`}
+            onClick={handleToggleChildren}
+          />
+        )}
+      </div>
+      <div
+        className={`${
+          showChildren ? "animate-sidebar-dropdown" : "h-0 opacity-0"
+        }`}
+      >
+        {showChildren &&
+          item.children.map((item, index) => (
+            <Link
+              key={index}
+              href={item.href}
+              onClick={() => setSheetOpen(false)}
+              className={`text-white hover:text-gray-400 focus:text-gray-400 transition-all duration-300 uppercase text-xl ${fonts.className} translate-x-4 flex w-full items-center rounded-md p-2 `}
+            >
+              {item.title}
+              {item.children.map((child, index) => (
                 <SheetClose asChild key={index}>
                   <NavMenu
                     fonts={fonts}
@@ -103,11 +115,10 @@ const NavMenu = ({
                     setSheetOpen={setSheetOpen}
                   ></NavMenu>
                 </SheetClose>
-              );
-            })}
-          </p>
-        </Link>
-      ))}
+              ))}
+            </Link>
+          ))}
+      </div>
     </div>
   );
 };
