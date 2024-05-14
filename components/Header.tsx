@@ -34,7 +34,6 @@ const socialIcons: SocialIconProps[] = [
 
 export async function Header() {
   const serviceItems = await getSubServicePage();
-  console.log(serviceItems);
   const navItems: NavItemTypes[] = [
     { title: "Home", href: "/", children: [] },
     { title: "Who we are", href: "/about", children: [] },

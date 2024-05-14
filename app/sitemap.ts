@@ -14,11 +14,19 @@ type Sitemap = Array<{
     | "never";
   priority?: number;
   alternates?: {
-    languages?: Languages<string>;
+    languages?: Record<string, string>;
   };
 }>;
 
-export default async function sitemap(): MetadataRoute.Sitemap {
+interface ServiceItemTypes {
+  href: string;
+  title: string;
+  servicetype: string;
+  slug: string;
+  updatedAt: Date;
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const links: Sitemap = [
     { url: "https://big0.dev/", lastModified: new Date() },
     { url: "https://big0.dev/about", lastModified: new Date() },
@@ -34,7 +42,7 @@ export default async function sitemap(): MetadataRoute.Sitemap {
   const serviceItems = await getSubServicePage();
 
   await Promise.all(
-    serviceItems.data.map(async (item) => {
+    serviceItems.data.map(async (item: ServiceItemTypes) => {
       const serviceType = item.servicetype.toLowerCase();
       links.push({
         url:
