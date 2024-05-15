@@ -72,6 +72,7 @@ export async function getInsights() {
 }
 
 export async function getInsightsBySlug(slug: string) {
+  noStore();
   const url = new URL(`/api/insights/${slug}`, baseUrl);
   url.search = qs.stringify({
     populate: {
