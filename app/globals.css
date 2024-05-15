@@ -75,8 +75,11 @@
   }
 }
 
-/* Custom Scrollbar */
+html {
+  scroll-behavior: smooth !important;
+}
 
+/* Custom Scrollbar */
 /* Firefox */
 * {
   /* scrollbar-width: thin; */

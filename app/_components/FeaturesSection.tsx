@@ -22,7 +22,10 @@ interface FeatureSectionProps {
 export function FeatureSection({ data }: Readonly<FeatureSectionProps>) {
   return (
     <>
-      <section className="container px-4 py-6 mx-auto md:px-6 lg:px-14 lg:py-11 relative">
+      <section
+        className="container px-4 py-6 mx-auto md:px-6 lg:px-14 lg:py-11 relative"
+        id="what-can-we-do"
+      >
         <h2 className="text-3xl uppercase font-semibold">What we can do</h2>
         <Separator className="w-full bg-gray-500 mt-5 mb-8 relative after:absolute after:content-[''] after:bg-drop-pattern after:w-full after:min-h-[420px] after:bg-no-repeat after:z-0" />
         <div className="max-w-[1400px] mx-auto px-4 sm:px-5 md:px-10 relative z-10">

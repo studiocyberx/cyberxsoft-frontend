@@ -34,11 +34,7 @@ const AboutUs = () => {
           </p>
         </div>
 
-        <Image
-          src={bgImage}
-          alt=""
-          className="h-full w-full mix-blend-multiply"
-        />
+        <Image src={bgImage} alt="" className="h-full w-full" />
       </section>
 
       <section className="flex items-center justify-between flex-col md:flex-row gap-10 pt-12 pb-8 sm:py-12 px-8 sm:px-10 md:px-20 container">

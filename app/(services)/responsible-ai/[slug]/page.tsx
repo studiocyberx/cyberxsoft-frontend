@@ -11,6 +11,7 @@ import { notFound } from "next/navigation";
 import { getStrapiURL } from "@/lib/utils";
 import { Metadata } from "next";
 import { PageProps } from "@/lib/definitions";
+import VideoCta from "@/components/VideoCta";
 
 export async function generateMetadata({
   params,
@@ -38,6 +39,14 @@ const Service = async ({ params }: { params: { slug: string } }) => {
       (item: { __component: string }) => item.__component === "layout.faq"
     )
     .map((item: { faqitem: faqItemsProps }) => item.faqitem);
+
+  const videoCtaData = {
+    title: "Scale AI for Business Responsibly",
+    description:
+      "Gain the Competitive Edge For Your Business with Our Responsible AI Services",
+    height: "h-screen md:h-[500px]",
+    videoSrc: "/subservice-cta.mp4",
+  };
 
   return (
     <>
@@ -71,25 +80,25 @@ const Service = async ({ params }: { params: { slug: string } }) => {
         </section>
       </Suspense>
 
-      <Suspense fallback={<Loading />}>
-        <section className="py-8 sm:pb-0 sm:pt-12 px-8 sm:px-10 lg:px-20 space-y-4 container">
-          {data.TabSectionTitle && (
-            <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy text-center">
-              {data.TabSectionTitle}
-            </h2>
-          )}
+      <section className="py-8 sm:py-12 px-8 sm:px-10 lg:px-20 md:space-y-4 container">
+        {data.TabSectionTitle && (
+          <h2 className="text-custom-purple-300 uppercase text-4xl font-tommy text-center">
+            {data.TabSectionTitle}
+          </h2>
+        )}
 
-          {data.TabSectionDescription && (
-            <p className="text-lg md:text-xl text-secondary-foreground text-center">
-              {data?.TabSectionDescription}
-            </p>
-          )}
+        {data.TabSectionDescription && (
+          <p className="text-lg md:text-xl text-secondary-foreground text-center">
+            {data?.TabSectionDescription}
+          </p>
+        )}
 
-          <ServiceTabs tabsData={data.cardsdata} />
-        </section>
-      </Suspense>
+        <ServiceTabs tabsData={data.cardsdata} />
+      </section>
 
-      <section className="container px-6 sm:px-8 flex items-center justify-between gap-4">
+      <VideoCta videoCtaData={videoCtaData} />
+
+      <section className="container px-6 py-8 sm:px-8 flex items-center justify-between gap-4">
         <Faqs faqItems={faqItems[0]} />
         <Image
           src="/faq-illustration.png"
