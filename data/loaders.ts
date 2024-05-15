@@ -15,7 +15,7 @@ async function fetchData(url: string) {
   };
 
   try {
-    const response = await fetch(url, authToken ? headers : {});
+    const response = await fetch(url, { next: { revalidate: 3600 } });
     const data = await response.json();
     return flattenAttributes(data);
   } catch (error) {
@@ -38,7 +38,6 @@ export async function getSubServicePage() {
 }
 
 export async function getSubServiceBySlug(slug: string) {
-  noStore();
   const url = new URL(`/api/sub-service-pages/${slug}`, baseUrl);
   url.search = qs.stringify({
     populate: {
@@ -55,7 +54,6 @@ export async function getSubServiceBySlug(slug: string) {
 }
 
 export async function getInsights() {
-  noStore();
   const url = new URL("/api/insights", baseUrl);
   url.search = qs.stringify({
     populate: {
@@ -72,7 +70,6 @@ export async function getInsights() {
 }
 
 export async function getInsightsBySlug(slug: string) {
-  noStore();
   const url = new URL(`/api/insights/${slug}`, baseUrl);
   url.search = qs.stringify({
     populate: {

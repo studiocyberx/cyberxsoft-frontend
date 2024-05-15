@@ -48,8 +48,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const serviceItems = await getSubServicePage();
   const insights = await getInsights();
 
-  console.log(insights);
-
   await Promise.all([
     serviceItems.data.map(async (item: ServiceItemTypes) => {
       const serviceType = item.servicetype.toLowerCase();
