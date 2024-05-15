@@ -2,6 +2,8 @@ import BackgroundVideo from "@/components/BackgroundVideo";
 import GetInTouch from "@/components/GetInTouch";
 import { Metadata } from "next";
 import GetQuoteForm from "./_components/GetQuoteForm";
+import Link from "next/link";
+import { MdOutlineExpandCircleDown } from "react-icons/md";
 
 export const metadata: Metadata = {
   title: "BigO - Get A Quote",
@@ -22,6 +24,13 @@ const GetAQuote = () => {
             miss out on experiencing its true potential. Collaborate with us and
             step up to achieve new heights of success and growth.
           </p>
+
+          <Link href="#quote" className="mx-auto animate-bounce pt-10">
+            <MdOutlineExpandCircleDown
+              size={25}
+              className="cursor-pointer text-gray-300 hover:text-white transition-all duration-200"
+            />
+          </Link>
         </div>
       </BackgroundVideo>
       <GetQuoteForm />
