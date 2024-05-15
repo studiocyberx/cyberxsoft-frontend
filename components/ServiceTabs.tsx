@@ -87,7 +87,7 @@ const ServiceTabs = ({ tabsData }: { tabsData: TabDataProps[] }) => {
         ))}
       </Tabs>
 
-      <Accordion type="single" collapsible className="w-full">
+      <Accordion type="single" collapsible className="w-full md:hidden">
         {tabsData.map((item, index) => {
           if (item.__component !== "layout.faq") {
             return (
