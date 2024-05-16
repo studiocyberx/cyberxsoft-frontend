@@ -22,6 +22,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { formSchema } from "@/lib/definitions";
+import { toast } from "@/components/ui/use-toast";
 
 const QuoteForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -34,8 +35,15 @@ const QuoteForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  function onSubmit(data: z.infer<typeof formSchema>) {
+    toast({
+      title: "You submitted the following values:",
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+        </pre>
+      ),
+    });
   }
 
   return (
@@ -85,6 +93,8 @@ const QuoteForm = () => {
                   <FormControl>
                     <Input
                       type="tel"
+                      autoComplete="off"
+                      inputMode="tel"
                       placeholder="Phone No. *"
                       {...field}
                       className="text-black"
@@ -119,7 +129,7 @@ const QuoteForm = () => {
                 <FormItem>
                   <FormControl>
                     <Input
-                      placeholder="Industry *"
+                      placeholder="Industry"
                       {...field}
                       className="text-black"
                     />
@@ -144,7 +154,10 @@ const QuoteForm = () => {
                           <SelectValue placeholder="Project Type *" />
                         </SelectTrigger>
                       </FormControl>
-                      <SelectContent></SelectContent>
+                      <SelectContent>
+                        <SelectItem value="light">Light</SelectItem>
+                        <SelectItem value="dark">Dark</SelectItem>
+                      </SelectContent>
                     </Select>
                   </FormControl>
 
@@ -195,7 +208,10 @@ const QuoteForm = () => {
                   <FormControl>
                     <Input
                       type="number"
+                      inputMode="numeric"
+                      autoComplete="off"
                       placeholder="Budget *"
+                      min={0}
                       {...field}
                       className="text-black"
                     />
@@ -207,7 +223,10 @@ const QuoteForm = () => {
             />
           </div>
 
-          <Button className="bg-custom-purple-400 hover:bg-custom-purple-500 uppercase px-10 py-6 text-xl">
+          <Button
+            type="submit"
+            className="bg-custom-purple-400 hover:bg-custom-purple-500 uppercase px-10 py-6 text-xl"
+          >
             Submit
           </Button>
         </form>

@@ -19,24 +19,24 @@ export const formSchema = z.object({
     .string()
     .min(2, { message: "Name must be at least 2 characters long." })
     .trim(),
-  email: z.string().email({ message: "Please enter a valid email." }).trim(),
-  phone: z
-    .number()
-    .min(11, { message: "Required!!" })
-    .max(12, { message: "Invalid number" }),
+  email: z.string().email({ message: "Enter a valid email." }).trim(),
+  phone: z.coerce
+    .number({
+      required_error: "Telphone number required!",
+      invalid_type_error: "Telphone number required!",
+    })
+    .min(11, { message: "Invalid number!!" }),
   company: z.string(),
   industry: z.string(),
-  project: z.string({
-    required_error: "Please select a project",
-  }),
-  service: z.string({
-    required_error: "Please select a service",
-  }),
-  budget: z
+  project: z.string(),
+  service: z.string(),
+  budget: z.coerce
     .number({
-      required_error: "Please enter a budget range",
+      required_error: "Enter a budget range",
+      invalid_type_error: "Enter a budget range",
     })
-    .min(0, { message: "Budget cannot be negative" }),
+    .min(1, { message: "Budget cannot be 0" })
+    .positive(),
 });
 
 export const getInTouchFormSchema = z.object({

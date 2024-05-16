@@ -8,6 +8,7 @@ import { madeTommy, fontSans } from "@/app/fonts";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { ScrollToTopButton } from "@/components/ScrollToTop";
+import { Toaster } from "@/components/ui/toaster";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -39,6 +40,7 @@ export default async function RootLayout({
           <Suspense fallback={<Loading />}>{children}</Suspense>
           <Footer />
 
+          <Toaster />
           <ScrollToTopButton />
         </ThemeProvider>
       </body>
