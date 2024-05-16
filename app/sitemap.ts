@@ -36,16 +36,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: "https://big0.dev/about", lastModified: new Date() },
     { url: "https://big0.dev/insights", lastModified: new Date() },
     { url: "https://big0.dev/contact", lastModified: new Date() },
-    {
-      url: "https://big0.dev/services/business-intelligence",
-      lastModified: new Date(),
-    },
-    { url: "https://big0.dev/services/cloud", lastModified: new Date() },
-    {
-      url: "https://big0.dev/services/responsible-ai",
-      lastModified: new Date(),
-    },
-    { url: "https://big0.dev/services/iot", lastModified: new Date() },
+    // {
+    //   url: "https://big0.dev/services/business-intelligence",
+    //   lastModified: new Date(),
+    // },
+    // { url: "https://big0.dev/services/cloud", lastModified: new Date() },
+    // {
+    //   url: "https://big0.dev/services/responsible-ai",
+    //   lastModified: new Date(),
+    // },
+    // { url: "https://big0.dev/services/iot", lastModified: new Date() },
     { url: "https://big0.dev/get-a-quote", lastModified: new Date() },
     { url: "https://big0.dev/policy", lastModified: new Date() },
     { url: "https://big0.dev/terms", lastModified: new Date() },

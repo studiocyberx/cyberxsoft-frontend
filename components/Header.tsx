@@ -41,22 +41,22 @@ export async function Header() {
       title: "What we do",
       href: "",
       children: [
-        {
-          title: "Business Intelligence",
-          href: "/services/business-intelligence",
-          children: [],
-        },
-        { title: "Cloud", href: "/services/cloud", children: [] },
-        {
-          title: "Responsible AI",
-          href: "/services/responsible-ai",
-          children: [],
-        },
-        {
-          title: "Internet Of Things",
-          href: "/services/iot",
-          children: [],
-        },
+        // {
+        //   title: "Business Intelligence",
+        //   href: "/services/business-intelligence",
+        //   children: [],
+        // },
+        // { title: "Cloud", href: "/services/cloud", children: [] },
+        // {
+        //   title: "Responsible AI",
+        //   href: "/services/responsible-ai",
+        //   children: [],
+        // },
+        // {
+        //   title: "Internet Of Things",
+        //   href: "/services/iot",
+        //   children: [],
+        // },
       ],
     },
     { title: "What we think", href: "/insights", children: [] },
