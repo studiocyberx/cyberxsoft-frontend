@@ -53,7 +53,7 @@ export function Footer() {
           {socialLinks.map((link, index) => (
             <li
               key={index}
-              className="text-white hover:text-gray-400 transition-all duration-300"
+              className="text-white hover:text-gray-400 capitalize transition-all duration-300"
             >
               <Link href={link.href} target="_blank">
                 {link.icon}

@@ -3,18 +3,16 @@ import BackgroundVideo from "./BackgroundVideo";
 import { Button } from "@/components/ui/button";
 
 interface videoCtaProps {
-  videoSrc: string;
+  videoSrc?: string;
   height?: string;
   title: string;
   description: string;
 }
 
 const VideoCta = ({ videoCtaData }: { videoCtaData: videoCtaProps }) => {
+  const videoSource = videoCtaData.videoSrc || "/subservice-cta.mp4";
   return (
-    <BackgroundVideo
-      videoSrc={videoCtaData.videoSrc}
-      height={videoCtaData.height}
-    >
+    <BackgroundVideo videoSrc={videoSource} height={videoCtaData.height}>
       <div className="absolute top-0 bottom-0 w-full flex items-center justify-center px-8 sm:px-20 flex-col bg-custom-purple-700 bg-opacity-80 space-y-4">
         <h2 className="text-3xl md:text-5xl text-center uppercase font-tommy text-white">
           {videoCtaData.title}

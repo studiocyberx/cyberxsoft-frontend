@@ -43,14 +43,18 @@ export async function Header() {
       children: [
         {
           title: "Business Intelligence",
-          href: "/business-intelligence",
+          href: "/services/business-intelligence",
           children: [],
         },
-        { title: "Cloud", href: "/cloud", children: [] },
-        { title: "Responsible AI", href: "/responsible-ai", children: [] },
+        { title: "Cloud", href: "/services/cloud", children: [] },
+        {
+          title: "Responsible AI",
+          href: "/services/responsible-ai",
+          children: [],
+        },
         {
           title: "Internet Of Things",
-          href: "/iot",
+          href: "/services/iot",
           children: [],
         },
       ],
@@ -60,11 +64,7 @@ export async function Header() {
   ];
   //Append subservice pages to the navitems
   serviceItems.data.forEach((item: ServiceItem) => {
-    const serviceType = item.servicetype.toLowerCase();
-    const href =
-      serviceType === "internet of things"
-        ? `/iot/${item.slug}`
-        : `/${serviceType.replace(/\s+/g, "-")}/${item.slug}`;
+    const href = `/services/${item.slug}`;
     navItems[2].children.push({
       title: item.navtitle,
       href: href,

@@ -1,5 +1,4 @@
-import React, { Suspense } from "react";
-import Loading from "../loading";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
@@ -49,35 +48,31 @@ const Service = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <>
-      <Suspense fallback={<Loading />}>
-        <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 py-10 sm:py-20 overflow-hidden">
-          <div className="space-y-4 container text-center lg:text-left min-w-min">
-            <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
-              {data.introTitle}
-            </h1>
-            <p className="text-lg md:text-xl text-secondary">
-              {data.introText}
-            </p>
+      <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 py-10 sm:py-20 overflow-hidden">
+        <div className="space-y-4 container text-center lg:text-left min-w-min">
+          <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
+            {data.introTitle}
+          </h1>
+          <p className="text-lg md:text-xl text-secondary">{data.introText}</p>
 
-            <Button
-              asChild
-              variant="outline"
-              className="bg-transparent text-white text-lg p-6"
-            >
-              <Link href="/get-a-quote">Request A Demo</Link>
-            </Button>
-          </div>
+          <Button
+            asChild
+            variant="outline"
+            className="bg-transparent text-white text-lg p-6"
+          >
+            <Link href="/get-a-quote">Request A Demo</Link>
+          </Button>
+        </div>
 
-          <Image
-            src={baseUrl + data.introImage.url}
-            width={720}
-            height={600}
-            sizes="(max-width: 1000px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            alt={data.introImage.alternativeText}
-            className=""
-          />
-        </section>
-      </Suspense>
+        <Image
+          src={baseUrl + data.introImage.url}
+          width={720}
+          height={600}
+          sizes="(max-width: 1000px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          alt={data.introImage.alternativeText}
+          className=""
+        />
+      </section>
 
       <section className="py-8 sm:py-12 px-8 sm:px-10 lg:px-20 md:space-y-4 container">
         {data.TabSectionTitle && (

@@ -36,10 +36,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: "https://big0.dev/about", lastModified: new Date() },
     { url: "https://big0.dev/insights", lastModified: new Date() },
     { url: "https://big0.dev/contact", lastModified: new Date() },
-    { url: "https://big0.dev/business-intelligence", lastModified: new Date() },
-    { url: "https://big0.dev/cloud", lastModified: new Date() },
-    { url: "https://big0.dev/responsible-ai", lastModified: new Date() },
-    { url: "https://big0.dev/iot", lastModified: new Date() },
+    {
+      url: "https://big0.dev/services/business-intelligence",
+      lastModified: new Date(),
+    },
+    { url: "https://big0.dev/services/cloud", lastModified: new Date() },
+    {
+      url: "https://big0.dev/services/responsible-ai",
+      lastModified: new Date(),
+    },
+    { url: "https://big0.dev/services/iot", lastModified: new Date() },
     { url: "https://big0.dev/get-a-quote", lastModified: new Date() },
     { url: "https://big0.dev/policy", lastModified: new Date() },
     { url: "https://big0.dev/terms", lastModified: new Date() },
@@ -50,14 +56,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   await Promise.all([
     serviceItems.data.map(async (item: ServiceItemTypes) => {
-      const serviceType = item.servicetype.toLowerCase();
       links.push({
-        url:
-          serviceType === "internet of things"
-            ? `https://big0.dev/iot/${item.slug}`
-            : `https://big0.dev/${serviceType.replace(/\s+/g, "-")}/${
-                item.slug
-              }`,
+        url: `https://big0.dev/services/${item.slug}`,
         lastModified: item.updatedAt,
       });
     }),

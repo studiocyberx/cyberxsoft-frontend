@@ -8,8 +8,6 @@ import BeyondSection from "@/components/BeyondSection";
 import ServicesCardsSection from "@/components/ServicesCardsSection";
 import VideoCta from "@/components/VideoCta";
 import FiveCardsSection from "@/components/FiveCardsSection";
-import { Suspense } from "react";
-import Loading from "./loading";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -151,73 +149,64 @@ const ResponsibleAi = () => {
 
   return (
     <>
-      <Suspense fallback={<Loading />}>
-        <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
-          <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
-            <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
-              Responsible <span className="font-bold">AI</span>
-            </h1>
-            <p className="text-lg md:text-xl text-secondary">
-              Develop and Deploy AI Capabilities that are Compliant and Inspire
-              Confidence and Responsibility
-            </p>
+      <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
+        <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
+          <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
+            Responsible <span className="font-bold">AI</span>
+          </h1>
+          <p className="text-lg md:text-xl text-secondary">
+            Develop and Deploy AI Capabilities that are Compliant and Inspire
+            Confidence and Responsibility
+          </p>
 
-            <Button
-              asChild
-              variant="outline"
-              className="bg-transparent text-white text-lg p-6"
-            >
-              <Link href="/">Learn More</Link>
-            </Button>
-          </div>
+          <Button
+            asChild
+            variant="outline"
+            className="bg-transparent text-white text-lg p-6"
+          >
+            <Link href="/">Learn More</Link>
+          </Button>
+        </div>
 
-          <Image
-            src={responsibleAiHeader}
-            alt=""
-            className="mix-blend-overlay"
-          />
-        </section>
-      </Suspense>
+        <Image src={responsibleAiHeader} alt="" className="mix-blend-overlay" />
+      </section>
 
-      <Suspense fallback={<Loading />}>
-        <section className="h-full flex flex-col-reverse lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full px-8 sm:px-14 lg:px-20 2xl:px-28 py-12 container">
-          <Image src="/ai-intro.png" alt="" width={550} height={550} />
+      <section className="h-full flex flex-col-reverse lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full px-8 sm:px-14 lg:px-20 2xl:px-28 py-12 container">
+        <Image src="/ai-intro.png" alt="" width={550} height={550} />
 
-          <div className="space-y-4 text-center lg:text-left max-w-3xl">
-            <h2 className="text-custom-purple-300 font-bold text-3xl uppercase">
-              Limitless Possibilities to Deploy AI with Confidence
-            </h2>
+        <div className="space-y-4 text-center lg:text-left max-w-3xl">
+          <h2 className="text-custom-purple-300 font-bold text-3xl uppercase">
+            Limitless Possibilities to Deploy AI with Confidence
+          </h2>
 
-            <p>
-              Organizations continue to embrace advanced emerging Artificial
-              Intelligence (AI) technologies to automate their operations and
-              reap competitive business benefits.
-            </p>
-            <p>
-              What is AI doing, though? Are its decisions bias-aware,
-              error-free, and accurate, or in any way violating privacy?
-            </p>
-            <p>
-              With great power comes even greater responsibility, and BigO is
-              your trusted partner in striking a balance between responsible AI
-              use with trust, transparency, and confidence. Our Responsible AI
-              (RAI) service is designed to leverage tools, techniques, and
-              frameworks necessary to uphold ethical and legal obligations.
-              Fundamentally, the technology is capable of reshaping the business
-              landscape with improved efficiency, promising heightened
-              productivity, cost-effectiveness, increased customer satisfaction,
-              and compliance.{" "}
-            </p>
+          <p>
+            Organizations continue to embrace advanced emerging Artificial
+            Intelligence (AI) technologies to automate their operations and reap
+            competitive business benefits.
+          </p>
+          <p>
+            What is AI doing, though? Are its decisions bias-aware, error-free,
+            and accurate, or in any way violating privacy?
+          </p>
+          <p>
+            With great power comes even greater responsibility, and BigO is your
+            trusted partner in striking a balance between responsible AI use
+            with trust, transparency, and confidence. Our Responsible AI (RAI)
+            service is designed to leverage tools, techniques, and frameworks
+            necessary to uphold ethical and legal obligations. Fundamentally,
+            the technology is capable of reshaping the business landscape with
+            improved efficiency, promising heightened productivity,
+            cost-effectiveness, increased customer satisfaction, and compliance.{" "}
+          </p>
 
-            <Button
-              asChild
-              className="bg-custom-purple-400 hover:bg-custom-purple-500 px-10 py-6 text-lg"
-            >
-              <Link href="/get-a-quote">Get A Quote</Link>
-            </Button>
-          </div>
-        </section>
-      </Suspense>
+          <Button
+            asChild
+            className="bg-custom-purple-400 hover:bg-custom-purple-500 px-10 py-6 text-lg"
+          >
+            <Link href="/get-a-quote">Get A Quote</Link>
+          </Button>
+        </div>
+      </section>
 
       <ServicesCardsSection
         content={serviceCardContent}

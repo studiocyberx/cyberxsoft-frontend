@@ -1,4 +1,3 @@
-import Loading from "@/app/loading";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 
 interface fiveCardsSectionCotentProps {
