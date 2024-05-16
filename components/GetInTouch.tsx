@@ -4,7 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import GetInTouchForm from "./GetInTouchForm";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import SubmitButton from "./SubmitButton";
 
 const GetInTouch = () => {
   return (
@@ -71,9 +71,10 @@ const GetInTouch = () => {
               className="rounded-l-sm rounded-r-none text-black"
               placeholder="Subscribe To Newsletter"
             />
-            <Button className="rounded-r-sm rounded-l-none bg-custom-purple-300/50 hover:bg-custom-purple-300 px-8">
-              Subscribe
-            </Button>
+            <SubmitButton
+              text="Subscribe"
+              className="rounded-r-sm rounded-l-none bg-custom-purple-300/50 hover:bg-custom-purple-300 px-8"
+            />
           </div>
         </div>
       </div>

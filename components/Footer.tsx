@@ -22,6 +22,7 @@ const navItems: NavItemProps[] = [
   // { title: "Industries", href: "/industries" },
   { title: "What we think", href: "/insights" },
   { title: "Get in touch", href: "/contact" },
+  { title: "Request a quote", href: "/get-a-quote" },
   // { title: "Careers", href: "/careers" },
 ];
 
@@ -42,7 +43,7 @@ export function Footer() {
           {navItems.map((navLink, index) => (
             <li
               key={index}
-              className="text-white hover:text-gray-400 transition-all duration-300"
+              className="text-white hover:text-gray-400 focus-within:text-gray-400 transition-all duration-300 capitalize"
             >
               <Link href={navLink.href}>{navLink.title}</Link>
             </li>
@@ -53,7 +54,7 @@ export function Footer() {
           {socialLinks.map((link, index) => (
             <li
               key={index}
-              className="text-white hover:text-gray-400 capitalize transition-all duration-300"
+              className="text-white hover:text-gray-400 focus-within:text-gray-400 capitalize transition-all duration-300"
             >
               <Link href={link.href} target="_blank">
                 {link.icon}
@@ -67,16 +68,16 @@ export function Footer() {
         <li className="text-white pointer-events-none">
           © 2024 Big0. All rights reserved.
         </li>
-        <li className="text-gray-400 hover:text-white">
+        <li className="text-gray-400 hover:text-white focus-within:text-white">
           <Link href="/policy">Privacy Policy</Link>
         </li>
-        <li className="text-gray-400 hover:text-white">
+        <li className="text-gray-400 hover:text-white focus-within:text-white">
           <Link href="/terms">Terms of Service</Link>
         </li>
-        <li className="text-gray-400 hover:text-white">
+        <li className="text-gray-400 hover:text-white focus-within:text-white">
           <Link href="/">Cookies Settings</Link>
         </li>
-        <li className="text-gray-400 hover:text-white">
+        <li className="text-gray-400 hover:text-white focus-within:text-white">
           <Link href="/sitemap.xml">Sitemap</Link>
         </li>
       </ul>

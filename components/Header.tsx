@@ -37,6 +37,7 @@ export async function Header() {
   const navItems: NavItemTypes[] = [
     { title: "Home", href: "/", children: [] },
     { title: "Who we are", href: "/about", children: [] },
+    { title: "What we think", href: "/insights", children: [] },
     {
       title: "What we do",
       href: "",
@@ -59,13 +60,13 @@ export async function Header() {
         // },
       ],
     },
-    { title: "What we think", href: "/insights", children: [] },
     { title: "Get in touch", href: "/contact", children: [] },
+    { title: "get a quote", href: "/get-a-quote", children: [] },
   ];
   //Append subservice pages to the navitems
   serviceItems.data.forEach((item: ServiceItem) => {
     const href = `/services/${item.slug}`;
-    navItems[2].children.push({
+    navItems[3].children.push({
       title: item.navtitle,
       href: href,
       children: [],

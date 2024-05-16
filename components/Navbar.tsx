@@ -38,7 +38,7 @@ const Navbar = ({
             key={index}
             className={`${
               activepath(navItem.href) ? "text-white" : "text-gray-400"
-            } hover:text-gray-200 transition-all duration-300 uppercase text-xl ${
+            } hover:text-gray-100 focus-within:text-gray-100 transition-all duration-300 uppercase text-xl ${
               fonts.className
             }`}
           >

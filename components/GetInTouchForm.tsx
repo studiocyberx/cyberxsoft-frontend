@@ -15,8 +15,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { getInTouchFormSchema } from "@/lib/definitions";
 import { toast } from "@/components/ui/use-toast";
+import { useFormStatus } from "react-dom";
+import SubmitButton from "./SubmitButton";
 
 const GetInTouchForm = () => {
+  const { pending } = useFormStatus();
   const form = useForm<z.infer<typeof getInTouchFormSchema>>({
     resolver: zodResolver(getInTouchFormSchema),
     defaultValues: {
@@ -30,8 +33,10 @@ const GetInTouchForm = () => {
     toast({
       title: "You submitted the following values:",
       description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+        <pre className="mt-2 w-full sm:w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white w-full">
+            {JSON.stringify(data, null, 2)}
+          </code>
         </pre>
       ),
     });
@@ -101,12 +106,7 @@ const GetInTouchForm = () => {
             )}
           />
 
-          <Button
-            variant="outline"
-            className="bg-transparent hover:text-custom-purple-400"
-          >
-            Contact Us
-          </Button>
+          <SubmitButton text="Contact Us" variant="outline" />
         </form>
       </Form>
     </div>

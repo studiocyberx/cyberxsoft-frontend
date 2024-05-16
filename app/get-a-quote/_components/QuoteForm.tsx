@@ -19,10 +19,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-import { Button } from "@/components/ui/button";
 import { formSchema } from "@/lib/definitions";
 import { toast } from "@/components/ui/use-toast";
+import SubmitButton from "@/components/SubmitButton";
 
 const QuoteForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -223,12 +222,10 @@ const QuoteForm = () => {
             />
           </div>
 
-          <Button
-            type="submit"
-            className="bg-custom-purple-400 hover:bg-custom-purple-500 uppercase px-10 py-6 text-xl"
-          >
-            Submit
-          </Button>
+          <SubmitButton
+            className="bg-custom-purple-400 hover:bg-custom-purple-500 hover:text-white uppercase px-10 py-6 text-xl"
+            text="Submit "
+          />
         </form>
       </Form>
     </div>
