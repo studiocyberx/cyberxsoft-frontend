@@ -1,7 +1,7 @@
 "use client";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import Image from "next/image";
-import DynamicChart from "@/app/services/business-intelligence/_components/DynamicChart";
+import DynamicChart from "@/app/services/_business-intelligence/_components/DynamicChart";
 
 type ChartType =
   | "bar"
