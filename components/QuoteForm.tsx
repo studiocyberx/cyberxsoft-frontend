@@ -32,24 +32,21 @@ const QuoteForm = () => {
       email: "",
       company: "",
       industry: "",
+      service: "",
     },
   });
 
-  const onSubmit = async (formData: typeof formSchema) => {
-    try {
-      await handleFormSubmission(formData);
-      toast({
-        title: "Form submitted successfully",
-        variant: "success",
-      });
-    } catch (error: any) {
-      toast({
-        title: "Error submitting form",
-        description: error.message,
-        variant: "destructive",
-      });
-    }
-  };
+  function onSubmit(data: z.infer<typeof formSchema>) {
+    // handleFormSubmission(data);
+    toast({
+      title: "You submitted the following values:",
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+        </pre>
+      ),
+    });
+  }
 
   return (
     <div className="w-full">
@@ -157,7 +154,7 @@ const QuoteForm = () => {
                     >
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Service" />
+                          <SelectValue placeholder="Service *" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
