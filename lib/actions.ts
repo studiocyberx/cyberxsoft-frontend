@@ -2,15 +2,14 @@
 
 import z from "zod";
 import { formSchema, getInTouchFormSchema } from "@/lib/definitions";
+import { revalidatePath } from "next/cache";
 
 // type FormData = z.infer<typeof formSchema>;
 
-export const handleFormSubmission = async (data: FormData) => {
-  const rawFormData = {
-    fullname: data.get("fullname"),
-    email: data.get("email"),
-  };
-  console.log(rawFormData);
+export const handleFormSubmission = async (data: typeof formSchema) => {
+  console.log(data);
+
+  revalidatePath("/");
 };
 
 type ContactFormData = z.infer<typeof getInTouchFormSchema>;

@@ -29,7 +29,7 @@ export const formSchema = z.object({
     .min(11),
   company: z.string(),
   industry: z.string(),
-  service: z.string(),
+  service: z.enum(["business-intelligence", "responsible-ai", "cloud", "iot"]),
   budget: z.coerce
     .number({
       required_error: "Enter a budget range",
@@ -44,5 +44,5 @@ export const getInTouchFormSchema = z.object({
   email: z.string().email().min(5, { message: "Cannot be empty!!!" }),
   message: z
     .string({ required_error: "Required" })
-    .max(350, { message: "Message cannot be longer than 350 characters" }),
+    .max(500, { message: "Message cannot be longer than 500 characters" }),
 });
