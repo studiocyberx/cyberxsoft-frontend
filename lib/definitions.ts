@@ -23,12 +23,12 @@ export const formSchema = z.object({
   phone: z.coerce
     .number({
       required_error: "Telphone number required!",
-      invalid_type_error: "Telphone number required!",
+      invalid_type_error: "Invalid Number!",
     })
-    .min(11, { message: "Invalid number!!" }),
+    .positive()
+    .min(11),
   company: z.string(),
   industry: z.string(),
-  project: z.string(),
   service: z.string(),
   budget: z.coerce
     .number({

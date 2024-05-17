@@ -34,7 +34,6 @@ const GetAQuote = () => {
         </div>
       </BackgroundVideo>
       <GetQuoteForm />
-      <GetInTouch />
     </>
   );
 };

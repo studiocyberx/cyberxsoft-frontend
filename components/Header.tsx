@@ -61,7 +61,7 @@ export async function Header() {
       ],
     },
     { title: "Get in touch", href: "/contact", children: [] },
-    { title: "get a quote", href: "/get-a-quote", children: [] },
+    // { title: "get a quote", href: "/get-a-quote", children: [] },
   ];
   //Append subservice pages to the navitems
   serviceItems.data.forEach((item: ServiceItem) => {

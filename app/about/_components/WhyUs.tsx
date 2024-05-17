@@ -12,9 +12,9 @@ const whyUs: whyUsProps[] = [
       "Achieve excellence with our team of seasoned data analysts, AI project architects, and data experts. We are masters at harnessing the potential of cutting-edge BI tools.",
   },
   {
-    title: "Tailored Solutions for Your Unique Business",
+    title: "Tailored Solutions for Your Business",
     description:
-      "Achieve excellence with our team of seasoned data analysts, AI project architects, and data experts.",
+      "Achieve excellence with our team of seasoned data analysts. Our AI project architects are here to elevate your projects. Benefit from the expertise of our dedicated data experts. ",
   },
   {
     title: "User-Friendly Dashboards",

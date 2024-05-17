@@ -14,10 +14,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { getInTouchFormSchema } from "@/lib/definitions";
 import { toast } from "@/components/ui/use-toast";
-import SubmitButton from "./SubmitButton";
+import SubmitButton from "@/components/SubmitButton";
+import { Card } from "@/components/ui/card";
 import { handleContactForm } from "@/lib/actions";
 
-const GetInTouchForm = () => {
+const ContactForm = () => {
   const form = useForm<z.infer<typeof getInTouchFormSchema>>({
     resolver: zodResolver(getInTouchFormSchema),
     defaultValues: {
@@ -42,7 +43,7 @@ const GetInTouchForm = () => {
   }
 
   return (
-    <div className="w-full max-w-2xl">
+    <Card className="max-w-4xl mx-auto bg-gray-200 border-none shadow-md overflow-hidden gap-8 p-8">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
           <div className="grid md:grid-cols-2 gap-4">
@@ -104,12 +105,14 @@ const GetInTouchForm = () => {
               </FormItem>
             )}
           />
-
-          <SubmitButton text="Contact Us" variant="outline" />
+          <SubmitButton
+            className="bg-custom-purple-400 hover:bg-custom-purple-500 hover:text-white uppercase px-10 py-6 text-xl"
+            text="Send "
+          />
         </form>
       </Form>
-    </div>
+    </Card>
   );
 };
 
-export default GetInTouchForm;
+export default ContactForm;

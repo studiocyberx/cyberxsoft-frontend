@@ -31,6 +31,7 @@ interface InsightItemProps {
 
 const ResourceSection = async () => {
   const data = await getInsights();
+  const baseUrl = getStrapiURL();
   const cardItems: cardProps[] = data.data.map((item: InsightItemProps) => {
     return {
       title: item.CardTitle,
@@ -44,7 +45,6 @@ const ResourceSection = async () => {
     };
   });
 
-  const baseUrl = getStrapiURL();
   return (
     <section className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8 sm:px-12 md:px-20">
       {cardItems.map((item) => (

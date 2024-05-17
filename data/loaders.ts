@@ -15,7 +15,7 @@ async function fetchData(url: string) {
 
   try {
     const response = await fetch(url, {
-      next: { revalidate: 1200 },
+      next: { revalidate: 1000 },
     });
     const data = await response.json();
     return flattenAttributes(data);

@@ -24,9 +24,10 @@ const Blog = async ({ params }: { params: { slug: string } }) => {
   }
 
   const videoCtaData = {
-    title: "Scale AI for Business Responsibly",
-    description:
-      "Gain the Competitive Edge For Your Business with Our Responsible AI Services",
+    title: data.ctaTitle ? data.ctaTitle : "Scale AI for Business Responsibly",
+    description: data.ctaDescription
+      ? data.ctaDescription
+      : "Gain the Competitive Edge For Your Business with Our Responsible AI Services",
     height: "h-screen md:h-[500px]",
   };
 

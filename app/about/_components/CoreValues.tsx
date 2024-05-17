@@ -22,7 +22,7 @@ const valuesData: valuesDataProps[] = [
   {
     title: "Integrity",
     description:
-      "We are reliable, transparent, and genuine partners for our clients.",
+      "We are reliable, transparent, and genuinly dedicated partners for our clients.",
     imageSrc: "/integrity.png",
   },
   {

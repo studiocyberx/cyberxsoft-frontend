@@ -22,6 +22,7 @@ import {
 import { formSchema } from "@/lib/definitions";
 import { toast } from "@/components/ui/use-toast";
 import SubmitButton from "@/components/SubmitButton";
+import { handleFormSubmission } from "@/lib/actions";
 
 const QuoteForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -31,15 +32,19 @@ const QuoteForm = () => {
       email: "",
       company: "",
       industry: "",
+      service: "",
     },
   });
 
   function onSubmit(data: z.infer<typeof formSchema>) {
+    // handleFormSubmission(data);
     toast({
       title: "You submitted the following values:",
       description: (
         <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+          <code className="text-white w-full text-wrap whitespace-pre-wrap">
+            {JSON.stringify(data, null, 2)}
+          </code>
         </pre>
       ),
     });
@@ -48,7 +53,7 @@ const QuoteForm = () => {
   return (
     <div className="w-full">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+        <form action={handleFormSubmission} className="space-y-3">
           <div className="grid md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
@@ -138,32 +143,7 @@ const QuoteForm = () => {
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="project"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Project Type *" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="light">Light</SelectItem>
-                        <SelectItem value="dark">Dark</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </FormControl>
 
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
             <FormField
               control={form.control}
               name="service"
@@ -176,7 +156,7 @@ const QuoteForm = () => {
                     >
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Service Required *" />
+                          <SelectValue placeholder="Service" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>

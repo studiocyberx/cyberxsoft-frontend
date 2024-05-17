@@ -25,7 +25,6 @@ export async function generateMetadata({
 
 const Service = async ({ params }: { params: { slug: string } }) => {
   const data = await getSubServiceBySlug(params.slug);
-
   if (data.error?.status === 404) {
     notFound();
   }
@@ -39,9 +38,10 @@ const Service = async ({ params }: { params: { slug: string } }) => {
     .map((item: { faqitem: faqItemsProps }) => item.faqitem);
 
   const videoCtaData = {
-    title: "Scale AI for Business Responsibly",
-    description:
-      "Gain the Competitive Edge For Your Business with Our Responsible AI Services",
+    title: data.ctaTitle ? data.ctaTitle : "Scale AI for Business Responsibly",
+    description: data.ctaDescription
+      ? data.ctaDescription
+      : "Gain the Competitive Edge For Your Business with Our Responsible AI Services",
     height: "h-screen md:h-[500px]",
     videoSrc: "/subservice-cta.mp4",
   };
