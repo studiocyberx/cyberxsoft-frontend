@@ -107,6 +107,7 @@ const Home = async () => {
         />
         <Faqs faqItems={faqItems} />
       </section>
+
       <GetInTouch />
     </main>
   );

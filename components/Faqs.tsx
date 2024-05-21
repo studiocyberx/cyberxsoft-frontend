@@ -19,7 +19,12 @@ const Faqs = ({ faqItems }: { faqItems: faqItemsProps[] }) => {
         Frequently Asked <br /> <span className="font-bold">Questions</span>
       </h2>
 
-      <Accordion type="single" collapsible className="w-full space-y-4 pt-4">
+      <Accordion
+        type="single"
+        collapsible
+        defaultValue={faqItems[0].value}
+        className="w-full space-y-4 pt-4"
+      >
         {faqItems.map((faq) => (
           <div key={faq.value}>
             <AccordionItem value={faq.value} className="px-4">
