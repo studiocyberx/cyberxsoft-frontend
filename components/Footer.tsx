@@ -19,18 +19,22 @@ interface NavItemProps {
 const navItems: NavItemProps[] = [
   { title: "Home", href: "/" },
   { title: "Who we are", href: "/about" },
-  // { title: "Industries", href: "/industries" },
   { title: "What we think", href: "/insights" },
   { title: "Get in touch", href: "/contact" },
   { title: "Request a quote", href: "/get-a-quote" },
-  // { title: "Careers", href: "/careers" },
 ];
 
 const socialLinks = [
-  { icon: <FaFacebook />, href: "https://www.facebook.com/" },
-  { icon: <FaInstagram />, href: "https://www.instagram.com/" },
-  { icon: <FaYoutube />, href: "https://www.youtube.com/" },
-  { icon: <FaLinkedin />, href: "https://www.linkedin.com/" },
+  {
+    icon: <FaFacebook />,
+    href: "https://www.facebook.com/profile.php?id=61559667573420",
+  },
+  { icon: <FaInstagram />, href: "https://www.instagram.com/big0.dev/" },
+  {
+    icon: <FaYoutube />,
+    href: "https://www.youtube.com/channel/UCdFdgYjRGC53PPmE2XTlPhw",
+  },
+  { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/big0-dev/" },
 ];
 
 export function Footer() {

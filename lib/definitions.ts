@@ -16,10 +16,13 @@ export interface FontProps {
 
 export const formSchema = z.object({
   fullname: z
-    .string()
+    .string({ required_error: "Required" })
     .min(2, { message: "Name must be at least 2 characters long." })
     .trim(),
-  email: z.string().email({ message: "Enter a valid email." }).trim(),
+  email: z
+    .string({ required_error: "Required" })
+    .email({ message: "Enter a valid email." })
+    .trim(),
   phone: z.coerce
     .number({
       required_error: "Telphone number required!",
@@ -31,18 +34,15 @@ export const formSchema = z.object({
   industry: z.string(),
   service: z.string(),
   budget: z.coerce
-    .number({
-      required_error: "Enter a budget range",
-      invalid_type_error: "Enter a budget range",
-    })
+    .number()
     .min(1, { message: "Budget cannot be 0" })
     .positive(),
 });
 
 export const getInTouchFormSchema = z.object({
-  name: z.string().min(4, { message: "Cannot be empty!!!" }),
+  name: z.string().min(1, { message: "Cannot be empty!!!" }),
   email: z.string().email().min(5, { message: "Cannot be empty!!!" }),
   message: z
-    .string({ required_error: "Required" })
+    .string()
     .max(350, { message: "Message cannot be longer than 350 characters" }),
 });

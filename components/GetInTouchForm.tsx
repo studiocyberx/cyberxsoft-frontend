@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,8 +17,14 @@ import { getInTouchFormSchema } from "@/lib/definitions";
 import { toast } from "@/components/ui/use-toast";
 import SubmitButton from "./SubmitButton";
 import { handleContactForm } from "@/lib/actions";
+import { useFormState } from "react-dom";
+
+const initialState = {
+  message: "",
+};
 
 const GetInTouchForm = () => {
+  const [state, formAction] = useFormState(handleContactForm, initialState);
   const form = useForm<z.infer<typeof getInTouchFormSchema>>({
     resolver: zodResolver(getInTouchFormSchema),
     defaultValues: {
@@ -28,7 +35,6 @@ const GetInTouchForm = () => {
   });
 
   function onSubmit(data: z.infer<typeof getInTouchFormSchema>) {
-    handleContactForm(data);
     toast({
       title: "You submitted the following values:",
       description: (
@@ -44,7 +50,7 @@ const GetInTouchForm = () => {
   return (
     <div className="w-full max-w-2xl">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+        <form action={formAction} className="space-y-3">
           <div className="grid md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
@@ -52,15 +58,17 @@ const GetInTouchForm = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Name *</FormLabel>
-
                   <FormControl>
                     <Input
+                      required
                       placeholder="Enter Name"
                       {...field}
                       className="text-black"
                     />
-                  </FormControl>
-
+                  </FormControl>{" "}
+                  {state?.message && (
+                    <FormMessage>{state?.message}</FormMessage>
+                  )}
                   <FormMessage />
                 </FormItem>
               )}
@@ -74,12 +82,16 @@ const GetInTouchForm = () => {
 
                   <FormControl>
                     <Input
+                      required
                       placeholder="Enter Email"
                       type="email"
                       {...field}
                       className="text-black"
                     />
                   </FormControl>
+                  {state?.message && (
+                    <FormMessage>{state?.message}</FormMessage>
+                  )}
                   <FormMessage />
                 </FormItem>
               )}

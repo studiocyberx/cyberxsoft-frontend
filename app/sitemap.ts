@@ -1,6 +1,8 @@
 import { getInsights, getSubServicePage } from "@/data/loaders";
 import { MetadataRoute } from "next";
 
+export const dynamic = "force-dynamic";
+
 type Sitemap = Array<{
   url: string;
   lastModified?: string | Date;

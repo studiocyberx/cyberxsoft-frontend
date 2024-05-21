@@ -26,10 +26,26 @@ interface ServiceItem {
 }
 
 const socialIcons: SocialIconProps[] = [
-  { id: 1, icon: <FaFacebook />, url: "https://www.facebook.com" },
-  { id: 2, icon: <FaInstagram />, url: "https://www.instagram.com/" },
-  { id: 3, icon: <FaYoutube />, url: "https://www.youtube.com" },
-  { id: 4, icon: <FaLinkedin />, url: "https://www.linkedin.com/" },
+  {
+    id: 1,
+    icon: <FaFacebook />,
+    url: "https://www.facebook.com/profile.php?id=61559667573420",
+  },
+  {
+    id: 2,
+    icon: <FaInstagram />,
+    url: "https://www.instagram.com/big0.dev/",
+  },
+  {
+    id: 3,
+    icon: <FaYoutube />,
+    url: "https://www.youtube.com/channel/UCdFdgYjRGC53PPmE2XTlPhw",
+  },
+  {
+    id: 4,
+    icon: <FaLinkedin />,
+    url: "https://www.linkedin.com/company/big0-dev/",
+  },
 ];
 
 export async function Header() {
@@ -41,27 +57,9 @@ export async function Header() {
     {
       title: "What we do",
       href: "",
-      children: [
-        // {
-        //   title: "Business Intelligence",
-        //   href: "/services/business-intelligence",
-        //   children: [],
-        // },
-        // { title: "Cloud", href: "/services/cloud", children: [] },
-        // {
-        //   title: "Responsible AI",
-        //   href: "/services/responsible-ai",
-        //   children: [],
-        // },
-        // {
-        //   title: "Internet Of Things",
-        //   href: "/services/iot",
-        //   children: [],
-        // },
-      ],
+      children: [],
     },
     { title: "Get in touch", href: "/contact", children: [] },
-    // { title: "get a quote", href: "/get-a-quote", children: [] },
   ];
   //Append subservice pages to the navitems
   serviceItems.data.forEach((item: ServiceItem) => {

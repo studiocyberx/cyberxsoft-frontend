@@ -4,15 +4,6 @@ import { flattenAttributes, getStrapiURL } from "@/lib/utils";
 const baseUrl = getStrapiURL();
 
 async function fetchData(url: string) {
-  const authToken = null;
-  // const headers = {
-  //   method: "GET",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     Authorization: `Bearer ${authToken}`,
-  //   },
-  // };
-
   try {
     const response = await fetch(url, {
       next: { revalidate: 1000 },

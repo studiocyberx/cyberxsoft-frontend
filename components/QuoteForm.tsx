@@ -20,7 +20,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { formSchema } from "@/lib/definitions";
-import { toast } from "@/components/ui/use-toast";
 import SubmitButton from "@/components/SubmitButton";
 import { handleFormSubmission } from "@/lib/actions";
 
@@ -32,26 +31,13 @@ const QuoteForm = () => {
       email: "",
       company: "",
       industry: "",
-      service: "",
     },
   });
-
-  function onSubmit(data: z.infer<typeof formSchema>) {
-    // handleFormSubmission(data);
-    toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    });
-  }
 
   return (
     <div className="w-full">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+        <form action={handleFormSubmission} className="space-y-3">
           <div className="grid md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
@@ -60,8 +46,9 @@ const QuoteForm = () => {
                 <FormItem>
                   <FormControl>
                     <Input
-                      placeholder="Full Name *"
                       {...field}
+                      required
+                      placeholder="Full Name *"
                       className="text-black"
                     />
                   </FormControl>
@@ -77,8 +64,9 @@ const QuoteForm = () => {
                 <FormItem>
                   <FormControl>
                     <Input
-                      placeholder="Email *"
                       {...field}
+                      required
+                      placeholder="Email *"
                       className="text-black"
                     />
                   </FormControl>
@@ -94,11 +82,12 @@ const QuoteForm = () => {
                 <FormItem>
                   <FormControl>
                     <Input
-                      type="tel"
-                      autoComplete="off"
-                      inputMode="tel"
-                      placeholder="Phone No. *"
                       {...field}
+                      required
+                      type="tel"
+                      inputMode="tel"
+                      autoComplete="off"
+                      placeholder="Phone No. *"
                       className="text-black"
                     />
                   </FormControl>
@@ -114,8 +103,9 @@ const QuoteForm = () => {
                 <FormItem>
                   <FormControl>
                     <Input
-                      placeholder="Company Name *"
+                      required
                       {...field}
+                      placeholder="Company Name *"
                       className="text-black"
                     />
                   </FormControl>
@@ -149,12 +139,13 @@ const QuoteForm = () => {
                 <FormItem>
                   <FormControl>
                     <Select
+                      name="service"
                       onValueChange={field.onChange}
                       defaultValue={field.value}
                     >
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Service *" />
+                          <SelectValue placeholder="Service" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>

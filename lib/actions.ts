@@ -1,19 +1,41 @@
 "use server";
 
-import z from "zod";
 import { formSchema, getInTouchFormSchema } from "@/lib/definitions";
-import { revalidatePath } from "next/cache";
+import { ZodError } from "zod";
 
-// type FormData = z.infer<typeof formSchema>;
+export const handleFormSubmission = async (formdata: FormData) => {
+  const data = formSchema.safeParse({
+    fullname: formdata.get("fullname"),
+    email: formdata.get("email"),
+    phone: formdata.get("phone"),
+    company: formdata.get("company"),
+    industry: formdata.get("industry"),
+    service: formdata.get("service"),
+    budget: formdata.get("budget"),
+  });
 
-export const handleFormSubmission = async (data: typeof formSchema) => {
+  if (!data.success) {
+    return {
+      errors: data.error.flatten().fieldErrors,
+      message: "Please fill all required fields",
+    };
+  }
   console.log(data);
-
-  revalidatePath("/");
 };
 
-type ContactFormData = z.infer<typeof getInTouchFormSchema>;
+export const handleContactForm = (prev: any, formdata: FormData) => {
+  const data = getInTouchFormSchema.safeParse({
+    name: formdata.get("name"),
+    email: formdata.get("email"),
+    message: formdata.get("message"),
+  });
 
-export const handleContactForm = (data: ContactFormData) => {
+  if (!data.success) {
+    console.log(data.error.flatten().fieldErrors);
+    return {
+      errors: data.error.flatten().fieldErrors,
+      message: "Please fill all required fields",
+    };
+  }
   console.log(data);
 };

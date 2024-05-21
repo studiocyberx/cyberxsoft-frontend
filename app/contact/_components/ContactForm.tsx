@@ -17,8 +17,14 @@ import { toast } from "@/components/ui/use-toast";
 import SubmitButton from "@/components/SubmitButton";
 import { Card } from "@/components/ui/card";
 import { handleContactForm } from "@/lib/actions";
+import { useFormState } from "react-dom";
 
+const initialState = {
+  message: "",
+};
 const ContactForm = () => {
+  const [state, formAction] = useFormState(handleContactForm, initialState);
+
   const form = useForm<z.infer<typeof getInTouchFormSchema>>({
     resolver: zodResolver(getInTouchFormSchema),
     defaultValues: {
@@ -29,7 +35,6 @@ const ContactForm = () => {
   });
 
   function onSubmit(data: z.infer<typeof getInTouchFormSchema>) {
-    handleContactForm(data);
     toast({
       title: "You submitted the following values:",
       description: (
@@ -45,7 +50,7 @@ const ContactForm = () => {
   return (
     <Card className="max-w-4xl mx-auto bg-gray-200 border-none shadow-md overflow-hidden gap-8 p-8">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+        <form action={formAction} className="space-y-3">
           <div className="grid md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
@@ -56,12 +61,15 @@ const ContactForm = () => {
 
                   <FormControl>
                     <Input
-                      placeholder="Enter Name"
                       {...field}
+                      required
+                      placeholder="Enter Name"
                       className="text-black"
                     />
                   </FormControl>
-
+                  {state?.message && (
+                    <FormMessage>{state?.message}</FormMessage>
+                  )}
                   <FormMessage />
                 </FormItem>
               )}
@@ -75,12 +83,16 @@ const ContactForm = () => {
 
                   <FormControl>
                     <Input
-                      placeholder="Enter Email"
-                      type="email"
+                      required
                       {...field}
+                      type="email"
+                      placeholder="Enter Email"
                       className="text-black"
                     />
                   </FormControl>
+                  {state?.message && (
+                    <FormMessage>{state?.message}</FormMessage>
+                  )}
                   <FormMessage />
                 </FormItem>
               )}
