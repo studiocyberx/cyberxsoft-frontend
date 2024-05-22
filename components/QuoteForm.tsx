@@ -8,7 +8,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -22,6 +21,9 @@ import {
 import { formSchema } from "@/lib/definitions";
 import SubmitButton from "@/components/SubmitButton";
 import { handleFormSubmission } from "@/lib/actions";
+import { toast } from "./ui/use-toast";
+
+type FormData = z.infer<typeof formSchema>;
 
 const QuoteForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -34,10 +36,32 @@ const QuoteForm = () => {
     },
   });
 
+  const onSubmit = async (data: FormData) => {
+    const formData = new FormData();
+    Object.entries(data).forEach(([key, value]) =>
+      formData.append(key, value as string)
+    );
+    const response = await handleFormSubmission(formData);
+
+    if (response.errors) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: response.message,
+      });
+    }
+    toast({
+      title: "Success",
+      description: response.message,
+      variant: "success",
+    });
+
+    form.reset();
+  };
   return (
     <div className="w-full">
       <Form {...form}>
-        <form action={handleFormSubmission} className="space-y-3">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
           <div className="grid md:grid-cols-2 gap-4">
             <FormField
               control={form.control}

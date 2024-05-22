@@ -5,6 +5,7 @@ import GetInTouchForm from "./GetInTouchForm";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import SubmitButton from "./SubmitButton";
+import NewsletterEmail from "./NewsletterEmail";
 
 const GetInTouch = () => {
   return (
@@ -66,16 +67,7 @@ const GetInTouch = () => {
             </div>
           </div>
 
-          <div className="flex items-center pt-4 max-w-lg">
-            <Input
-              className="rounded-l-sm rounded-r-none text-black"
-              placeholder="Subscribe To Newsletter"
-            />
-            <SubmitButton
-              text="Subscribe"
-              className="rounded-r-sm rounded-l-none bg-custom-purple-300/50 hover:bg-custom-purple-300 px-8"
-            />
-          </div>
+          <NewsletterEmail />
         </div>
       </div>
     </section>

@@ -7,6 +7,8 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import ContactForm from "./_components/ContactForm";
+import { getDatabase } from "@/lib/actions";
+import NewsletterEmail from "@/components/NewsletterEmail";
 
 export const metadata: Metadata = {
   title: "BigO - Contact",
@@ -79,16 +81,7 @@ const ContactUs = async () => {
               </div>
             </div>
 
-            <div className="flex items-center pt-4 max-w-lg">
-              <Input
-                className="rounded-l-sm rounded-r-none text-black"
-                placeholder="Subscribe To Newsletter"
-              />
-              <SubmitButton
-                text="Subscribe"
-                className="rounded-r-sm rounded-l-none bg-custom-purple-300/50 hover:bg-custom-purple-300 px-8"
-              />
-            </div>
+            <NewsletterEmail />
 
             <p className="text-white/50">
               At BigO, communication is key, and we are excited to hear from

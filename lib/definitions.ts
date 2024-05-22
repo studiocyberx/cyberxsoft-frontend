@@ -46,3 +46,7 @@ export const getInTouchFormSchema = z.object({
     .string()
     .max(350, { message: "Message cannot be longer than 350 characters" }),
 });
+
+export const newsletterEmailSchema = z.object({
+  email: z.string().email(),
+});

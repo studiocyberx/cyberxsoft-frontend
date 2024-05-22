@@ -39,7 +39,7 @@ export default async function RootLayout({
           <Header />
           <Suspense fallback={<Loading />}>{children}</Suspense>
           <Footer />
-
+          {/* <CookieConsentPopup /> */}
           <Toaster />
           <ScrollToTopButton />
         </ThemeProvider>
