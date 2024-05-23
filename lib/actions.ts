@@ -7,10 +7,8 @@ import {
   getInTouchFormSchema,
   newsletterEmailSchema,
 } from "@/lib/definitions";
-import { redirect } from "next/navigation";
 import { createTransport } from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
-import z from "zod";
 
 export const handleFormSubmission = async (formdata: FormData) => {
   //Get data from the form
@@ -137,7 +135,7 @@ export const handleContactForm = async (prevState: any, formdata: FormData) => {
   }
 };
 
-export const subscriberEmail = async (formdata: FormData) => {
+export const subscriberEmail = async (prevState: any, formdata: FormData) => {
   const parseResult = newsletterEmailSchema.safeParse({
     email: formdata.get("email"),
   });
@@ -154,11 +152,11 @@ export const subscriberEmail = async (formdata: FormData) => {
       .insert(subscriberEmailTable)
       .values({ email: parseResult.data.email });
 
-    return { message: "Email subscribed!!" };
+    return { success: true, message: "Email subscribed!!" };
   } catch (err) {
     if (err) {
       return {
-        errors: { email: "Email already exists" },
+        errors: { message: "Email already exists" },
         message: "Email already subscribed",
       };
     }

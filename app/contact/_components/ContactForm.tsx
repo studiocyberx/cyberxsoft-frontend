@@ -1,15 +1,6 @@
 "use client";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+
+import { FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { getInTouchFormSchema } from "@/lib/definitions";
@@ -25,14 +16,6 @@ const initialState = { message: "", errors: {} };
 const ContactForm = () => {
   const [state, formAction] = useFormState(handleContactForm, initialState);
   const formRef = useRef<HTMLFormElement>(null);
-  const form = useForm<z.infer<typeof getInTouchFormSchema>>({
-    resolver: zodResolver(getInTouchFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-  });
 
   if (state && state.success) {
     toast({
