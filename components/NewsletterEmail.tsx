@@ -4,7 +4,7 @@ import z from "zod";
 import React from "react";
 import { Input } from "./ui/input";
 import SubmitButton from "./SubmitButton";
-import { sendEmail } from "@/lib/actions";
+import { subscriberEmail } from "@/lib/actions";
 import { toast } from "./ui/use-toast";
 import { useForm } from "react-hook-form";
 import { newsletterEmailSchema } from "@/lib/definitions";
@@ -26,22 +26,25 @@ const NewsletterEmail = () => {
     Object.entries(data).forEach(([key, value]) =>
       formData.append(key, value as string)
     );
-    const response = await sendEmail(formData);
+    const response = await subscriberEmail(formData);
+    console.log(response);
 
-    if (response.errors) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: response.message,
-      });
+    if (response) {
+      if (!response.errors) {
+        toast({
+          title: "Success",
+          description: response.message,
+          variant: "success",
+        });
+        form.reset();
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Error",
+          description: response.message,
+        });
+      }
     }
-    toast({
-      title: "Success",
-      description: response.message,
-      variant: "success",
-    });
-
-    form.reset();
   };
   return (
     <div>

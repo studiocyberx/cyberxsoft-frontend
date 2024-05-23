@@ -18,13 +18,13 @@ import SubmitButton from "@/components/SubmitButton";
 import { Card } from "@/components/ui/card";
 import { handleContactForm } from "@/lib/actions";
 import { useFormState } from "react-dom";
+import { useRef } from "react";
+import { Label } from "@/components/ui/label";
 
-const initialState = {
-  message: "",
-};
+const initialState = { message: "", errors: {} };
 const ContactForm = () => {
   const [state, formAction] = useFormState(handleContactForm, initialState);
-
+  const formRef = useRef<HTMLFormElement>(null);
   const form = useForm<z.infer<typeof getInTouchFormSchema>>({
     resolver: zodResolver(getInTouchFormSchema),
     defaultValues: {
@@ -34,95 +34,71 @@ const ContactForm = () => {
     },
   });
 
-  function onSubmit(data: z.infer<typeof getInTouchFormSchema>) {
+  if (state && state.success) {
     toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-full sm:w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white w-full text-wrap whitespace-pre-wrap">
-            {JSON.stringify(data, null, 2)}
-          </code>
-        </pre>
-      ),
+      title: "Success",
+      variant: "success",
+      description: state.message,
+    });
+  } else if (state?.errors?.message) {
+    toast({
+      title: "Error",
+      variant: "destructive",
+      description: state.errors?.message,
     });
   }
-
   return (
     <Card className="max-w-4xl mx-auto bg-gray-200 border-none shadow-md overflow-hidden gap-8 p-8">
-      <Form {...form}>
-        <form action={formAction} className="space-y-3">
-          <div className="grid md:grid-cols-2 gap-4">
-            <FormField
-              control={form.control}
+      <form
+        action={async (formData: FormData) => {
+          formAction(formData);
+          formRef.current?.reset();
+        }}
+        ref={formRef}
+        className="space-y-3"
+      >
+        <div className="grid md:grid-cols-2 gap-4">
+          <FormItem>
+            <Label htmlFor="name">Name *</Label>
+
+            <Input
               name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name *</FormLabel>
-
-                  <FormControl>
-                    <Input
-                      {...field}
-                      required
-                      placeholder="Enter Name"
-                      className="text-black"
-                    />
-                  </FormControl>
-                  {state?.message && (
-                    <FormMessage>{state?.message}</FormMessage>
-                  )}
-                  <FormMessage />
-                </FormItem>
-              )}
+              required
+              placeholder="Enter Name"
+              className="text-black"
             />
-            <FormField
-              control={form.control}
+          </FormItem>
+          <FormItem>
+            <Label htmlFor="email">Email *</Label>
+
+            <Input
+              required
               name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email *</FormLabel>
-
-                  <FormControl>
-                    <Input
-                      required
-                      {...field}
-                      type="email"
-                      placeholder="Enter Email"
-                      className="text-black"
-                    />
-                  </FormControl>
-                  {state?.message && (
-                    <FormMessage>{state?.message}</FormMessage>
-                  )}
-                  <FormMessage />
-                </FormItem>
-              )}
+              type="email"
+              placeholder="Enter Email"
+              className="text-black"
             />
-          </div>
+          </FormItem>
+        </div>
+        <FormItem>
+          <Label htmlFor="message">Message</Label>
 
-          <FormField
-            control={form.control}
+          <Textarea
             name="message"
-            render={({ field }) => (
-              <FormItem>
-                {" "}
-                <FormLabel>Message</FormLabel>
-                <FormControl>
-                  <Textarea
-                    placeholder="Type Your Message..."
-                    className="resize-y text-black"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+            placeholder="Type Your Message..."
+            className="resize-y text-black"
           />
-          <SubmitButton
-            className="bg-custom-purple-400 hover:bg-custom-purple-500 hover:text-white uppercase px-10 py-6 text-xl"
-            text="Send "
-          />
-        </form>
-      </Form>
+        </FormItem>
+
+        <p aria-live="polite" className="sr-only" role="status">
+          {state?.message}
+        </p>
+
+        <SubmitButton
+          className="bg-custom-purple-400 hover:bg-custom-purple-500 hover:text-white uppercase px-10 py-6 text-xl"
+          text="Send "
+        />
+      </form>
     </Card>
   );
 };

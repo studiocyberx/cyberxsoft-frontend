@@ -1,5 +1,3 @@
-import SubmitButton from "@/components/SubmitButton";
-import { Input } from "@/components/ui/input";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +5,6 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import ContactForm from "./_components/ContactForm";
-import { getDatabase } from "@/lib/actions";
 import NewsletterEmail from "@/components/NewsletterEmail";
 
 export const metadata: Metadata = {

@@ -43,18 +43,22 @@ const QuoteForm = () => {
     );
     const response = await handleFormSubmission(formData);
 
-    if (response.errors) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: response.message,
-      });
+    if (response) {
+      if (!response.errors) {
+        toast({
+          title: "Success",
+          description: response.message,
+          variant: "success",
+        });
+        form.reset();
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Error",
+          description: response.message,
+        });
+      }
     }
-    toast({
-      title: "Success",
-      description: response.message,
-      variant: "success",
-    });
 
     form.reset();
   };

@@ -3,8 +3,6 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import GetInTouchForm from "./GetInTouchForm";
 import Link from "next/link";
-import { Input } from "@/components/ui/input";
-import SubmitButton from "./SubmitButton";
 import NewsletterEmail from "./NewsletterEmail";
 
 const GetInTouch = () => {

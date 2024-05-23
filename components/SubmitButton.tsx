@@ -23,12 +23,19 @@ const SubmitButton = ({
   className?: string;
 }) => {
   const { pending } = useFormStatus();
+
   return (
     <Button
       variant={variant}
       type="submit"
       disabled={pending}
-      className={cn("bg-transparent text-white", className)}
+      aria-disabled={pending}
+      className={cn(
+        `bg-transparent text-white ${
+          pending ? "cursor-not-allowed opacity-50" : ""
+        }`,
+        className
+      )}
     >
       {text}
     </Button>
