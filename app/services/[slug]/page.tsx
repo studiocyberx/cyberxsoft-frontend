@@ -18,8 +18,12 @@ export async function generateMetadata({
   const slug = params.slug;
   const data = await getSubServiceBySlug(slug);
   return {
-    title: data.metaTitle,
-    description: data.metaDescription,
+    title: data?.metaTitle,
+    description: data?.metaDescription,
+    keywords: data?.metakeywords,
+    alternates: {
+      canonical: data?.canonical,
+    },
   };
 }
 

@@ -27,7 +27,10 @@ const Faqs = ({ faqItems }: { faqItems: faqItemsProps[] }) => {
       >
         {faqItems.map((faq) => (
           <div key={faq.value}>
-            <AccordionItem value={faq.value} className="px-4">
+            <AccordionItem
+              value={faq.value}
+              className="px-4 border-none border-b-0"
+            >
               <AccordionTrigger className="text-lg text-left font-bold hover:text-custom-purple-400">
                 {faq.question}
               </AccordionTrigger>

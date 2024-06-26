@@ -5,7 +5,7 @@ import { MdOutlineExpandCircleDown } from "react-icons/md";
 
 export function HeroSection() {
   return (
-    <header className="relative h-screen sm:h-auto overflow-hidden z-0">
+    <section className="relative h-screen sm:h-auto overflow-hidden z-0">
       <BackgroundVideo videoSrc="/intro-background.mp4">
         <div className="absolute top-0 bottom-0 w-full content-center px-8 sm:px-20 bg-custom-purple-700 bg-opacity-70 space-y-10 flex flex-col justify-center">
           <h1 className="font-tommy text-4xl md:text-5xl lg:text-7xl text-center md:text-left text-primary-foreground max-w-5xl uppercase">
@@ -21,7 +21,7 @@ export function HeroSection() {
             </Button>
             <p className="text-lg md:text-xl text-center md:text-left text-secondary max-w-lg ">
               Enabling Businesses Smart Decision-Making by Integrating Endless
-              Automation Possibilities Powered by Our responsible AI
+              Automation Possibilities Powered by Our Responsible AI
             </p>
           </div>
 
@@ -33,6 +33,6 @@ export function HeroSection() {
           </Link>
         </div>
       </BackgroundVideo>
-    </header>
+    </section>
   );
 }

@@ -37,7 +37,7 @@ const SubmitButton = ({
         className
       )}
     >
-      {text}
+      {pending ? `Please Wait...` : text}
     </Button>
   );
 };
