@@ -64,6 +64,65 @@ export const contactFormAction = action
     }
   });
 
+export const quoteFormAction = action
+  .schema(formSchema)
+  .action(
+    async ({
+      parsedInput: {
+        fullname,
+        email,
+        phone,
+        company,
+        industry,
+        service,
+        budget,
+      },
+    }) => {
+      if (!fullname || !email || !phone || !company || !budget) {
+        return { success: false, message: "Please add all required fields" };
+      }
+
+      const transport = getNodemailerTransporter();
+      const mailOptions: Mail.Options = {
+        from: process.env.NODEMAILER_USERNAME,
+        to: process.env.NODEMAILER_USERNAME,
+        subject: `New quote from ${fullname} ${email}`,
+        text: `${fullname} Submitted following data: 
+        Fullname: ${fullname}
+        Email: ${email}
+        Phone Number: ${phone}
+        Company: ${company}
+        Industry: ${industry}
+        Service Required: ${service}
+        Estimated Budget: ${budget}
+        `,
+      };
+
+      const sendMailPromise = () =>
+        new Promise<void>((resolve, reject) => {
+          transport.sendMail(mailOptions, function (err) {
+            if (!err) {
+              resolve();
+            } else {
+              reject(err.message);
+            }
+          });
+        });
+
+      try {
+        await sendMailPromise();
+        return { success: true, message: "Form Submitted Successfully" };
+      } catch (error) {
+        if (error) {
+          return {
+            success: false,
+            message: `An error occurred: ${(error as Error).message}`,
+          };
+        }
+      }
+    }
+  );
+
 export const handleFormSubmission = async (formdata: FormData) => {
   //Get data from the form
   const data = formSchema.safeParse({

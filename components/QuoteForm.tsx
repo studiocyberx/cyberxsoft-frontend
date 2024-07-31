@@ -20,10 +20,9 @@ import {
 } from "@/components/ui/select";
 import { formSchema } from "@/lib/definitions";
 import SubmitButton from "@/components/SubmitButton";
-import { handleFormSubmission } from "@/lib/actions";
+import { quoteFormAction } from "@/lib/actions";
 import { toast } from "./ui/use-toast";
-
-type FormData = z.infer<typeof formSchema>;
+import { useAction } from "next-safe-action/hooks";
 
 const QuoteForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -33,34 +32,44 @@ const QuoteForm = () => {
       email: "",
       company: "",
       industry: "",
+      service: "",
+      budget: undefined,
+      phone: undefined,
     },
   });
 
-  const onSubmit = async (data: FormData) => {
-    const formData = new FormData();
-    Object.entries(data).forEach(([key, value]) =>
-      formData.append(key, value as string)
-    );
-    const response = await handleFormSubmission(formData);
-
-    if (response) {
-      if (!response.errors) {
+  const { status, execute } = useAction(quoteFormAction, {
+    onSuccess(data) {
+      if (data.data?.success) {
         toast({
           title: "Success",
-          description: response.message,
           variant: "success",
+          description: data.data.message,
         });
         form.reset();
-      } else {
+      }
+
+      if (!data.data?.success) {
         toast({
-          variant: "destructive",
           title: "Error",
-          description: response.message,
+          description: data.data?.message,
+          variant: "destructive",
         });
       }
-    }
+    },
+    onError(error) {
+      if (error.error.serverError) {
+        toast({
+          title: "An error occured on server",
+          description: error.error.serverError,
+          variant: "destructive",
+        });
+      }
+    },
+  });
 
-    form.reset();
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    execute(values);
   };
   return (
     <div className="w-full">
@@ -221,7 +230,8 @@ const QuoteForm = () => {
 
           <SubmitButton
             className="bg-custom-purple-400 hover:bg-custom-purple-500 hover:text-white uppercase px-10 py-6 text-xl"
-            text="Submit "
+            text="Submit"
+            disabled={status}
           />
         </form>
       </Form>
