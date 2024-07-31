@@ -4,60 +4,94 @@ import z from "zod";
 import React, { useRef } from "react";
 import { Input } from "./ui/input";
 import SubmitButton from "./SubmitButton";
-import { subscriberEmail } from "@/lib/actions";
+import { subscriberEmailAction } from "@/lib/actions";
 import { toast } from "./ui/use-toast";
 import { useForm } from "react-hook-form";
 import { newsletterEmailSchema } from "@/lib/definitions";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
-import { useFormState } from "react-dom";
+import { useAction } from "next-safe-action/hooks";
 
-const initialState = { message: "", errors: {} };
 const NewsletterEmail = () => {
-  const [state, formAction] = useFormState(subscriberEmail, initialState);
   const formRef = useRef<HTMLFormElement>(null);
+  const form = useForm<z.infer<typeof newsletterEmailSchema>>({
+    resolver: zodResolver(newsletterEmailSchema),
+    defaultValues: {
+      email: "",
+    },
+  });
 
-  if (state && state.success) {
-    toast({
-      title: "Success",
-      variant: "success",
-      description: state.message,
-    });
-  } else if ((state?.errors as { message: string })?.message) {
-    toast({
-      title: "Error",
-      variant: "destructive",
-      description: (state?.errors as { message: string }).message,
-    });
-  }
+  const { status, execute } = useAction(subscriberEmailAction, {
+    onSuccess(data) {
+      if (data.data?.success) {
+        toast({
+          title: "Success",
+          variant: "success",
+          description: data.data.message,
+        });
+        form.reset();
+      }
+
+      if (!data.data?.success) {
+        toast({
+          title: "Error",
+          description: data.data?.message,
+          variant: "destructive",
+        });
+      }
+    },
+    onError(error) {
+      if (error.error.serverError) {
+        toast({
+          title: "An error occured on server",
+          description: error.error.serverError,
+          variant: "destructive",
+        });
+      }
+    },
+  });
+
+  const handleSubscribe = async (
+    values: z.infer<typeof newsletterEmailSchema>
+  ) => {
+    execute(values);
+  };
+
   return (
-    <div>
-      <form
-        className="flex items-center pt-4 max-w-xl"
-        ref={formRef}
-        action={async (formData: FormData) => {
-          formAction(formData);
-          formRef.current?.reset();
-        }}
-      >
-        <FormItem>
-          <Input
+    <>
+      <Form {...form}>
+        <form
+          className="flex items-center pt-4 max-w-xl"
+          ref={formRef}
+          onSubmit={form.handleSubmit(handleSubscribe)}
+        >
+          <FormField
+            control={form.control}
             name="email"
-            required
-            placeholder="Subscribe To Newsletter"
-            className="rounded-l-sm rounded-r-none text-black"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input
+                    type="email"
+                    {...field}
+                    required
+                    placeholder="Subscribe To Newsletter"
+                    className="rounded-l-sm rounded-r-none text-black"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
           />
-        </FormItem>
-        <p aria-live="polite" className="sr-only" role="status">
-          {state?.message}
-        </p>
 
-        <SubmitButton
-          text="Subscribe"
-          className="rounded-r-sm rounded-l-none bg-custom-purple-300/50 hover:bg-custom-purple-300 px-8"
-        />
-      </form>
-    </div>
+          <SubmitButton
+            text="Subscribe"
+            disabled={status}
+            className="rounded-r-sm rounded-l-none bg-custom-purple-300/50 hover:bg-custom-purple-300 px-8"
+          />
+        </form>
+      </Form>
+    </>
   );
 };
 

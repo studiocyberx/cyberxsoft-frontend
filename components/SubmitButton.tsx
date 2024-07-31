@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useFormStatus } from "react-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -9,6 +8,7 @@ const SubmitButton = ({
   text,
   variant,
   className,
+  disabled,
 }: {
   text: string;
   variant?:
@@ -21,23 +21,22 @@ const SubmitButton = ({
     | null
     | undefined;
   className?: string;
+  disabled?: string;
 }) => {
-  const { pending } = useFormStatus();
-
   return (
     <Button
       variant={variant}
       type="submit"
-      disabled={pending}
-      aria-disabled={pending}
+      disabled={disabled === "executing" ? true : false}
+      aria-disabled={disabled === "executing" ? true : false}
       className={cn(
         `bg-transparent text-white ${
-          pending ? "cursor-not-allowed opacity-50" : ""
+          disabled === "executing" ? "cursor-not-allowed opacity-50" : ""
         }`,
         className
       )}
     >
-      {pending ? `Please Wait...` : text}
+      {disabled === "executing" ? `Please Wait...` : text}
     </Button>
   );
 };

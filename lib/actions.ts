@@ -7,8 +7,62 @@ import {
   getInTouchFormSchema,
   newsletterEmailSchema,
 } from "@/lib/definitions";
-import { createTransport } from "nodemailer";
+import { Transporter, createTransport } from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
+import { action } from "./safe-action";
+
+//Function for nodemailer transporter
+function getNodemailerTransporter(): Transporter {
+  return createTransport({
+    service: process.env.NODEMAILER_HOST as string,
+    auth: {
+      user: process.env.NODEMAILER_USERNAME,
+      pass: process.env.NODEMAILER_PASSWORD,
+    },
+  });
+}
+
+export const contactFormAction = action
+  .schema(getInTouchFormSchema)
+  .action(async ({ parsedInput: { name, email, message } }) => {
+    if (!name || !email) {
+      return { success: false, message: "Please add all required fields" };
+    }
+
+    const transporter = getNodemailerTransporter();
+
+    const mailOptions: Mail.Options = {
+      from: process.env.NODEMAILER_USERNAME,
+      to: process.env.NODEMAILER_USERNAME,
+      subject: `Message from Contact Form`,
+      text: `New Submission from ${name}
+      Email: ${email}
+      Message: ${message}
+      `,
+    };
+
+    const sendMailPromise = () => {
+      return new Promise<void>((resolve, reject) => {
+        transporter.sendMail(mailOptions, function (err) {
+          if (!err) {
+            resolve();
+          } else {
+            reject(new Error(err.message));
+          }
+        });
+      });
+    };
+
+    try {
+      await sendMailPromise();
+      return { success: true, message: "Form submitted successfully" };
+    } catch (error) {
+      return {
+        success: false,
+        message: `An error occurred: ${(error as Error).message}`,
+      };
+    }
+  });
 
 export const handleFormSubmission = async (formdata: FormData) => {
   //Get data from the form
@@ -31,13 +85,7 @@ export const handleFormSubmission = async (formdata: FormData) => {
   }
 
   //Nodemailer config
-  const transport = createTransport({
-    service: process.env.NODEMAILER_HOST as string,
-    auth: {
-      user: process.env.NODEMAILER_USERNAME,
-      pass: process.env.NODEMAILER_PASSWORD,
-    },
-  });
+  const transport = getNodemailerTransporter();
 
   const mailOptions: Mail.Options = {
     from: process.env.NODEMAILER_USERNAME,
@@ -78,87 +126,22 @@ export const handleFormSubmission = async (formdata: FormData) => {
   }
 };
 
-export const handleContactForm = async (prevState: any, formdata: FormData) => {
-  const data = getInTouchFormSchema.safeParse({
-    name: formdata.get("name"),
-    email: formdata.get("email"),
-    message: formdata.get("message"),
-  });
-
-  if (!data.success) {
-    console.log(data.error.flatten().fieldErrors);
-    return {
-      errors: data.error.flatten().fieldErrors,
-      message: "Please fill all required fields",
-    };
-  }
-
-  //Nodemailer config
-  const transport = createTransport({
-    service: process.env.NODEMAILER_HOST as string,
-    auth: {
-      user: process.env.NODEMAILER_USERNAME,
-      pass: process.env.NODEMAILER_PASSWORD,
-    },
-  });
-
-  const mailOptions: Mail.Options = {
-    from: process.env.NODEMAILER_USERNAME,
-    to: process.env.NODEMAILER_USERNAME,
-    subject: `Message from Contact Form`,
-    text: `New Submission from ${data.data.name}
-    Email: ${data.data.email}
-    Message: ${data.data.message}
-    `,
-  };
-  const sendMailPromise = () =>
-    new Promise<void>((resolve, reject) => {
-      transport.sendMail(mailOptions, function (err) {
-        if (!err) {
-          resolve();
-        } else {
-          reject(err.message);
-        }
-      });
-    });
-
-  try {
-    await sendMailPromise();
-    return { success: true, message: "Your message was sent successfully" };
-  } catch (error) {
-    if (error) {
-      return {
-        errors: { message: "An error occured" },
-        message: "An error occured",
-      };
+//Handle Subscriber Email
+export const subscriberEmailAction = action
+  .schema(newsletterEmailSchema)
+  .action(async ({ parsedInput: { email } }) => {
+    if (!email) {
+      return { success: false, message: "Entire a valid email" };
     }
-  }
-};
 
-export const subscriberEmail = async (prevState: any, formdata: FormData) => {
-  const parseResult = newsletterEmailSchema.safeParse({
-    email: formdata.get("email"),
-  });
-
-  if (!parseResult.success) {
-    return {
-      errors: parseResult.error.flatten().fieldErrors,
-      message: "Email is not correct",
-    };
-  }
-
-  try {
-    await db
-      .insert(subscriberEmailTable)
-      .values({ email: parseResult.data.email });
-
-    return { success: true, message: "Email subscribed!!" };
-  } catch (err) {
-    if (err) {
-      return {
-        errors: { message: "Email already exists" },
-        message: "Email already subscribed",
-      };
+    try {
+      await db.insert(subscriberEmailTable).values({ email: email });
+      return { success: true, message: "Email Sent!!" };
+    } catch (err) {
+      if (err)
+        return {
+          errors: { message: "Email already subscribed" },
+          message: "Email already subscribed",
+        };
     }
-  }
-};
+  });

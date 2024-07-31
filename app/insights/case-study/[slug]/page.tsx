@@ -1,3 +1,4 @@
+import GetInTouch from "@/components/GetInTouch";
 import ParseRichText from "@/components/ParseRichText";
 import VideoCta from "@/components/VideoCta";
 import { getInsightsBySlug } from "@/data/loaders";
@@ -13,6 +14,10 @@ export async function generateMetadata({
   return {
     title: data.MetaTitle,
     description: data.MetaDescription,
+    keywords: data.metakeywords,
+    alternates: {
+      canonical: data.metacanonical,
+    },
   };
 }
 
@@ -42,6 +47,7 @@ const CaseStudy = async ({ params }: { params: { slug: string } }) => {
       </section>
 
       <VideoCta videoCtaData={videoCtaData} />
+      <GetInTouch />
     </>
   );
 };

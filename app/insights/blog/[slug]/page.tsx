@@ -1,6 +1,8 @@
+import GetInTouch from "@/components/GetInTouch";
 import ParseRichText from "@/components/ParseRichText";
 import VideoCta from "@/components/VideoCta";
 import { getInsightsBySlug } from "@/data/loaders";
+
 import { PageProps } from "@/lib/definitions";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -10,9 +12,14 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const slug = params.slug;
   const data = await getInsightsBySlug(slug);
+
   return {
     title: data.MetaTitle,
     description: data.MetaDescription,
+    keywords: data.metakeywords,
+    alternates: {
+      canonical: data.metacanonical,
+    },
   };
 }
 
@@ -40,6 +47,7 @@ const Blog = async ({ params }: { params: { slug: string } }) => {
         </div>
       </section>
       <VideoCta videoCtaData={videoCtaData} />
+      <GetInTouch />
     </>
   );
 };

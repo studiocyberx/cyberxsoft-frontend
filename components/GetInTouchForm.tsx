@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,15 +16,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { getInTouchFormSchema } from "@/lib/definitions";
 import { toast } from "@/components/ui/use-toast";
 import SubmitButton from "./SubmitButton";
-import { handleContactForm } from "@/lib/actions";
-import { useFormState } from "react-dom";
-
-const initialState = {
-  message: "",
-};
+import { contactFormAction } from "@/lib/actions";
+import { useAction } from "next-safe-action/hooks";
 
 const GetInTouchForm = () => {
-  const [state, formAction] = useFormState(handleContactForm, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
   const form = useForm<z.infer<typeof getInTouchFormSchema>>({
     resolver: zodResolver(getInTouchFormSchema),
     defaultValues: {
@@ -34,23 +30,48 @@ const GetInTouchForm = () => {
     },
   });
 
-  function onSubmit(data: z.infer<typeof getInTouchFormSchema>) {
-    toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-full sm:w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white w-full text-wrap whitespace-pre-wrap">
-            {JSON.stringify(data, null, 2)}
-          </code>
-        </pre>
-      ),
-    });
-  }
+  const { status, execute } = useAction(contactFormAction, {
+    onSuccess(data) {
+      if (data.data?.success) {
+        toast({
+          title: "Success",
+          variant: "success",
+          description: data.data.message,
+        });
+        form.reset();
+      }
+
+      if (!data.data?.success) {
+        toast({
+          title: "Error",
+          description: data.data?.message,
+          variant: "destructive",
+        });
+      }
+    },
+    onError(error) {
+      if (error.error.serverError) {
+        toast({
+          title: "An error occured on server",
+          description: error.error.serverError,
+          variant: "destructive",
+        });
+      }
+    },
+  });
+
+  const onSubmit = async (values: z.infer<typeof getInTouchFormSchema>) => {
+    execute(values);
+  };
 
   return (
     <div className="w-full max-w-2xl">
       <Form {...form}>
-        <form action={formAction} className="space-y-3">
+        <form
+          onClick={form.handleSubmit(onSubmit)}
+          ref={formRef}
+          className="space-y-3"
+        >
           <div className="grid md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
@@ -62,13 +83,10 @@ const GetInTouchForm = () => {
                     <Input
                       required
                       placeholder="Enter Name"
-                      {...field}
                       className="text-black"
+                      {...field}
                     />
-                  </FormControl>{" "}
-                  {state?.message && (
-                    <FormMessage>{state?.message}</FormMessage>
-                  )}
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
@@ -79,19 +97,15 @@ const GetInTouchForm = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Email *</FormLabel>
-
                   <FormControl>
                     <Input
                       required
-                      placeholder="Enter Email"
                       type="email"
-                      {...field}
+                      placeholder="Enter Email"
                       className="text-black"
+                      {...field}
                     />
                   </FormControl>
-                  {state?.message && (
-                    <FormMessage>{state?.message}</FormMessage>
-                  )}
                   <FormMessage />
                 </FormItem>
               )}
@@ -103,13 +117,12 @@ const GetInTouchForm = () => {
             name="message"
             render={({ field }) => (
               <FormItem>
-                {" "}
                 <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea
+                    {...field}
                     placeholder="Type Your Message..."
                     className="resize-y text-black"
-                    {...field}
                   />
                 </FormControl>
                 <FormMessage />
@@ -117,7 +130,7 @@ const GetInTouchForm = () => {
             )}
           />
 
-          <SubmitButton text="Contact Us" variant="outline" />
+          <SubmitButton text="Contact Us" variant="outline" disabled={status} />
         </form>
       </Form>
     </div>

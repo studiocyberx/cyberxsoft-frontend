@@ -21,9 +21,11 @@ const config = {
       screens: {
         sm: "640px",
         md: "800px",
-        lg: "1024px",
+        lg: "1080px",
         xl: "1280px",
         "2xl": "1536px",
+        "3xl": "1920px",
+        "4xl": "2500px",
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
