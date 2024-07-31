@@ -69,7 +69,7 @@ const NewsletterEmail = () => {
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="max-w-xs w-full">
                 <FormControl>
                   <Input
                     type="email"
