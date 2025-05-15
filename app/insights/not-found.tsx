@@ -9,7 +9,7 @@ export default function NotFound() {
         <h1 className="text-8xl font-bold text-gray-900 dark:text-gray-100">
           404
         </h1>
-        <p className="text-lg text-gray-700 dark:text-gray-300">
+        <p className="text-lg text-gray-500 dark:text-gray-300">
           Resource Not Found
         </p>
         <Link

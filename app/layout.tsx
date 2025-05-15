@@ -12,9 +12,14 @@ import { Toaster } from "@/components/ui/toaster";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Big0",
+    title: "CyberXSoft",
     description:
-      "Big0 is a responsible AI-driven Business Intelligence (BI) service provider, leveraging the power of technology to drive meaningful change for their clients.",
+      "CyberXSoft is a responsible AI-driven Business Intelligence (BI) service provider, leveraging the power of technology to drive meaningful change for their clients.",
+ robots: {
+    index: false,
+    follow: false,
+  },
+
   };
 }
 
@@ -26,7 +31,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/icon.png" />
+        <link rel="icon" href="/CXS favicon.png" />
       </head>
       <body
         className={cn(

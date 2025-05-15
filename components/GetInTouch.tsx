@@ -10,7 +10,7 @@ const GetInTouch = () => {
     <section className="bg-custom-purple-500 text-white py-12 px-6 sm:px-12 md:px-20">
       <strong className="uppercase text-center block">Connect</strong>
       <h2 className="text-center text-5xl font-bold">Get In Touch</h2>
-      <p className="text-center text-custom-purple-100">
+      <p className="text-center text-white">
         We&apos;re here to answer any questions you may have. Feel free to reach
         out to us.
       </p>
@@ -27,9 +27,9 @@ const GetInTouch = () => {
               <h5 className="text-lg font-bold">Email</h5>
               <Link
                 className="hover:text-custom-purple-100 transition-all duration-200"
-                href="mailto:info@Big0.dev"
+                href="mailto:info@cyberxstudio.com"
               >
-                info@Big0.dev
+                info@cyberxstudio.com
               </Link>
             </div>
           </div>
@@ -42,9 +42,9 @@ const GetInTouch = () => {
               <h5 className="text-lg font-bold">Phone</h5>
               <Link
                 className="hover:text-custom-purple-100 transition-all duration-200"
-                href="tel:+1-437-365-9377"
+                href="tel:+92-312-9786297"
               >
-                +1-437-365-9377
+                +92-312-9786297
               </Link>
             </div>
           </div>
@@ -60,7 +60,7 @@ const GetInTouch = () => {
                 href="https://maps.app.goo.gl/3MQpn7aqJ6H7wCrG8"
                 target="_blank"
               >
-                1054, East Avenue, Mississauga, Ontario L5E 1W9
+                Plaza No. 54, Sector F, DHA Phase 1, Islamabad
               </Link>
             </div>
           </div>

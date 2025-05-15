@@ -12,9 +12,9 @@ import ScrollCards from "@/components/ScrollCards";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cloud Service | BigO",
+  title: "Cloud Service | CyberXSoft",
   description:
-    "BigO facilitates innovation through customizable cloud services that ensure intelligence, automation, efficiency, agility, and 100% compliance.",
+    "CyberXSoft facilitates innovation through customizable cloud services that ensure intelligence, automation, efficiency, agility, and 100% compliance.",
 };
 
 const CloudService = () => {
@@ -100,7 +100,7 @@ const CloudService = () => {
   const beyondSectionData = {
     title: "Go Beyond Cloud Services to Revamping Your Digital Presence",
     description:
-      "We are aware of the challenges that digitization and building an online presence can bring in this fast-paced time of tech-driven competition. As a joint venture, BigO, in collaboration with CyberX Studio, is committed to addressing its clients' digital visibility needs in addition to cloud services. From strategic planning to execution, CyberX Studio empowers your enterprise to thrive in the digital landscape by refining your online presence and amplifying customer engagement. Get in touch and benefit from the following suite of services:",
+      "We are aware of the challenges that digitization and building an online presence can bring in this fast-paced time of tech-driven competition. As a joint venture, CyberXSoft, in collaboration with CyberX Studio, is committed to addressing its clients' digital visibility needs in addition to cloud services. From strategic planning to execution, CyberX Studio empowers your enterprise to thrive in the digital landscape by refining your online presence and amplifying customer engagement. Get in touch and benefit from the following suite of services:",
     image: "/beyond-cloud.png",
   };
 
@@ -185,7 +185,7 @@ const CloudService = () => {
 
   return (
     <>
-      <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
+      <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-500 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
         <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
           <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
             Cloud <span className="font-bold">Service</span>

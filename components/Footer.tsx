@@ -25,16 +25,16 @@ const navItems: NavItemProps[] = [
 ];
 
 const socialLinks = [
-  {
-    icon: <FaFacebook />,
-    href: "https://www.facebook.com/profile.php?id=61559667573420",
-  },
-  { icon: <FaInstagram />, href: "https://www.instagram.com/big0.dev/" },
-  {
-    icon: <FaYoutube />,
-    href: "https://www.youtube.com/channel/UCdFdgYjRGC53PPmE2XTlPhw",
-  },
-  { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/big0-dev/" },
+  // {
+  //   icon: <FaFacebook />,
+  //   href: "https://www.facebook.com/profile.php?id=61559667573420",
+  // },
+  // { icon: <FaInstagram />, href: "https://www.instagram.com/big0.dev/" },
+  // {
+  //   icon: <FaYoutube />,
+  //   href: "https://www.youtube.com/channel/UCdFdgYjRGC53PPmE2XTlPhw",
+  // },
+  { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/cyberx-soft/" },
 ];
 
 export function Footer() {
@@ -70,7 +70,7 @@ export function Footer() {
 
       <ul className="flex items-center justify-center gap-4 flex-wrap md:flex-nowrap">
         <li className="text-white pointer-events-none">
-          © 2024 Big0. All rights reserved.
+          © 2025 CyberXSoft. All rights reserved.
         </li>
         <li className="text-gray-400 hover:text-white focus-within:text-white">
           <Link href="/policy">Privacy Policy</Link>

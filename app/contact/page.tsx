@@ -8,23 +8,23 @@ import ContactForm from "./_components/ContactForm";
 import NewsletterEmail from "@/components/NewsletterEmail";
 
 export const metadata: Metadata = {
-  title: "BigO - Contact",
+  title: "CyberXSoft - Contact",
 };
 
 const ContactUs = async () => {
   return (
     <>
-      <section className="relative h-full lg:h-screen lg:max-h-[850px] py-20 bg-custom-purple-700 content-center">
+      <section className="relative h-full lg:h-screen lg:max-h-[850px] py-20 bg-custom-purple-500 content-center">
         <div className="container relative z-10 px-8 sm:px-10 lg:px-20 flex items-center gap-10 lg:gap-32 justify-between flex-col lg:flex-row">
           <div className="text-white lg:max-w-2xl space-y-4">
             <strong className="uppercase">Connect</strong>
             <h1 className="text-4xl sm:text-5xl font-bold">
-              Get in Touch With BigO - Your Partner in Excellence
+              Get in Touch With CyberXSoft - Your Partner in Excellence
             </h1>
             <p className="">
               Whether you wish to dominate the digital arena by employing the
               latest business solutions or have queries regarding our services,
-              our team at BigO is here to serve you. Your success is our
+              our team at CyberXSoft is here to serve you. Your success is our
               victory, and we are excited to talk about how we might adapt our
               offerings to suit your particular requirements.
             </p>
@@ -40,9 +40,9 @@ const ContactUs = async () => {
                 <h5 className="text-lg font-bold text-white">Email</h5>
                 <Link
                   className="text-white hover:text-custom-purple-100 transition-all duration-200"
-                  href="mailto:info@Big0.dev"
+                  href="mailto:Info@cyberxsoft.com"
                 >
-                  info@Big0.dev
+                  Info@cyberxsoft.com
                 </Link>
               </div>
             </div>
@@ -55,9 +55,9 @@ const ContactUs = async () => {
                 <h5 className="text-lg font-bold text-white">Phone</h5>
                 <Link
                   className="text-white hover:text-custom-purple-100 transition-all duration-200"
-                  href="tel:+1-437-365-9377"
+                  href="tel:+92-3129786297"
                 >
-                  +1-437-365-9377
+                  +92-3129786297
                 </Link>
               </div>
             </div>
@@ -73,7 +73,7 @@ const ContactUs = async () => {
                   href="https://maps.app.goo.gl/3MQpn7aqJ6H7wCrG8"
                   target="_blank"
                 >
-                  1054, East Avenue, Mississauga, Ontario L5E 1W9
+                  Plaza No. 54, Sector F, DHA Phase 1, Islamabad
                 </Link>
               </div>
             </div>
@@ -81,7 +81,7 @@ const ContactUs = async () => {
             <NewsletterEmail />
 
             <p className="text-white/50">
-              At BigO, communication is key, and we are excited to hear from
+              At CyberXSoft, communication is key, and we are excited to hear from
               you. Let&apos;s make big things happen together!
             </p>
           </div>

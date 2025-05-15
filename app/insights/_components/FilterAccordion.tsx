@@ -102,7 +102,7 @@ const FilterAccordion = () => {
             {item.list.map((list, index) => (
               <Button
                 key={index}
-                className={`rounded-sm capitalize bg-transparent text-primary hover:bg-gray-700 hover:text-primary-foreground border-gray-800 border-2 ${
+                className={`rounded-sm capitalize bg-transparent text-primary hover:bg-gray-500 hover:text-primary-foreground border-gray-800 border-2 ${
                   selected[item.category] &&
                   selected[item.category].includes(list)
                     ? "bg-gray-900 text-primary-foreground"

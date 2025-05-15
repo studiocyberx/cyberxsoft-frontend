@@ -14,7 +14,7 @@ import Loading from "./loading";
 export const metadata: Metadata = {
   title: "Outcome-Driven Internet of Things (IoT) Services",
   description:
-    "Facilitate your business operations through BigO’s IoT services. Strengthen the speed and reduce error frequency with a substantial cost. Learn more!",
+    "Facilitate your business operations through CyberXSoft’s IoT services. Strengthen the speed and reduce error frequency with a substantial cost. Learn more!",
 };
 
 const InternetOfThings = () => {
@@ -28,28 +28,28 @@ const InternetOfThings = () => {
     {
       value: "question-2",
       question:
-        "Can BigO's IoT services be tailored to cater to the needs of diverse industries?",
+        "Can CyberXSoft's IoT services be tailored to cater to the needs of diverse industries?",
       answer:
-        "BigO recognizes the different needs of industries. We provide customized IoT solutions, collaborating closely with clients to tailor our services to specific industry needs, whether in manufacturing, healthcare, logistics, or other.",
+        "CyberXSoft recognizes the different needs of industries. We provide customized IoT solutions, collaborating closely with clients to tailor our services to specific industry needs, whether in manufacturing, healthcare, logistics, or other.",
     },
     {
       value: "question-3",
-      question: "How does BigO safeguard the confidentiality of IoT data?",
+      question: "How does CyberXSoft safeguard the confidentiality of IoT data?",
       answer:
-        "Privacy is our top priority. BigO uses strong encryption, authentication, and compliance methods to protect IoT data. We follow industry guidelines and regulations to maintain the integrity and security of your information.",
+        "Privacy is our top priority. CyberXSoft uses strong encryption, authentication, and compliance methods to protect IoT data. We follow industry guidelines and regulations to maintain the integrity and security of your information.",
     },
     {
       value: "question-4",
-      question: "What makes BigO stand out in the IoT service industry?",
+      question: "What makes CyberXSoft stand out in the IoT service industry?",
       answer:
-        "BigO distinguishes itself with its experience, collaborative approach, and dedication to technological advances. We render our years of knowledge, cooperate closely with clients, and are always exploring emerging technologies to keep our IoT services at the forefront of industry innovations.",
+        "CyberXSoft distinguishes itself with its experience, collaborative approach, and dedication to technological advances. We render our years of knowledge, cooperate closely with clients, and are always exploring emerging technologies to keep our IoT services at the forefront of industry innovations.",
     },
   ];
 
   const beyondSectionData = {
     title: "Discover Full-Scale Digital Services Beyond IoT Solutions",
     description:
-      "We understand the ever evolving demands of businesses, and finding the finest services has become a challenge for business owners. BigO in collaboration with CyberX Studio fulfills the holistic digital marketing requirements of its clients. If you are looking for services other than the Internet of Things (IoT), then look no further! Let CyberX Studio be your digital marketing partner and upscale your business's online visibility.",
+      "We understand the ever evolving demands of businesses, and finding the finest services has become a challenge for business owners. CyberXSoft in collaboration with CyberX Studio fulfills the holistic digital marketing requirements of its clients. If you are looking for services other than the Internet of Things (IoT), then look no further! Let CyberX Studio be your digital marketing partner and upscale your business's online visibility.",
     image: "/beyond-iot.png",
     serviceHeading: "Benefit from the following holistic services suite:",
   };
@@ -149,14 +149,14 @@ const InternetOfThings = () => {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
+        <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-500 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
           <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
             <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
               <span className="font-bold">Outcome-Driven</span> Internet of
               Things (IoT) Services
             </h1>
             <p className="text-lg md:text-xl text-secondary">
-              At BigO, the core motive of our IoT services is to reveal
+              At CyberXSoft, the core motive of our IoT services is to reveal
               analytical insights about operations, streamline work processes,
               minimize potential challenges, and empower businesses to make
               informed, data-driven decisions.

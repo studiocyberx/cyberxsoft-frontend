@@ -36,7 +36,7 @@ const BusinessIntelligence = () => {
     {
       title: "Data Warehousing",
       description:
-        "At BigO, our Data warehousing solution as part of our Business Intelligence Services involves holistic services to maximize data management, operations efficiency, and precise analytics. We specialize in collecting, integrating, and migrating data from diverse sources, ensuring the working of a well-structured and centralized warehouse.",
+        "At CyberXSoft, our Data warehousing solution as part of our Business Intelligence Services involves holistic services to maximize data management, operations efficiency, and precise analytics. We specialize in collecting, integrating, and migrating data from diverse sources, ensuring the working of a well-structured and centralized warehouse.",
       imageSrc: "/data-warehouse.png",
     },
     {
@@ -100,7 +100,7 @@ const BusinessIntelligence = () => {
     {
       value: "question-4",
       question:
-        "What security measures does BigO put in place to protect sensitive business data in BI systems?",
+        "What security measures does CyberXSoft put in place to protect sensitive business data in BI systems?",
       answer:
         "Our BI systems implement sound security measures, including user authentication, encryption, and access controls. These measures ensure that only authorized personnel can access and alter sensitive business data.",
     },
@@ -243,7 +243,7 @@ const BusinessIntelligence = () => {
 
   return (
     <>
-      <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
+      <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-500 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
         <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
           <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
             <span className="font-bold">Make Precise Decisions</span> with

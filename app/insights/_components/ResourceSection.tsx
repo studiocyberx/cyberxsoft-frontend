@@ -49,7 +49,7 @@ const ResourceSection = async () => {
     <section className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 p-8 sm:px-12 md:px-20">
       {cardItems.map((item) => (
         <Link href={item.href} key={item.title} className="group">
-          <Card className="relative h-[450px] flex flex-col justify-between items-center rounded-lg border-slate-700 overflow-hidden md:group-hover:scale-105 transition-transform">
+          <Card className="relative h-[450px] flex flex-col justify-between items-center rounded-lg border-slate-500 overflow-hidden md:group-hover:scale-105 transition-transform">
             <Image
               src={baseUrl + item.image}
               alt={item.alternativeText}

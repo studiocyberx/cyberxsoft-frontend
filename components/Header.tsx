@@ -26,25 +26,25 @@ interface ServiceItem {
 }
 
 const socialIcons: SocialIconProps[] = [
+  // {
+  //   id: 1,
+  //   icon: <FaFacebook />,
+  //   url: "https://www.facebook.com/profile.php?id=61559667573420",
+  // },
+  // {
+  //   id: 2,
+  //   icon: <FaInstagram />,
+  //   url: "https://www.instagram.com/big0.dev/",
+  // },
+  // {
+  //   id: 3,
+  //   icon: <FaYoutube />,
+  //   url: "https://www.youtube.com/channel/UCdFdgYjRGC53PPmE2XTlPhw",
+  // },
   {
     id: 1,
-    icon: <FaFacebook />,
-    url: "https://www.facebook.com/profile.php?id=61559667573420",
-  },
-  {
-    id: 2,
-    icon: <FaInstagram />,
-    url: "https://www.instagram.com/big0.dev/",
-  },
-  {
-    id: 3,
-    icon: <FaYoutube />,
-    url: "https://www.youtube.com/channel/UCdFdgYjRGC53PPmE2XTlPhw",
-  },
-  {
-    id: 4,
     icon: <FaLinkedin />,
-    url: "https://www.linkedin.com/company/big0-dev/",
+    url: "https://www.linkedin.com/company/cyberx-soft/",
   },
 ];
 
@@ -80,7 +80,7 @@ export async function Header() {
               key={icon.id}
               href={icon.url}
               target="_blank"
-              className="text-white hover:text-custom-purple-100 text-xl"
+              className="text-white hover:text-custom-purple-200 text-xl"
             >
               {icon.icon}
             </Link>
@@ -88,19 +88,19 @@ export async function Header() {
         </div>
         <div className="flex items-center gap-4 justify-center md:justify-start flex-wrap md:flex-nowrap">
           <Link
-            href="tel:+1-437-365-9377"
-            className="flex items-center gap-2 text-white hover:text-custom-purple-100 transition-all duration-300"
+            href="tel:+92-312-9786297"
+            className="flex items-center gap-2 text-white hover:text-custom-purple-200 transition-all duration-300"
           >
             <FaPhone size={20} />
-            +1-437-365-9377
+            +92-312-9786297
           </Link>
           <Link
             href="https://maps.app.goo.gl/3MQpn7aqJ6H7wCrG8"
             target="_blank"
-            className="flex items-center text-center md:text-left gap-2 text-white hover:text-custom-purple-100 transition-all duration-300"
+            className="flex items-center text-center md:text-left gap-2 text-white hover:text-custom-purple-200 transition-all duration-300"
           >
             <FaLocationDot size={20} />
-            1054, East Avenue, Mississauga, Ontario L5E 1W9
+            Plaza No. 54, Sector F, DHA Phase 1, Islamabad.
           </Link>
         </div>
       </div>

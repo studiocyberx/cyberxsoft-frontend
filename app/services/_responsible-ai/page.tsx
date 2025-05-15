@@ -11,16 +11,16 @@ import FiveCardsSection from "@/components/FiveCardsSection";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Responsible AI Service | BigO",
+  title: "Responsible AI Service | CyberXSoft",
   description:
-    "BigO enables businesses to wield artificial intelligence with trust, confidence, and transparency through innovative and Responsible AI service.",
+    "CyberXSoft enables businesses to wield artificial intelligence with trust, confidence, and transparency through innovative and Responsible AI service.",
 };
 
 const ResponsibleAi = () => {
   const beyondSectionData = {
     title: "Explore Beyond Responsible AI Service: Full-Scale Digital Suite",
     description:
-      "The tech-driven changes are fueling high competition, and the fittest will survive in the digital landscape. BigO, in collaboration with CyberX Studio, acknowledges the challenges in digitization and online visibility beyond Responsible AI expertise. It facilitates strategic planning, designing of course of action, and execution, empowering enterprises to excel in the digital realm by refining their online presence and elevating customer engagement. CyberX Studio is your one-stop shop for upscaling your business visibility and building worth in the global market. Connect and witness how this holistic suite of services accelerates your organization`s success!",
+      "The tech-driven changes are fueling high competition, and the fittest will survive in the digital landscape. CyberXSoft, in collaboration with CyberX Studio, acknowledges the challenges in digitization and online visibility beyond Responsible AI expertise. It facilitates strategic planning, designing of course of action, and execution, empowering enterprises to excel in the digital realm by refining their online presence and elevating customer engagement. CyberX Studio is your one-stop shop for upscaling your business visibility and building worth in the global market. Connect and witness how this holistic suite of services accelerates your organization`s success!",
     image: "/beyond-ai.png",
   };
 
@@ -149,7 +149,7 @@ const ResponsibleAi = () => {
 
   return (
     <>
-      <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
+      <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-500 px-8 sm:px-14 lg:px-20 2xl:px-28 pt-10 sm:pt-20 overflow-hidden">
         <div className="pb-0 lg:pb-20 space-y-4 container text-center lg:text-left">
           <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
             Responsible <span className="font-bold">AI</span>
@@ -189,7 +189,7 @@ const ResponsibleAi = () => {
             and accurate, or in any way violating privacy?
           </p>
           <p>
-            With great power comes even greater responsibility, and BigO is your
+            With great power comes even greater responsibility, and CyberXSoft is your
             trusted partner in striking a balance between responsible AI use
             with trust, transparency, and confidence. Our Responsible AI (RAI)
             service is designed to leverage tools, techniques, and frameworks

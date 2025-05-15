@@ -38,7 +38,7 @@ const WhyUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start max-w-4xl pb-10 md:pb-20">
           {whyUs.map((item) => (
             <div key={item.title} className="flex flex-col gap-2 items-start">
-              <h4 className="text-custom-purple-300 uppercase text-lg font-bold">
+              <h4 className="text-white uppercase text-lg font-bold">
                 {item.title}
               </h4>
               <p className="text-white">{item.description}</p>

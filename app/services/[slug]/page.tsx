@@ -52,7 +52,7 @@ const Service = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <>
-      <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-700 px-8 sm:px-14 lg:px-20 2xl:px-28 py-10 sm:py-20 overflow-hidden">
+      <section className="h-full flex flex-col lg:flex-row gap-10 lg:gap-20 justify-between items-center w-full bg-custom-purple-500 px-8 sm:px-14 lg:px-20 2xl:px-28 py-10 sm:py-20 overflow-hidden">
         <div className="space-y-4 container text-center lg:text-left min-w-min">
           <h1 className="text-white font-tommy uppercase text-5xl lg:text-[3.5rem]">
             {data.introTitle}

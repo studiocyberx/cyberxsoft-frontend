@@ -46,7 +46,7 @@ const ChallengesSection = () => {
           Resolving Your Business Challenges for Boosted Execution
         </h2>
         <p className="mt-2 mb-8">
-          BigO excels at identifying and providing solutions for the obstacles
+        CyberXSoft excels at identifying and providing solutions for the obstacles
           that impede your company&apos;s expansion. We offer dynamic IoT
           solutions that pave the way for sustainable progress and advancement.
         </p>

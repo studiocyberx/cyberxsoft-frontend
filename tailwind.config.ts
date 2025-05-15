@@ -65,14 +65,14 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        "custom-purple-50": "#DA78FF",
-        "custom-purple-100": "#B180C3",
-        "custom-purple-200": "#9D60B4",
-        "custom-purple-300": "#9C37C2",
-        "custom-purple-400": "#7F3E98",
-        "custom-purple-500": "#5C2671",
-        "custom-purple-600": "#321A3B",
-        "custom-purple-700": "#200F26",
+        "custom-purple-50": "#1d7acf", //lightish blue
+        "custom-purple-100": "#B180C3", //lightish purple
+        "custom-purple-200": "#0B9444", //green
+        "custom-purple-300": "#0B9444", //green
+        "custom-purple-400": "#0B9444", //green
+        "custom-purple-500": "#112d4e", //dark blue
+        "custom-purple-600": "#1A4578", //logo blue color
+        "custom-purple-700": "#200F26", //purple
       },
       borderRadius: {
         lg: "var(--radius)",

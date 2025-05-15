@@ -83,7 +83,7 @@ html {
 /* Firefox */
 * {
   /* scrollbar-width: thin; */
-  scrollbar-color: rgba(92, 38, 113, 0.591);
+  scrollbar-color: #0B9444;
   scrollbar-width: 2px;
 }
 
@@ -93,14 +93,14 @@ html {
 }
 
 *::-webkit-scrollbar-track {
-  background: rgba(92, 38, 113, 0.591);
+  background: #0B9444;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #5c2671;
+  background: #1A4578;
   cursor: pointer;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7f3e98;
+  background: #1A4578;
 }
