@@ -7,6 +7,7 @@ import { HeroSection } from "@/app/_components/HeroSection";
 import { FeatureSection } from "@/app/_components/FeaturesSection";
 import CarouselSection from "@/app/_components/CarouselSection";
 import TestimonialSection from "./_components/TestimonialSection";
+import { ClientLogoCarousel } from "./_components/ClientLogoCarousel";
 
 const featuresData = [
   {
@@ -106,6 +107,7 @@ const Home = async () => {
       <HeroSection />
       <IntroSection />
       <FeatureSection data={featuresData} />
+      <ClientLogoCarousel />
       <CarouselSection />
       <TestimonialSection/>
       <section className="container px-6 sm:px-8 lg:h-screen 2xl:max-h-[800px] my-8 flex items-center justify-between gap-4 flex-wrap lg:flex-nowrap">
