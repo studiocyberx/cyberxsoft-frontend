@@ -1,5 +1,6 @@
 import FeatureCard from "@/app/_components/FeatureCard";
 import AnimatedCards from "@/components/AnimatedCards";
+import { FeatureCarousel } from "@/components/FeatureCarosuel";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
@@ -44,13 +45,14 @@ export function FeatureSection({ data }: Readonly<FeatureSectionProps>) {
             comprehensive suite of BI services.
           </p>
         </div>
-        <AnimatedCards>
+        {/* <AnimatedCards>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 pt-12 max-w-[1400px] mx-auto px-4 sm:px-5 md:px-10">
             {data.map((feature) => (
               <FeatureCard feature={feature} key={feature.id} />
             ))}
           </div>
-        </AnimatedCards>
+        </AnimatedCards> */}
+        <FeatureCarousel data={data} />
 
         {/* <Image
           fill={true}

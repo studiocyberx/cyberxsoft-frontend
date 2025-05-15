@@ -6,10 +6,23 @@ import IntroSection from "@/app/_components/IntroSection";
 import { HeroSection } from "@/app/_components/HeroSection";
 import { FeatureSection } from "@/app/_components/FeaturesSection";
 import CarouselSection from "@/app/_components/CarouselSection";
+import TestimonialSection from "./_components/TestimonialSection";
 
 const featuresData = [
   {
     id: 1,
+    heading: "SAP Support Services",
+    subHeading:
+      "We deliver end-to-end SAP support including SAP Consulting, Implementation, Integration, Cloud Solutions, and Analytics & BI. From S/4HANA deployments to real-time dashboards, our experts ensure your SAP systems run smoothly, scale efficiently, and align with your business goals.",
+    image: {
+      id: 5,
+      url: "/SAP_icon.png",
+      alternativeText:
+        "SAP support including SAP Consulting, Implementation, Integration, Cloud Solutions, and Analytics & BI",
+    },
+  },
+  {
+    id: 2,
     heading: "Business Intelligence (BI) Services",
     subHeading:
       "We develop interactive dashboards for real-time data visualization, turning it into a business advantage through Extract, Transform, and Load (ETL) pipeline development. Our BI services leverage industrial-grade tools like Apache Spark, SQL, Python, R, Numpy, Pandas and more to deliver impactful analytics services.",
@@ -21,7 +34,7 @@ const featuresData = [
     },
   },
   {
-    id: 2,
+    id: 3,
     heading: "Responsible AI Services",
     subHeading:
       "We offer custom-made AI model development using TensorFlow or PyTorch, federated learning solutions for privacy preservation, and predictive insights for resource handling and equipment or machinery maintenance.",
@@ -33,7 +46,7 @@ const featuresData = [
     },
   },
   {
-    id: 3,
+    id: 4,
     heading: "Cloud Services",
     subHeading:
       "We provide end-to-end cloud infrastructure setup and management using AWS, Terraform, Docker, and Kubernetes along with DevOps integration through Jenkins and GIT. In addition, our cloud services include big data analytics and processing.",
@@ -44,7 +57,7 @@ const featuresData = [
     },
   },
   {
-    id: 4,
+    id: 5,
     heading: "Internet of Things (IoT) Services",
     subHeading:
       "We empower clients to adapt to their changing needs and integrate IoT technology into their infrastructures. Our IoT services provide business automation by leveraging real-time data analytics and processing and improving operational efficiency.",
@@ -55,6 +68,7 @@ const featuresData = [
         "Embracing Modern Technology and Delivering the Finest to Our Clients",
     },
   },
+  
 ];
 
 const faqItems = [
@@ -93,6 +107,7 @@ const Home = async () => {
       <IntroSection />
       <FeatureSection data={featuresData} />
       <CarouselSection />
+      <TestimonialSection/>
       <section className="container px-6 sm:px-8 lg:h-screen 2xl:max-h-[800px] my-8 flex items-center justify-between gap-4 flex-wrap lg:flex-nowrap">
         <Image
           src="/faq-illustration.png"

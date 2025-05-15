@@ -27,9 +27,9 @@ const GetInTouch = () => {
               <h5 className="text-lg font-bold">Email</h5>
               <Link
                 className="hover:text-custom-purple-100 transition-all duration-200"
-                href="mailto:info@cyberxstudio.com"
+                href="mailto:info@cyberxsoft.com"
               >
-                info@cyberxstudio.com
+                info@cyberxsoft.com
               </Link>
             </div>
           </div>
